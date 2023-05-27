@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SmartAqua"
-include ':app'
+include ':SmartAqua'
