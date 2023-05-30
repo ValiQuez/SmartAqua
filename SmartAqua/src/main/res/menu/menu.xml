@@ -1,6 +1,37 @@
-
 <?xml version="1.0" encoding="utf-8"?>
-<menu>
+<!--
+CENG-322-0NA: Group 6
+Denis Shwaloff - N01424883
+Alvaro Rodrigo Chavez Moya - N01455107
+Paolo Adrian Quezon - N01424883
+Nicholas Dibiase - N01367109
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/PULL"
+            android:title="@string/pull"
+
+              >
+
+        </item>
+        <item android:id="@+id/ON"
+            android:title="@string/on"
+            >
+
+        </item>
+        <item android:id="@+id/OFF"
+            android:title="@string/off"
+            >
+
+        </item>
+        <item android:id="@+id/STOP"
+            android:title="@string/stop"
+            >
+
+        </item>
+
+    </group>
 
 </menu>
