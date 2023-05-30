@@ -1,6 +1,6 @@
 ![logo](https://i.imgur.com/73YDdtg.png)
 # Smart Aqua Project
-## Empowering users with smart Automation and real-time monitoring for optimal aquarium and water system health.
+## Empowering users with smart automation and real-time monitoring for optimal aquarium and water system health.
 
 ### BuckleUp Inc.
 
