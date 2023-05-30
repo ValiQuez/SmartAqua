@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+CENG-322-0NA: Group 6
+Denis Shwaloff - N01424883
+Alvaro Rodrigo Chavez Moya - N01455107
+Paolo Adrian Quezon - N01424883
+Nicholas Dibiase - N01367109
+-->
+
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
