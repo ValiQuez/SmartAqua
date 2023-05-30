@@ -12,7 +12,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/AlvaroDenisDrawerLayout"
+    android:id="@+id/SmartAquaDrawerLayout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".MainActivity">
@@ -32,7 +32,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_drawer_menu" />
-        <!--app:headerLayout="@layout/navigation_header"-->
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
