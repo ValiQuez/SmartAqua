@@ -4,7 +4,7 @@
      Denis Shwaloff - N01424883
      Alvaro Rodrigo Chavez Moya - N01455107
      Paolo Adrian Quezon - N01424883
-     Nicholas Dibiase - N01367109 -->
+     Nicholas Dibiase - N01367109           -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,7 @@
         android:layout_width="240dp"
         android:layout_height="129dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         app:srcCompat="@drawable/aqua_project_logo" />
 
 </LinearLayout>

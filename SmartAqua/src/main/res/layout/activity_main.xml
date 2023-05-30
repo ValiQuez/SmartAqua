@@ -4,7 +4,7 @@
      Denis Shwaloff - N01424883
      Alvaro Rodrigo Chavez Moya - N01455107
      Paolo Adrian Quezon - N01424883
-     Nicholas Dibiase - N01367109 -->
+     Nicholas Dibiase - N01367109           -->
 
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,17 +17,31 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/SmartAquaToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/turquoise"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+        <FrameLayout
+            android:id="@+id/SmartAquaFragmentSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/AlvaroDenisNavigationView"
+        android:id="@+id/SmartAquaNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

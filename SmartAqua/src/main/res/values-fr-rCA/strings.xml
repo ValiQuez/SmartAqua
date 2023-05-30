@@ -1,10 +1,8 @@
-<!--
-CENG-322-0NA: Group 6
-Denis Shwaloff - N01424883
-Alvaro Rodrigo Chavez Moya - N01455107
-Paolo Adrian Quezon - N01424883
-Nicholas Dibiase - N01367109
--->
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
 
 <resources>
     <string name="app_name">Smart Aqua</string>
@@ -12,4 +10,8 @@ Nicholas Dibiase - N01367109
     <string name="light_control">Light Control</string>
     <string name="temperature_control">Temperature Control</string>
     <string name="switch_control">Switch Control</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
