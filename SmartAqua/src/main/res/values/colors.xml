@@ -10,4 +10,6 @@ Nicholas Dibiase - N01367109
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="turquoise">#045C5A</color>
+    <color name="light_green">#8CBDA4</color>
 </resources>
