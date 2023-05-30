@@ -8,8 +8,8 @@ Nicholas Dibiase - N01367109
 
 <resources>
     <string name="app_name">SmartAqua</string>
-    <string name="pull">PULL</string>
-    <string name="on">ON</string>
-    <string name="off">OFF</string>
-    <string name="stop">STOP</string>
+    <string name="water_control">Water Control</string>
+    <string name="light_control">Light Control</string>
+    <string name="temperature_control">Temperature Control</string>
+    <string name="switch_control">Switch Control</string>
 </resources>

@@ -12,15 +12,15 @@ Nicholas Dibiase - N01367109
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/PULL"
-              android:title="@string/pull"/>
+              android:title="@string/water_control"/>
 
         <item android:id="@+id/ON"
-              android:title="@string/on"/>
+              android:title="@string/switch_control"/>
 
         <item android:id="@+id/OFF"
-              android:title="@string/off"/>
+              android:title="@string/temperature_control"/>
 
         <item android:id="@+id/STOP"
-              android:title="@string/stop"/>
+              android:title="@string/light_control"/>
     </group>
 </menu>
