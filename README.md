@@ -4,7 +4,7 @@
 
 ### BuckleUp Inc.
 
-### Team Members:
+#### Team Members:
 
 ###### Alvaro Rodrigo Chavez Moya - N01455107
 ###### Nicholas Dibiase - N01367109
