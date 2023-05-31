@@ -12,6 +12,7 @@
     <string name="switch_control">Switch Control</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="splashDesc">Autonomiser les utilisateurs avec une automatisation intelligente et une surveillance en temps réel pour une santé optimale de l\'aquarium et du système d\'eau.</string>
 
     <string name="yes">Oui</string>
     <string name="alertDialogMesg">Voulez-vous quitter l\'application?</string>
