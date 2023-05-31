@@ -20,6 +20,6 @@
         android:layout_height="129dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="35dp"
-        app:srcCompat="@drawable/aqua_project_logo" />
+        app:srcCompat="@drawable/aqua_logo_white"/>
 
 </LinearLayout>
