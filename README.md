@@ -1,5 +1,6 @@
 ![logo](https://i.imgur.com/73YDdtg.png)
 # Smart Aqua Project
+###### https://github.com/DenisShwaloff2583/SmartAqua.git
 ## Empowering users with smart automation and real-time monitoring for optimal aquarium and water system health.
 
 ### BuckleUp Inc.
