@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SmartAquaSplash extends AppCompatActivity {
 
-    private static final int SPLASH_DELAY = 5000; // Splash screen delay in milliseconds
+    private static final int SPLASH_DELAY = 3000; // Splash screen delay in milliseconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
