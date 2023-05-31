@@ -27,13 +27,13 @@
         android:progressTint="#045C5A" />
 
     <TextView
-
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="508dp"
         android:gravity="center"
-        android:text="Empowering users with smart automation and real-time monitoring for optimal aquarium and water system health."
+        android:text="@string/splashDesc"
+        android:textColor="@color/black"
         android:textSize="18dp"
-        android:translationY="0dp" />
+        android:translationY="0dp"/>
 
 </RelativeLayout>
