@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/aqua_project_logo" />
+        android:src="@drawable/aqua_logo_png" />
 
     <ProgressBar
         android:id="@+id/SmartAquaProgressBar"
