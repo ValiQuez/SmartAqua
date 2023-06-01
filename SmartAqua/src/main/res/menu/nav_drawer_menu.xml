@@ -11,16 +11,21 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/PULL"
-              android:title="@string/water_control"/>
+        <item android:id="@+id/SmartAquaWaterMenu"
+              android:title="@string/water_monitor"
+              android:icon="@drawable/water_menu_icon"/>
 
-        <item android:id="@+id/ON"
-              android:title="@string/switch_control"/>
+        <item android:id="@+id/SmartAquaTemperatureMenu"
+              android:title="@string/temperature_monitor"
+              android:icon="@drawable/temperature_water_icon"/>
 
-        <item android:id="@+id/OFF"
-              android:title="@string/temperature_control"/>
+        <item android:id="@+id/SmartAquaLightMenu"
+              android:title="@string/light_monitor"
+              android:icon="@drawable/light_menu_icon"/>
 
-        <item android:id="@+id/STOP"
-              android:title="@string/light_control"/>
+        <item android:id="@+id/SmartAquaSwitchMenu"
+            android:title="@string/switch_control"
+            android:icon="@drawable/switch_menu_icon"/>
+
     </group>
 </menu>

@@ -6,9 +6,9 @@
 
 <resources>
     <string name="app_name" translatable="false">Smart Aqua</string>
-    <string name="water_control">Water Control</string>
-    <string name="light_control">Light Control</string>
-    <string name="temperature_control">Temperature Control</string>
+    <string name="water_monitor">Water Monitor</string>
+    <string name="light_monitor">Light Monitor</string>
+    <string name="temperature_monitor">Temperature Monitor</string>
     <string name="switch_control">Switch Control</string>
     <string name="open">Open</string>
     <string name="yes">Yes</string>

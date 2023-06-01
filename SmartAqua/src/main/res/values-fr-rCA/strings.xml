@@ -5,9 +5,9 @@
      Nicholas Dibiase - N01367109           -->
 
 <resources>
-    <string name="water_control">Contrôle de l\'eau</string>
-    <string name="light_control">Contrôle de la lumière</string>
-    <string name="temperature_control">Contrôle de la température</string>
+    <string name="water_monitor">Moniteur d\'eau</string>
+    <string name="light_monitor">Moniteur de lumière</string>
+    <string name="temperature_monitor">Moniteur de température</string>
     <string name="switch_control">Commutateur de contrôle</string>
     <string name="open">Ouvrir</string>
     <string name="splashDesc">Autonomiser les utilisateurs avec une automatisation intelligente et une surveillance en temps réel pour une santé optimale de l\'aquarium et du système d\'eau.</string>
