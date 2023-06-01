@@ -5,18 +5,17 @@
      Nicholas Dibiase - N01367109           -->
 
 <resources>
-    <string name="app_name">Smart Aqua</string>
+    <string name="app_name" translatable="false">Smart Aqua</string>
     <string name="water_control">Water Control</string>
     <string name="light_control">Light Control</string>
     <string name="temperature_control">Temperature Control</string>
     <string name="switch_control">Switch Control</string>
     <string name="open">Open</string>
-    <string name="close">Close</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="splashDesc">Empowering users with smart automation and real-time monitoring for optimal aquarium and water system health.</string>
     <!-- Alert dialog string -->
     <string name="alertDialogMesg">Do you want to exit the app?</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="homeFragmentGreeting">Welcome to the home screen fragment</string>
+    <string name="close">Close</string>
 </resources>

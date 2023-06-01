@@ -6,17 +6,14 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
