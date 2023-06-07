@@ -12,10 +12,39 @@
     android:layout_height="match_parent"
     tools:context=".SmartAquaSwitch">
 
-    <!-- TODO: Update blank fragment layout -->
+    <Switch
+        android:id="@+id/SmartAquaSwitch"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/switchName" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:id="@+id/SmartAquaSwitchStatus"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="225dp"
+        android:text="@string/off" />
+
+    <Switch
+        android:id="@+id/SmartAquaSwitch2"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="300dp"
+        android:text="@string/switchName2" />
+
+    <TextView
+        android:id="@+id/SmartAquaSwitchStatus2"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="325dp"
+        android:text="@string/off" />
+
 
 </FrameLayout>
