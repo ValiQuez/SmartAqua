@@ -18,17 +18,17 @@
         tools:context=".SmartAquaLight">
 
         <Button
-            android:id="@+id/Lightbutton1"
+            android:id="@+id/lightbutton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Lightbutton1"
+            android:text="@string/SmartAquaLightBtn1"
             android:translationY="660dp" />
 
         <Button
-            android:id="@+id/Lightbutton2"
+            android:id="@+id/lightbutton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Lightbutton2"
+            android:text="@string/SmartAquaLightBtn2"
             android:translationY="560dp" />
 
 
