@@ -23,4 +23,6 @@
     <string name="on">Allumé</string>
     <string name="off">Éteindre</string>
     <string name="switchName2">Bain moussant</string>
+    <string name="Lightbutton2">Allumé</string>
+    <string name="Lightbutton1">Éteindre</string>
 </resources>
