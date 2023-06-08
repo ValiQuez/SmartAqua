@@ -28,6 +28,7 @@
     <string name="switchName2">Bubble Bath</string>
     <string name="Lightbutton2">ON</string>
     <string name="Lightbutton1">OFF</string>
+    <string name="feedback">Feedback</string>
 
 
 </resources>
