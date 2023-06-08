@@ -33,12 +33,15 @@
     <!-- MAIN PAGE STRINGS  -->
     <string name="homeFragmentGreeting">Welcome to the home screen fragment</string>
 
+    <!-- SETTINGS PAGE STRINGS  -->
+    <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>
+    <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
+
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>
     <string name="measure">PPM -> Parts Per Millon</string>
     <string name="explanation">PPM is used to measure the cleaniness of the water system</string>
     <string name="start_button">Start</string>
-
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>

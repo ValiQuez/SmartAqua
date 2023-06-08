@@ -10,9 +10,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SmartAquaSettings">
-
-    <!-- TODO: Update blank fragment layout -->
 
     <ImageView
         android:id="@+id/SmartAquaSettingsTitle"
@@ -21,7 +20,26 @@
         android:src="@drawable/settings_title" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/SmartAquaPortraitLock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="175dp"
+        android:layout_marginStart="30dp"
+
+        android:text="@string/settingsLockPortrait"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        />
+
+    <ToggleButton
+        android:id="@+id/SmartAquaPortraitLockToggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="75dp"
+
+        android:text="@string/settingsTogglePortraitBtn" />
 
 </FrameLayout>
