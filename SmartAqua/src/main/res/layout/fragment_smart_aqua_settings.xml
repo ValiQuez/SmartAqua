@@ -34,12 +34,16 @@
 
     <ToggleButton
         android:id="@+id/SmartAquaPortraitLockToggleBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
 
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="75dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginStart="40dp"
 
-        android:text="@string/settingsTogglePortraitBtn" />
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+
+        android:background="@color/turquoise" />
 
 </FrameLayout>
