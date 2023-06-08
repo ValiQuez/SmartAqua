@@ -35,19 +35,15 @@
 
     <group android:checkableBehavior="single"
            android:id="@+id/SmartAquaG2">
-
         <item
-            android:id="@+id/SmartAquaSettings"
+            android:id="@+id/SmartAquaSettingsMenu"
             android:title="@string/settings"
             android:icon="@drawable/settings"/>
 
         <item
-            android:id="@+id/SmartAquaHelp"
-            android:title="@string/help"
-            android:icon="@drawable/help"
-            />
-
-
-
+            android:id="@+id/SmartAquaHelpMenu"
+            android:title="@string/feedback"
+            android:icon="@drawable/feedback_icon"/>
     </group>
+
 </menu>
