@@ -15,7 +15,9 @@
     <string name="alertDialogMesg">Voulez-vous quitter l\'application?</string>
     <string name="no">Non</string>
     <string name="close">Fermer</string>
-    <string name="homeFragmentGreeting">Bienvenue dans le fragment d\'écran d\'accueil</string>
+    <string name="homeFragmentGreeting">Bienvenue sur l\'application Smart Aqua</string>
+    <string name="app_description">Notre objectif est de suivre et de contrôler efficacement les systèmes d\'eau pour assurer la qualité de l\'eau et minimiser les dommages et les coûts.</string>
+    <string name="feature_description">Notre application dispose de 4 fonctionnalités différentes pour maintenir un système d\'eau sain</string>
     <string name="home">Accueil</string>
     <string name="settings">Paramètres</string>
     <string name="help">Aider</string>

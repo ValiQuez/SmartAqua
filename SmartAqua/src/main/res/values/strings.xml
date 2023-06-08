@@ -23,15 +23,17 @@
     <string name="alertDialogMesg">Do you want to exit the app?</string>
 
     <!-- NAVIGATION DRAWER STRINGS  -->
-    <string name="water_monitor">Water Monitor</string>
-    <string name="light_monitor">Light Monitor</string>
-    <string name="temperature_monitor">Temperature Monitor</string>
+    <string name="water_monitor">Water Quality</string>
+    <string name="light_monitor">Light Control</string>
+    <string name="temperature_monitor">Temperature Control</string>
     <string name="switch_control">Switch Control</string>
     <string name="settings">Settings</string>
     <string name="help">Help</string>
 
     <!-- MAIN PAGE STRINGS  -->
-    <string name="homeFragmentGreeting">Welcome to the home screen fragment</string>
+    <string name="homeFragmentGreeting">Welcome to the Smart Aqua Application</string>
+    <string name="app_description">Our goal is to effectively track and control water systems to ensure water quality and minimize damage and costs.</string>
+    <string name="feature_description">Our application has 4 different features to maintain an healthy water system</string>
 
     <!-- SETTINGS PAGE STRINGS  -->
     <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>

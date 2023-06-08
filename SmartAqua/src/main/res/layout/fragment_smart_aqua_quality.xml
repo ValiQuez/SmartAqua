@@ -44,7 +44,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="175dp"
         android:text="@string/readings"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="323dp"
