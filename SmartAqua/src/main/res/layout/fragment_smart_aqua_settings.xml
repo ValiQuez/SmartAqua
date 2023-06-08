@@ -17,7 +17,8 @@
         android:id="@+id/SmartAquaSettingsTitle"
         android:layout_width="260dp"
         android:layout_height="134dp"
-        android:src="@drawable/settings_title" />
+        android:src="@drawable/settings_title"
+        android:contentDescription="@string/settingsTitleImgDesc"/>
 
     <TextView
         android:id="@+id/SmartAquaPortraitLock"
@@ -30,16 +31,17 @@
         android:text="@string/settingsLockPortrait"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
+        android:textSize="17sp"
         />
 
     <ToggleButton
         android:id="@+id/SmartAquaPortraitLockToggleBtn"
         android:layout_width="75dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:background="@color/turquoise"
 
         android:layout_marginTop="170dp"
-        android:layout_marginStart="275dp"
+        android:layout_marginStart="290dp"
 
         android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
@@ -55,7 +57,8 @@
 
         android:text="@string/settingsResetValues"
         android:textColor="@color/turquoise"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/SmartAquaResetBtn"
@@ -63,8 +66,42 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/turquoise"
 
+        android:layout_marginTop="245dp"
+        android:layout_marginStart="280dp"
+
         android:text="@string/settingsResetBtn"
         android:textColor="@color/white"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/SmartAquaOption3"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="325dp"
+
+        android:text="@string/placeholder"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <!-- Button for option 3 here -->
+
+    <TextView
+        android:id="@+id/SmartAquaOption4"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="375dp"
+
+        android:text="@string/placeholder"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <!-- Button for option 4 here -->
+
 
 </FrameLayout>
