@@ -10,41 +10,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/columbia_blue"
     tools:context=".SmartAquaSwitch">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="75dp"
+
+        android:text="@string/switchWelcome"
+        android:textAlignment="center"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
 
     <Switch
         android:id="@+id/SmartAquaSwitch"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="70dp"
 
-        android:layout_marginStart="115dp"
+        android:layout_marginStart="85dp"
         android:layout_marginTop="200dp"
-        android:text="@string/switchName" />
+
+        android:text="@string/switchName"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/SmartAquaSwitchStatus"
         android:layout_width="60dp"
         android:layout_height="35dp"
+
         android:layout_marginStart="265dp"
         android:layout_marginTop="225dp"
-        android:text="@string/off" />
+
+        android:text="@string/off"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
 
     <Switch
         android:id="@+id/SmartAquaSwitch2"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="70dp"
 
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="300dp"
-        android:text="@string/switchName2" />
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="290dp"
+
+        android:text="@string/switchName2"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/SmartAquaSwitchStatus2"
         android:layout_width="60dp"
         android:layout_height="35dp"
+
         android:layout_marginStart="265dp"
-        android:layout_marginTop="325dp"
-        android:text="@string/off"/>
+        android:layout_marginTop="315dp"
+
+        android:text="@string/off"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
 
 
 </FrameLayout>

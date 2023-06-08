@@ -8,8 +8,10 @@ Nicholas Dibiase - N01367109
 -->
 
 <resources>
+    <!-- MAIN COLOURS -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
 
     <!-- MAIN COLOURS FROM LOGO -->
     <color name="turquoise">#045C5A</color>

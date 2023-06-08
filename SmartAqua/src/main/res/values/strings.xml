@@ -21,14 +21,22 @@
     <string name="help">Help</string>
     <string name="on">On</string>
     <string name="off">Off</string>
-    <!-- Alert dialog string -->
+    <string name="feedback">Feedback</string>
+
+    <!-- Settings screen  fragment-->
+
+    <!-- Alert dialog strings -->
     <string name="alertDialogMesg">Do you want to exit the app?</string>
+
     <!-- Switch screen fragment  -->
     <string name="switchName">Air Pump</string>
     <string name="switchName2">Bubble Bath</string>
+    <string name="switchWelcome">Switch Controls</string>
+
+    <!-- Light screen fragment  -->
     <string name="SmartAquaLightBtn2">LIGHT ON</string>
     <string name="SmartAquaLightBtn1">LIGHT OFF</string>
-    <string name="feedback">Feedback</string>
+
 
 
 </resources>
