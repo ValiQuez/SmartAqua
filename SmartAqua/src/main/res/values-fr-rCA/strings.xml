@@ -27,4 +27,11 @@
     <string name="lightbutton1">lumière Éteindre</string>
     <string name="feedback">Feedback</string>
     <string name="switchWelcome">Commandes de commutation</string>
+
+    <!-- WATER QUALITY SCREEN STRINGS -->
+    <string name="readings">Temp text for readings</string>
+    <string name="measure">PPM -> Parts Per Millon</string>
+    <string name="explanation">PPM is used to measure the cleaniness of the water system</string>
+    <string name="start_button">Start</string>
+
 </resources>

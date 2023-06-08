@@ -18,14 +18,31 @@
         android:id="@+id/SmartAquaWQTitle"
         android:layout_width="260dp"
         android:layout_height="134dp"
-        android:src="@drawable/water_quality_title" />
-
+        android:src="@drawable/water_quality_title"/>
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:src="@drawable/water_quality_picture" />
+        android:src="@drawable/water_quality_picture"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="275dp"
+        android:backgroundTint="@color/couter_space"/>
+
+    <TextView
+        android:id="@+id/SmartAquaWaterReadings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="175dp"
+        android:text="@string/readings"
+        android:textSize="20dp"/>
+
 
 </FrameLayout>
