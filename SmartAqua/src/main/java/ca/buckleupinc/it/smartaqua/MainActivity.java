@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.SmartAquaTemperatureMenu) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaQuality()).commit();
         } else if (itemId == R.id.SmartAquaSwitchMenu) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaLight()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaSwitch()).commit();
         } else if (itemId == R.id.SmartAquaSettingsMenu) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaSettings()).commit();
         } else {
