@@ -38,6 +38,8 @@
     <!-- SETTINGS PAGE STRINGS  -->
     <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>
     <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
+    <string name="settingsResetValues">Reset ALL values and settings in the application</string>
+    <string name="settingsResetBtn">RESET</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>

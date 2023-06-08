@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/SmartAquaPortraitLock"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="175dp"
@@ -36,14 +36,35 @@
         android:id="@+id/SmartAquaPortraitLockToggleBtn"
         android:layout_width="75dp"
         android:layout_height="30dp"
+        android:background="@color/turquoise"
 
-        android:layout_marginTop="205dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="275dp"
 
         android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="15sp" />
 
-        android:background="@color/turquoise" />
+    <TextView
+        android:id="@+id/SmartAquaResetValues"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+
+        android:text="@string/settingsResetValues"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/SmartAquaResetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/turquoise"
+
+        android:text="@string/settingsResetBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
 </FrameLayout>

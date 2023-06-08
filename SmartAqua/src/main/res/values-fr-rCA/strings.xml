@@ -38,5 +38,7 @@
     <string name="settingsLockPortrait">Verrouiller l\'application en mode portrait</string>
     <string name="switchBubblesImgDesc">Image de bulles d\'air qui coule</string>
     <string name="switchTitleImgDesc">Image de titre pour l\'écran de contrôle du commutateur</string>
+    <string name="settingsResetValues">Réinitialiser TOUTES les valeurs et tous les paramètres dans l\'application</string>
+    <string name="settingsResetBtn">RÉINITIALISER</string>
 
 </resources>
