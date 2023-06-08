@@ -35,7 +35,17 @@
             android:translationX="5dp"
             android:translationY="560dp" />
 
+        <TextView
+            android:id="@+id/Lightcontroldec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lightcontroldescription"
+            android:translationY="450dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
 
+             />
 
 
     </LinearLayout>
