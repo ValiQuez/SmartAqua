@@ -34,8 +34,8 @@
     <string name="switchWelcome">Switch Controls</string>
 
     <!-- Light screen fragment  -->
-    <string name="SmartAquaLightBtn2">ON</string>
-    <string name="SmartAquaLightBtn1">OFF</string>
+    <string name="SmartAquaLightBtn2">LIGHT ON</string>
+    <string name="SmartAquaLightBtn1">LIGHT OFF</string>
 
 
 
