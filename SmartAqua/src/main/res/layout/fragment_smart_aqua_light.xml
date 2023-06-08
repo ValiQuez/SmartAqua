@@ -36,8 +36,17 @@
             android:translationY="560dp" />
 
 
+
+
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/SmartAqualightbulb"
+        android:layout_width="383dp"
+        android:layout_height="333dp"
+        android:src="@drawable/aqua_light_bulb"
+        android:translationX="10dp"
+        android:translationY="150dp" />
 
 
     <!-- TODO: Update blank fragment layout -->
