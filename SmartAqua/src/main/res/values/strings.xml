@@ -42,13 +42,15 @@
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>
     <string name="measure">PPM -> Parts Per Millon</string>
-    <string name="explanation">PPM is used to measure the cleaniness of the water system</string>
+    <string name="explanation">PPM is used to measure the cleanliness of the water system</string>
     <string name="start_button">Start</string>
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>
     <string name="switchName2">Bubble Bath</string>
     <string name="switchWelcome">Switch Controls</string>
+    <string name="switchBubblesImgDesc">Image of flowing air bubbles</string>
+    <string name="switchTitleImgDesc">Title image for the switch control screen</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton2">LIGHT ON</string>
