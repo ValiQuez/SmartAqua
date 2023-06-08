@@ -18,7 +18,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -97,21 +96,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exitByBackKey();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-    protected void exitByBackKey() {
-        AlertDialog alertbox = new AlertDialog.Builder(this)
-                .setMessage(R.string.alertDialogMesg)
-                .setPositiveButton(R.string.yes, (arg0, arg1) -> {
-                    finish();
-                    //close();
-                })
-                .setNegativeButton(R.string.no, (arg0, arg1) -> {}).show();
+    //Alert Dialog message on Back Key pressed
+    @Override
+    public void onBackPressed(){
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.icon_error_48px)
+                .setTitle(getResources().getString(R.string.app_name))
+                .setMessage(getResources().getString(R.string.alertDialogMesg))
+                .setPositiveButton(R.string.yes, (dialogInterface, i) -> finish())
+                .setNegativeButton(R.string.no, null)
+                .show();
     }
 }
 
