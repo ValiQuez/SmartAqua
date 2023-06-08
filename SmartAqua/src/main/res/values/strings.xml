@@ -26,8 +26,8 @@
     <!-- Switch screen fragment  -->
     <string name="switchName">Air Pump</string>
     <string name="switchName2">Bubble Bath</string>
-    <string name="SmartAquaLightBtn2">ON</string>
-    <string name="SmartAquaLightBtn1">OFF</string>
+    <string name="SmartAquaLightBtn2">LIGHT ON</string>
+    <string name="SmartAquaLightBtn1">LIGHT OFF</string>
     <string name="feedback">Feedback</string>
 
 
