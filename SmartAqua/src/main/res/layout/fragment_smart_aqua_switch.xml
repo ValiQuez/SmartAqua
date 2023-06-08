@@ -10,7 +10,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/columbia_blue"
+    android:background="@color/white"
     tools:context=".SmartAquaSwitch">
 
     <ImageView
@@ -40,19 +40,21 @@
         android:layout_marginTop="200dp"
 
         android:text="@string/switchName"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@color/turquoise" />
 
     <TextView
         android:id="@+id/SmartAquaSwitchStatus"
-        android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:layout_marginStart="265dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="220dp"
 
         android:text="@string/off"
         android:textColor="@color/red"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <Switch
         android:id="@+id/SmartAquaSwitch2"
@@ -63,19 +65,21 @@
         android:layout_marginTop="290dp"
 
         android:text="@string/switchName2"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="@color/turquoise"/>
 
     <TextView
         android:id="@+id/SmartAquaSwitchStatus2"
-        android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:layout_marginStart="265dp"
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="310dp"
 
         android:text="@string/off"
         android:textColor="@color/red"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
 
 </FrameLayout>
