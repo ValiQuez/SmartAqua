@@ -10,9 +10,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03A9F4"
+    android:background="@color/columbia_blue"
     tools:context=".SmartAquaTemperature">
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/SmartAquaTempTitle"
+        android:layout_width="260dp"
+        android:layout_height="134dp"
+        android:src="@drawable/temperature_control_title" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -13,6 +13,13 @@
     tools:context=".SmartAquaSettings">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/SmartAquaSettingsTitle"
+        android:layout_width="260dp"
+        android:layout_height="134dp"
+        android:src="@drawable/settings_title" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

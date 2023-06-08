@@ -41,14 +41,20 @@
 
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:id="@+id/SmartAquaLightTitle"
+        android:layout_width="260dp"
+        android:layout_height="134dp"
+        android:src="@drawable/light_control_title" />
+
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/light_monitor"
         android:textSize="24sp"
         android:textStyle="bold"
         android:translationX="125dp"
-        android:textColor="@color/turquoise"
-/>
+        android:textColor="@color/turquoise"/>-->
 
 </FrameLayout>

@@ -13,7 +13,13 @@
     android:background="@color/columbia_blue"
     tools:context=".SmartAquaSwitch">
 
-    <TextView
+    <ImageView
+        android:id="@+id/SmartAquaSwitchTitle"
+        android:layout_width="260dp"
+        android:layout_height="134dp"
+        android:src="@drawable/switch_control_title" />
+
+    <!-- <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -23,7 +29,7 @@
         android:textAlignment="center"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:textSize="25sp"/> -->
 
     <Switch
         android:id="@+id/SmartAquaSwitch"
