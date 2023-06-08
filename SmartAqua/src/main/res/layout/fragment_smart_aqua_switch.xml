@@ -17,7 +17,9 @@
         android:id="@+id/SmartAquaSwitchTitle"
         android:layout_width="260dp"
         android:layout_height="134dp"
-        android:src="@drawable/switch_control_title" />
+        android:src="@drawable/switch_control_title"
+
+        android:contentDescription="@string/switchTitleImgDesc"/>
 
     <!-- <TextView
         android:layout_width="match_parent"
@@ -80,6 +82,17 @@
         android:textColor="@color/red"
         android:textStyle="bold"
         android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/iSmartAquaSwitchBubblesImg"
+        android:layout_width="225dp"
+        android:layout_height="200dp"
+        android:src="@drawable/switch_bubbles_icon"
+
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="400dp"
+
+        android:contentDescription="@string/switchBubblesImgDesc"/>
 
 
 </FrameLayout>

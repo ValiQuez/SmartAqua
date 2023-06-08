@@ -34,5 +34,7 @@
     <string name="explanation">PPM is used to measure the cleaniness of the water system</string>
     <string name="start_button">Start</string>
     <string name="settingsLockPortrait">Verrouiller l\'application en mode portrait</string>
+    <string name="switchBubblesImgDesc">Image de bulles d\'air qui coule</string>
+    <string name="switchTitleImgDesc">Image de titre pour l\'écran de contrôle du commutateur</string>
 
 </resources>
