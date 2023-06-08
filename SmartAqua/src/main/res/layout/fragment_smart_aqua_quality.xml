@@ -41,7 +41,7 @@
         android:id="@+id/SmartAquaWaterReadings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="175dp"
         android:text="@string/readings"
         android:textSize="20dp"/>
@@ -49,7 +49,7 @@
     <TextView
         android:layout_width="323dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="210dp"
         android:text="@string/explanation"
         android:textColor="@color/paynes_gray"/>
