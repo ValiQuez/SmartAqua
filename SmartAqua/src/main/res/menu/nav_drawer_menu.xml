@@ -41,7 +41,7 @@
             android:icon="@drawable/settings"/>
 
         <item
-            android:id="@+id/SmartAquaHelpMenu"
+            android:id="@+id/SmartAquaFeedbackMenu"
             android:title="@string/feedback"
             android:icon="@drawable/feedback_icon"/>
     </group>
