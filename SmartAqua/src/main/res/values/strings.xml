@@ -36,6 +36,7 @@
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>
     <string name="switchName2">Bubble Bath</string>
+    <string name="switchWelcome">Switch Controls</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton2">LIGHT ON</string>
