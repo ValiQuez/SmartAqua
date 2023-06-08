@@ -23,8 +23,8 @@
     <string name="on">Allumé</string>
     <string name="off">Éteindre</string>
     <string name="switchName2">Bain moussant</string>
-    <string name="SmartAquaLightBtn2">Allumé</string>
-    <string name="SmartAquaLightBtn1">Éteindre</string>
+    <string name="SmartAquaLightBtn2">lumière Allumé</string>
+    <string name="SmartAquaLightBtn1">lumière Éteindre</string>
     <string name="feedback">Feedback</string>
     <string name="switchWelcome">Commandes de commutation</string>
 </resources>
