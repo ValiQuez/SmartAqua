@@ -10,6 +10,30 @@ Nicholas Dibiase - N01367109
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- MAIN COLOURS FROM LOGO -->
     <color name="turquoise">#045C5A</color>
     <color name="light_green">#8CBDA4</color>
+
+    <!-- SECONDARY COLOURS -->
+    <color name="oxford_blue">#1B263B</color>
+    <color name="yinmin_blue">#415A77</color>
+    <color name="rich_black">#0D1B2A</color>
+    <color name="couter_space">#404E4D</color>
+    <color name="lapis_lazuli">#456990</color>
+    <color name="reseda_green">#6B8F71</color>
+
+    <!-- COLOURS FOR BACKGROUND -->
+    <color name="columbia_blue">#B8D0EB</color>
+    <color name="celadon">#AAD2BA</color>
+    <color name="silver_lake_blue">#778DA9</color>
+    <color name="ash_gray">#9BC1BC</color>
+
+    <!-- EXTRA COLOURS TO CHOOSE FROM -->
+    <color name="paynes_gray">#646881</color>
+    <color name="russian_violet">#0B0033</color>
+    <color name="eerie_black">#1D1E18</color>
+    <color name="midnight_green">#114B5F</color>
+
+
 </resources>
