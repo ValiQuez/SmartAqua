@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/SmartAquaHomeBtn"
         android:icon="@drawable/home"
-        android:iconTintMode="@color/white"
+        android:iconTint="@color/white"
         android:title="@string/home"
         app:showAsAction="withText|always" />
     <item
