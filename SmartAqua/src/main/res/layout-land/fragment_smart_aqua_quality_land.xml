@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmartAquaHome"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/SmartAquaWQTitle"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
+        android:src="@drawable/water_quality_title"/>
+
+    <ImageView
+        android:id="@+id/SmartAquaWQPicture"
+        android:layout_width="@dimen/quality_pic"
+        android:layout_height="@dimen/quality_pic"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="180dp"
+        android:src="@drawable/water_quality_picture" />
+
+    <Button
+        android:id="@+id/SmartAquaWQButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="275dp"
+        android:backgroundTint="@color/couter_space"/>
+
+    <TextView
+        android:id="@+id/SmartAquaWaterReadings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="135dp"
+        android:text="@string/readings"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/couter_space"/>
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="170dp"
+        android:background="@color/couter_space"
+        android:alpha="0.8"/>
+
+    <TextView
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/measure"
+        android:textColor="@color/paynes_gray"/>
+
+    <TextView
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/explanation"
+        android:textColor="@color/paynes_gray"/>
+
+</FrameLayout>

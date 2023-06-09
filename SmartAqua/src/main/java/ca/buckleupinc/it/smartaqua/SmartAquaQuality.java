@@ -6,6 +6,7 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -65,7 +66,15 @@ public class SmartAquaQuality extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
+        View view;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            view = inflater.inflate(R.layout.fragment_smart_aqua_quality_land, container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
+        }
+
         return view;
     }
 }
