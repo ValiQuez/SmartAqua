@@ -9,10 +9,12 @@ package ca.buckleupinc.it.smartaqua;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +67,61 @@ public class SmartAquaHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
+
+        //Button to transfer to SmartAquaQuality fragment.
+        Button wq_button = view.findViewById(R.id.SmartAquaWQBtn);
+        wq_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SmartAquaQuality smartAquaQuality = new SmartAquaQuality();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.SmartAquaFragmentSection, smartAquaQuality);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        //Button to transfer to SmartAquaLight fragment.
+        Button lc_button = view.findViewById(R.id.SmartAquaLCBtn);
+        lc_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SmartAquaLight smartAquaLight = new SmartAquaLight();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.SmartAquaFragmentSection, smartAquaLight);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        //Button to transfer to SmartAquaTemperature fragment.
+        Button tc_button = view.findViewById(R.id.SmartAquaTCBtn);
+        tc_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SmartAquaTemperature smartAquaTemperature = new SmartAquaTemperature();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.SmartAquaFragmentSection, smartAquaTemperature);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        //Button to transfer to SmartAquaSwitch fragment.
+        Button sc_button = view.findViewById(R.id.SmartAquaSCBtn);
+        sc_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SmartAquaSwitch smartAquaSwitch = new SmartAquaSwitch();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.SmartAquaFragmentSection, smartAquaSwitch);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        return view;
     }
 }
