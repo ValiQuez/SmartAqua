@@ -35,6 +35,7 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">sur</string>
     <string name="tempToggleOFF">désactivé</string>
+    <string name="tempReadings">Support de place pour les relevés de température</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>

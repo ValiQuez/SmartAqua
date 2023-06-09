@@ -53,6 +53,8 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
     <string name="tempToggleOFF">OFF</string>
+    <string name="tempReadings">Place holder for temperature readings</string>
+
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>

@@ -35,19 +35,24 @@
         android:textOn="@string/tempToggleOFF"
         app:showText="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/SmartAquaTempIcon"
         android:layout_width="270dp"
         android:layout_height="261dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
         android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:src="@drawable/temperature_stat_icon" />
 
+    <TextView
+        android:id="@+id/SmartAquaTempReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-140sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="TextView" />
 
 
 </FrameLayout>
