@@ -10,12 +10,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SmartAquaLight">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".SmartAquaLight">
 
         <Button
             android:id="@+id/SmartAquaLightBtn1"
@@ -26,29 +22,27 @@
             android:translationX="5dp"
             android:translationY="660dp" />
 
-        <Button
-            android:id="@+id/SmartAquaLightBtn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/turquoise"
-            android:text="@string/lightbutton2"
-            android:translationX="5dp"
-            android:translationY="560dp" />
+    <Button
+        android:id="@+id/SmartAquaLightBtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/turquoise"
+        android:text="@string/lightbutton2"
+        android:translationX="5dp"
+        android:translationY="615dp" />
 
-        <TextView
+    <TextView
             android:id="@+id/Lightcontroldec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lightcontroldescription"
-            android:translationY="450dp"
+            android:translationY="550dp"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
 
              />
 
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/SmartAqualightbulb"
