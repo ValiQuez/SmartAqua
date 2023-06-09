@@ -26,7 +26,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:src="@drawable/water_quality_picture"/>
+        android:src="@drawable/water_quality_picture" />
 
     <Button
         android:id="@+id/SmartAquaWQButton"
