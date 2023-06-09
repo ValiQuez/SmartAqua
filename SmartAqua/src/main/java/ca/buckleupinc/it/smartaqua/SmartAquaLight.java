@@ -6,6 +6,7 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -64,7 +65,15 @@ public class SmartAquaLight extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_smart_aqua_light, container, false);
+        View view;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            view = inflater.inflate(R.layout.fragment_smart_aqua_light_land, container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_smart_aqua_light, container, false);
+        }
+
+        return view;
     }
 }
