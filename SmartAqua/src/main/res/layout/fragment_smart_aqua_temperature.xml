@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/SmartAquaTempControlDescription"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_height="57dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="450dp"
         android:gravity="center"
@@ -83,5 +83,16 @@
         android:background="@color/lapis_lazuli"
         android:alpha="0.8"/>
 
+    <SeekBar
+        android:id="@+id/SmartAquaTempSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="30dp"
+        android:max="100"
+        android:progress="50"
+        android:thumbTint="@color/russian_violet"
+        android:progressTint="@color/russian_violet" />
 
 </FrameLayout>
