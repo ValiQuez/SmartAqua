@@ -18,7 +18,7 @@
     <string name="homeFragmentGreeting">Bienvenue sur l\'application Smart Aqua</string>
     <string name="app_description">Notre objectif est de suivre et de contrôler efficacement les systèmes d\'eau pour assurer la qualité de l\'eau et minimiser les dommages et les coûts.</string>
     <string name="feature_description">Notre application dispose de 4 fonctionnalités différentes pour maintenir un système d\'eau sain</string>
-    <string name="members">Smart Aqua Team Members</string>
+    <string name="members">Membres de l\équipe Smart Aqua</string>
     <string name="home">Accueil</string>
     <string name="settings">Paramètres</string>
     <string name="help">Aider</string>
@@ -28,21 +28,21 @@
     <string name="switchName2">Bain moussant</string>
     <string name="lightbutton2">lumière Allumé</string>
     <string name="lightbutton1">lumière Éteindre</string>
-    <string name="feedback">Feedback</string>
+    <string name="feedback">Retour d\'information</string>
     <string name="switchWelcome">Commandes de commutation</string>
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
 
     <!-- TEMPERATURE SCREEN STRINGS -->
-    <string name="tempToggleON">sur</string>
-    <string name="tempToggleOFF">désactivé</string>
+    <string name="tempToggleON">Sur</string>
+    <string name="tempToggleOFF">Désactivé</string>
     <string name="tempReadings">Support de place pour les relevés de température</string>
     <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
-    <string name="readings">Temp text for readings</string>
-    <string name="measure">PPM -> Parts Per Millon</string>
-    <string name="explanation">PPM is used to measure the cleaniness of the water system</string>
-    <string name="start_button">Start</string>
+    <string name="readings">Texte temporaire pour les lectures</string>
+    <string name="measure">PPM -> Parties par Millon</string>
+    <string name="explanation">Les PPM sont utilisés pour mesurer la propreté du réseau d\'eau</string>
+    <string name="start_button">Démarrage</string>
     <string name="settingsLockPortrait">Verrouiller l\'application en mode portrait</string>
     <string name="switchBubblesImgDesc">Image de bulles d\'air qui coule</string>
     <string name="switchTitleImgDesc">Image de titre pour l\'écran de contrôle du commutateur</string>
@@ -50,9 +50,9 @@
     <string name="settingsResetBtn">RÉINITIALISER</string>
     <string name="settingsTitleImgDesc">Image du titre de l\'écran des paramètres de l\'application</string>
 
-    <string name="feedback_text">Tell us what you think! :)</string>
-    <string name="feedback_hint">Type here…</string>
-    <string name="submit">Submit</string>
+    <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
+    <string name="feedback_hint">Tapez ici...</string>
+    <string name="submit">Soumettre</string>
     <string name="contactUs">Contactez-nous</string>
 
 </resources>

@@ -18,7 +18,7 @@
         android:id="@+id/SmartAquaHomeLogo"
         android:layout_width="wrap_content"
         android:layout_height="135dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/aqua_logo_png"/>
 
     <TextView
