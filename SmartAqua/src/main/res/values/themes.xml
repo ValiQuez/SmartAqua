@@ -1,8 +1,14 @@
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.SmartAqua" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/turquoise</item> -->
     </style>
 
     <style name="Theme.SmartAqua" parent="Base.Theme.SmartAqua" />
