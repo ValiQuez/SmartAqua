@@ -61,13 +61,5 @@
         android:layout_height="@dimen/title_pic_height"
         android:src="@drawable/light_control_title" />
 
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/light_monitor"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:translationX="125dp"
-        android:textColor="@color/turquoise"/>-->
 
 </FrameLayout>
