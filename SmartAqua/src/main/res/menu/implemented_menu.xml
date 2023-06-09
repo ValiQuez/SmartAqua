@@ -16,10 +16,7 @@
         android:title="@string/home"
         android:tooltipText="@string/home"
         app:showAsAction="withText|always" />
-    <item
-        android:id="@+id/SmartAquaHomeTxt"
-        android:title="@string/home"
-        app:showAsAction="always"/>
+
     <item
         android:id="@+id/SmartAquaSetM"
         android:title="@string/settings"
