@@ -34,7 +34,6 @@
     <string name="help">Help</string>
     <string name="contactUs">Contact Us</string>
 
-
     <!-- MAIN PAGE STRINGS  -->
     <string name="homeFragmentGreeting">Welcome to the Smart Aqua Application</string>
     <string name="app_description">Our goal is to effectively track and control water systems to ensure water quality and minimize damage and costs.</string>

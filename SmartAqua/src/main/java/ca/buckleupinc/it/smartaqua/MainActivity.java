@@ -14,7 +14,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -95,7 +97,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.SmartAquaFeedbackM) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaFeedback()).commit();
         } else if (itemId == R.id.SmartAquaContactUsM) {
+            String phoneNum = "519-902-1759";
 
+            String uri = "tel:" + phoneNum.trim() ;
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse(uri));
+            startActivity(intent);
         } else {
             return super.onOptionsItemSelected(item);
         }
