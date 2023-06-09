@@ -51,8 +51,9 @@
     <string name="settingsTitleImgDesc">Image du titre de l\'écran des paramètres de l\'application</string>
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
-    <string name="feedback_hint">Tapez ici...</string>
+    <string name="feedback_hint">Tapez ici…</string>
     <string name="submit">Soumettre</string>
     <string name="contactUs">Contactez-nous</string>
+    <string name="settingsDarkMode">Mode sombre</string>
 
 </resources>

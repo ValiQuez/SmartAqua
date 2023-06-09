@@ -46,6 +46,7 @@
     <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
     <string name="settingsResetValues">Reset ALL values and settings in the application</string>
     <string name="settingsResetBtn">RESET</string>
+    <string name="settingsDarkMode">Dark Mode</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>

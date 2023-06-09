@@ -74,19 +74,30 @@
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/SmartAquaOption3"
+        android:id="@+id/SmartAquaDarkMode"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="30dp"
         android:layout_marginTop="325dp"
 
-        android:text="@string/placeholder"
+        android:text="@string/settingsDarkMode"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
         android:textSize="17sp"/>
 
-    <!-- Button for option 3 here -->
+    <ToggleButton
+        android:id="@+id/SmartAquaDarkModeToggleBtn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+
+        android:layout_marginTop="315dp"
+        android:layout_marginStart="290dp"
+
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/SmartAquaOption4"
@@ -94,7 +105,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="30dp"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="390dp"
 
         android:text="@string/placeholder"
         android:textColor="@color/turquoise"
