@@ -35,6 +35,7 @@
     <string name="homeFragmentGreeting">Welcome to the Smart Aqua Application</string>
     <string name="app_description">Our goal is to effectively track and control water systems to ensure water quality and minimize damage and costs.</string>
     <string name="feature_description">Our application has 4 different features to maintain a healthy water system</string>
+    <string name="members">Smart Aqua Team Members</string>
 
     <!-- SETTINGS PAGE STRINGS  -->
     <string name="settingsTitleImgDesc">Title image for the application settings screen</string>
