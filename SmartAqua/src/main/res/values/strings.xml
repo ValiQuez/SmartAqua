@@ -62,6 +62,11 @@
     <string name="feedback">Feedback</string>
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
 
+    <!-- FEEDBACK STRINGS -->
+    <string name="feedback_text">Tell us what you think! :)</string>
+    <string name="feedback_hint">Type here…</string>
+    <string name="submit">Submit</string>
+
 
 
 </resources>

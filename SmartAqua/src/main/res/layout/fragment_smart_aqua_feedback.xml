@@ -6,10 +6,52 @@
     tools:context=".SmartAquaFeedback">
 
     <!-- TODO: Update blank fragment layout -->
+
     <ImageView
         android:id="@+id/SmartAquaFTitle"
         android:layout_width="260dp"
         android:layout_height="134dp"
-        android:src="@drawable/feedback_title"/>
+        android:src="@drawable/feedback_title" />
+
+    <TextView
+        android:id="@+id/SmartAquaFText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/feedback_text"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/SmartAquaTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="180dp"
+        android:hint="@string/feedback_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SmartAquaTextInputEditText"
+            android:layout_width="271dp"
+            android:layout_height="182dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/SmartAquaFeedbackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_marginTop="390dp"
+        android:layout_marginStart="230dp"
+        android:backgroundTint="@color/yinmin_blue"/>
+
+    <ImageView
+        android:id="@+id/SmartAquaFeedbackPic"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/feedback_pic"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="80dp"/>
 
 </FrameLayout>
