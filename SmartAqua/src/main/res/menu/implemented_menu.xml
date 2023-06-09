@@ -27,7 +27,7 @@
         android:title="@string/feedback"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/SmartAquaHelpM"
-        android:title="@string/help"
+        android:id="@+id/SmartAquaContactUsM"
+        android:title="@string/contactUs"
         app:showAsAction="never"/>
 </menu>
