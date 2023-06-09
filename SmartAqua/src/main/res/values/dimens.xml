@@ -11,5 +11,4 @@
     <dimen name="title_pic_height">134dp</dimen>
     <dimen name="member_pics_dimen">120dp</dimen>
     <dimen name="alpha_value">0.8</dimen>
-
 </resources>
