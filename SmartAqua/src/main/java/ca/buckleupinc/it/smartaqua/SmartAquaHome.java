@@ -6,6 +6,7 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -68,7 +69,15 @@ public class SmartAquaHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
+        View view;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            view = inflater.inflate(R.layout.fragment_smart_aqua_home_land, container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
+        }
+
         return view;
     }
 }

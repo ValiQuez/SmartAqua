@@ -14,6 +14,7 @@
         android:icon="@drawable/home"
         android:iconTint="@color/white"
         android:title="@string/home"
+        android:tooltipText="@string/home"
         app:showAsAction="withText|always" />
     <item
         android:id="@+id/SmartAquaHomeTxt"
