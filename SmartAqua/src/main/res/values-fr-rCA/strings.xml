@@ -36,6 +36,7 @@
     <string name="tempToggleON">sur</string>
     <string name="tempToggleOFF">désactivé</string>
     <string name="tempReadings">Support de place pour les relevés de température</string>
+    <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>
