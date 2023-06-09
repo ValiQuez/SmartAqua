@@ -98,36 +98,36 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="440dp"
         android:background="@color/reseda_green"
-        android:alpha="0.8"/>
+        android:alpha="@dimen/alpha_value"/>
 
     <ImageView
         android:id="@+id/SmartAquaACMember"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/member_pics_dimen"
+        android:layout_height="@dimen/member_pics_dimen"
         android:layout_marginTop="450dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/rc"/>
 
     <ImageView
         android:id="@+id/SmartAquaDSMember"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/member_pics_dimen"
+        android:layout_height="@dimen/member_pics_dimen"
         android:layout_marginTop="580dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/ds"/>
 
     <ImageView
         android:id="@+id/SmartAquaPQMember"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/member_pics_dimen"
+        android:layout_height="@dimen/member_pics_dimen"
         android:layout_marginTop="580dp"
         android:layout_marginStart="250dp"
         android:src="@drawable/pq"/>
 
     <ImageView
         android:id="@+id/SmartAquaNDMember"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/member_pics_dimen"
+        android:layout_height="@dimen/member_pics_dimen"
         android:layout_marginTop="450dp"
         android:layout_marginStart="250dp"
         android:src="@drawable/nd"/>

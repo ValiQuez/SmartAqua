@@ -16,8 +16,8 @@
 
     <ImageView
         android:id="@+id/SmartAquaWQTitle"
-        android:layout_width="260dp"
-        android:layout_height="134dp"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
         android:src="@drawable/water_quality_title"/>
 
     <ImageView
