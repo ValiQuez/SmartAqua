@@ -46,7 +46,7 @@
         android:layout_height="228dp"
         android:src="@drawable/aqua_light_bulb"
         android:translationX="400dp"
-        android:translationY="0dp" />
+        android:translationY="5dp" />
 
     <ImageView
         android:id="@+id/SmartAquaLightTitle"
