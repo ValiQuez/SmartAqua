@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaHome()).commit();
         } else if (itemId == R.id.SmartAquaHomeTxt) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaHome()).commit();
+        } else if (itemId == R.id.SmartAquaSetM) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaSettings()).commit();
+        } else if (itemId == R.id.SmartAquaFeedbackM) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaFeedback()).commit();
         } else {
             return super.onOptionsItemSelected(item);
         }
