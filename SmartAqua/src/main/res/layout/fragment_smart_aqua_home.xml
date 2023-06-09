@@ -18,7 +18,7 @@
         android:id="@+id/SmartAquaHomeLogo"
         android:layout_width="wrap_content"
         android:layout_height="135dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/aqua_logo_png"/>
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="180dp"
         android:text="@string/homeFragmentGreeting"
         android:textColor="@color/couter_space"/>
 
@@ -34,7 +34,7 @@
         android:id="@+id/SmartAquaAppDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="215dp"
         android:text="@string/app_description"
         android:textAlignment="center"
         android:textColor="@color/eerie_black"
@@ -44,16 +44,17 @@
         android:id="@+id/SmartAquaFeatures"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:layout_marginStart="45dp"
         android:text="@string/feature_description"
         android:textAlignment="center"/>
+
 
     <TextView
         android:id="@+id/SmartAquaMembers"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="390dp"
         android:layout_marginStart="45dp"
         android:text="@string/members"
         android:textColor="@color/reseda_green"
@@ -64,7 +65,7 @@
         android:layout_width="300dp"
         android:layout_height="2dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="415dp"
         android:background="@color/reseda_green"
         android:alpha="@dimen/alpha_value"/>
 
@@ -72,7 +73,7 @@
         android:id="@+id/SmartAquaACMember"
         android:layout_width="@dimen/member_pics_dimen"
         android:layout_height="@dimen/member_pics_dimen"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="440dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/rc"/>
 
@@ -80,7 +81,7 @@
         android:id="@+id/SmartAquaDSMember"
         android:layout_width="@dimen/member_pics_dimen"
         android:layout_height="@dimen/member_pics_dimen"
-        android:layout_marginTop="590dp"
+        android:layout_marginTop="570dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/ds"/>
 
@@ -88,7 +89,7 @@
         android:id="@+id/SmartAquaPQMember"
         android:layout_width="@dimen/member_pics_dimen"
         android:layout_height="@dimen/member_pics_dimen"
-        android:layout_marginTop="590dp"
+        android:layout_marginTop="570dp"
         android:layout_marginStart="250dp"
         android:src="@drawable/pq"/>
 
@@ -96,7 +97,7 @@
         android:id="@+id/SmartAquaNDMember"
         android:layout_width="@dimen/member_pics_dimen"
         android:layout_height="@dimen/member_pics_dimen"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="440dp"
         android:layout_marginStart="250dp"
         android:src="@drawable/nd"/>
 
