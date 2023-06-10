@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- CENG-322-0NA: Group 6
-     Denis Shwaloff - N01424883
-     Alvaro Rodrigo Chavez Moya - N01455107
-     Paolo Adrian Quezon - N01424883
-     Nicholas Dibiase - N01367109           -->
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SmartAquaSwitch">
+    tools:ignore="MissingDefaultResource">
 
     <ImageView
         android:id="@+id/SmartAquaSwitchTitle"
@@ -26,7 +19,7 @@
         android:layout_height="70dp"
 
         android:layout_marginStart="85dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
 
         android:text="@string/switchName"
         android:textSize="20sp"
@@ -38,7 +31,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="265dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="170dp"
 
         android:text="@string/off"
         android:textColor="@color/red"
@@ -51,7 +44,7 @@
         android:layout_height="70dp"
 
         android:layout_marginStart="85dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="230dp"
 
         android:text="@string/switchName2"
         android:textSize="20sp"
@@ -63,7 +56,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="265dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="250dp"
 
         android:text="@string/off"
         android:textColor="@color/red"
@@ -76,11 +69,10 @@
         android:layout_height="200dp"
         android:src="@drawable/switch_bubbles_icon"
 
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="375dp"
+        android:layout_marginTop="150dp"
 
         android:contentDescription="@string/switchBubblesImgDesc"
         android:alpha="0.9"/>
-
 
 </FrameLayout>
