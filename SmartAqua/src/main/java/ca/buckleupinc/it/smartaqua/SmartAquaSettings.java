@@ -20,7 +20,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -37,9 +36,16 @@ public class SmartAquaSettings extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
+        View view;
 
-        ToggleButton toggleLockBtn = (ToggleButton) view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            view = inflater.inflate(R.layout.fragment_smart_aqua_settings_land, container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
+        }
+
+        ToggleButton toggleLockBtn = view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
         int currentOrientation = getResources().getConfiguration().orientation;
         toggleLockBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
