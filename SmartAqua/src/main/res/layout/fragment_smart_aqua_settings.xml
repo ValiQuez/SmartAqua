@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="175dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
 
         android:text="@string/settingsLockPortrait"
         android:textColor="@color/turquoise"
@@ -51,7 +51,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="250dp"
 
         android:text="@string/settingsResetValues"
@@ -77,7 +77,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="325dp"
 
         android:text="@string/settingsDarkMode"
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:background="@color/turquoise"
 
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="310dp"
         android:layout_marginStart="290dp"
 
         android:text="@string/settingsTogglePortraitBtn"
@@ -99,19 +99,43 @@
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/SmartAquaOption4"
+        android:id="@+id/SmartAquaMute"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="390dp"
 
-        android:text="@string/placeholder"
+        android:text="@string/settingsMute"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
         android:textSize="17sp"/>
 
-    <!-- Button for option 4 here -->
+    <ToggleButton
+        android:id="@+id/SmartAquaMuteToggleBtn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+
+        android:layout_marginTop="380dp"
+        android:layout_marginStart="290dp"
+
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/SmartAquaUsrPermBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/turquoise"
+
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="160dp"
+
+        android:text="@string/placeholder"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
 
 </FrameLayout>

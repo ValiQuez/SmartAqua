@@ -55,5 +55,6 @@
     <string name="submit">Soumettre</string>
     <string name="contactUs">Contactez-nous</string>
     <string name="settingsDarkMode">Mode sombre</string>
+    <string name="settingsMute">Application muette</string>
 
 </resources>
