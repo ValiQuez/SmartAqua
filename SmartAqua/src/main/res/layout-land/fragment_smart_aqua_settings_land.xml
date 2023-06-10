@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/SmartAquaSettingsTitle"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
+        android:src="@drawable/settings_title"
+        android:contentDescription="@string/settingsTitleImgDesc"/>
+
+    <TextView
+        android:id="@+id/SmartAquaPortraitLock"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="175dp"
+        android:layout_marginStart="35dp"
+
+        android:text="@string/settingsLockPortrait"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        />
+
+    <ToggleButton
+        android:id="@+id/SmartAquaPortraitLockToggleBtn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="285dp"
+
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/SmartAquaResetValues"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="250dp"
+
+        android:text="@string/settingsResetValues"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/SmartAquaResetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/turquoise"
+
+        android:layout_marginTop="245dp"
+        android:layout_marginStart="275dp"
+
+        android:text="@string/settingsResetBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/SmartAquaDarkMode"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="325dp"
+
+        android:text="@string/settingsDarkMode"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <ToggleButton
+        android:id="@+id/SmartAquaDarkModeToggleBtn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+
+        android:layout_marginTop="310dp"
+        android:layout_marginStart="285dp"
+
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/SmartAquaMute"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="450dp"
+        android:layout_marginTop="175dp"
+
+        android:text="@string/settingsMute"
+        android:textColor="@color/turquoise"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <ToggleButton
+        android:id="@+id/SmartAquaMuteToggleBtn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquoise"
+
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="600dp"
+
+        android:text="@string/settingsTogglePortraitBtn"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/SmartAquaUsrPermBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/turquoise"
+
+        android:layout_marginTop="270dp"
+        android:layout_marginStart="485dp"
+
+        android:text="@string/settingsUsrPermBtnTxt"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</FrameLayout>
