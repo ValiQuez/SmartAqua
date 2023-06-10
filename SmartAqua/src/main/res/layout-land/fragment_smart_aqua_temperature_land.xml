@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/columbia_blue"
+    tools:context=".SmartAquaTemperature"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/SmartAquaTempTitle"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/temperature_control_title" />
+
+    <TextView
+        android:id="@+id/SmartAquaTempControlDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="550dp"
+        android:gravity="center"
+        android:text="@string/tempControlDescription"
+        android:textColor="@color/paynes_gray"
+        android:textStyle="bold" />
+
+    <ToggleButton
+        android:id="@+id/SmartAquaTempToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:checked="false"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textOff="@string/tempToggleON"
+        android:textOn="@string/tempToggleOFF"
+        app:showText="true"
+        android:backgroundTint="@color/silver_lake_blue"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/yinmin_blue">
+
+        <ImageView
+            android:id="@+id/SmartAquaTempIcon"
+            android:layout_width="240dp"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/temperature_stat_icon" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/SmartAquaTempReading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-140sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/tempReadings" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="205dp"
+        android:background="@color/lapis_lazuli"
+        android:alpha="0.8"/>
+
+    <SeekBar
+        android:id="@+id/SmartAquaTempSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
+        android:max="100"
+        android:progress="50"
+        android:thumbTint="@color/russian_violet"
+        android:progressTint="@color/russian_violet" />
+
+</FrameLayout>
