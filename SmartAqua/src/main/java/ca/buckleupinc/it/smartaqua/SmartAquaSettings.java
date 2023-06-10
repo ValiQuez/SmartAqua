@@ -5,17 +5,26 @@
     Nicholas Dibiase - N01367109            */
 package ca.buckleupinc.it.smartaqua;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
+import android.widget.Button;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.snackbar.Snackbar;
+import android.Manifest;
 
 public class SmartAquaSettings extends Fragment {
 
@@ -46,6 +55,34 @@ public class SmartAquaSettings extends Fragment {
             }
         });
 
+        Button btn = view.findViewById(R.id.SmartAquaUsrPermBtn);
+        btn.setOnClickListener(view1 -> {
+
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(getResources().getString(R.string.settingsPermissionTitle));
+                builder.setMessage(getResources().getString(R.string.settingsPermissionBody));
+                builder.setPositiveButton(R.string.settingsPermissionGrant, (dialogInterface, i) -> {
+
+                    //Toast.makeText(getActivity(),R.string.settingsAccessGranted, Toast.LENGTH_SHORT).show();
+                    Snackbar grantedBar = Snackbar.make(view1, R.string.settingsAccessGranted, Snackbar.LENGTH_SHORT);
+                    grantedBar.show();
+                    Uri link = Uri.parse("http://maps.google.com/maps");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, link);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    startActivity(mapIntent);
+                });
+
+                builder.setNegativeButton(R.string.settingsPermissionDeny, (dialogInterface, i) -> {
+                    //Toast.makeText(getActivity(),R.string.settingsAccessDenied, Toast.LENGTH_SHORT).show();
+                    Snackbar deniedBar = Snackbar.make(view1, R.string.settingsAccessDenied, Snackbar.LENGTH_SHORT);
+                    deniedBar.show();
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
         return view;
     }
 

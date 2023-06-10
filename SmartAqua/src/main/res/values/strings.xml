@@ -48,6 +48,13 @@
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
     <string name="settingsMute">Mute App</string>
+    <string name="settingsUsrPermBtnTxt" translatable="false">Location</string>
+    <string name="settingsPermissionTitle">Access Request</string>
+    <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
+    <string name="settingsPermissionGrant">Give Access</string>
+    <string name="settingsPermissionDeny">Deny</string>
+    <string name="settingsAccessDenied">Access Denied</string>
+    <string name="settingsAccessGranted">Access Granted</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>
