@@ -28,7 +28,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="290dp"
         android:layout_marginTop="210dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:gravity="center"
         android:text="@string/tempControlDescription"
         android:textColor="@color/paynes_gray"
