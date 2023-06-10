@@ -20,37 +20,35 @@
             android:backgroundTint="@color/turquoise"
             android:text="@string/lightbutton1"
             android:translationX="5dp"
-            android:translationY="660dp" />
+            android:translationY="660dp"/>
 
-    <Button
-        android:id="@+id/SmartAquaLightBtn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/turquoise"
-        android:text="@string/lightbutton2"
-        android:translationX="5dp"
-        android:translationY="615dp" />
-
-    <TextView
-            android:id="@+id/Lightcontroldec"
+        <Button
+            android:id="@+id/SmartAquaLightBtn2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lightcontroldescription"
-            android:translationY="550dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
+            android:backgroundTint="@color/turquoise"
+            android:text="@string/lightbutton2"
+            android:translationX="5dp"
+            android:translationY="615dp"/>
 
-             />
+        <TextView
+                android:id="@+id/Lightcontroldec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lightcontroldescription"
+                android:translationY="550dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
 
 
-    <ImageView
-        android:id="@+id/SmartAqualightbulb"
-        android:layout_width="251dp"
-        android:layout_height="270dp"
-        android:src="@drawable/aqua_light_bulb"
-        android:translationX="85dp"
-        android:translationY="150dp" />
+        <ImageView
+            android:id="@+id/SmartAqualightbulb"
+            android:layout_width="251dp"
+            android:layout_height="270dp"
+            android:src="@drawable/aqua_light_bulb"
+            android:translationX="85dp"
+            android:translationY="150dp"/>
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -59,7 +57,7 @@
         android:id="@+id/SmartAquaLightTitle"
         android:layout_width="@dimen/title_pic_width"
         android:layout_height="@dimen/title_pic_height"
-        android:src="@drawable/light_control_title" />
+        android:src="@drawable/light_control_title"/>
 
 
 </FrameLayout>

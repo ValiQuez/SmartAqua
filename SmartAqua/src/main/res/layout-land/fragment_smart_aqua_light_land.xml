@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- CENG-322-0NA: Group 6
      Denis Shwaloff - N01424883
      Alvaro Rodrigo Chavez Moya - N01455107
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +20,7 @@
         android:backgroundTint="@color/turquoise"
         android:text="@string/lightbutton1"
         android:translationX="5dp"
-        android:translationY="270dp" />
+        android:translationY="270dp"/>
 
     <Button
         android:id="@+id/SmartAquaLightBtn2"
@@ -27,7 +29,7 @@
         android:backgroundTint="@color/turquoise"
         android:text="@string/lightbutton2"
         android:translationX="5dp"
-        android:translationY="225dp" />
+        android:translationY="225dp"/>
 
 
     <TextView
@@ -39,8 +41,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:translationY="130dp"
-        android:layout_marginStart="15dp"
-        />
+        android:layout_marginStart="15dp"/>
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -57,8 +58,7 @@
         android:id="@+id/SmartAquaLightTitle"
         android:layout_width="@dimen/title_pic_width"
         android:layout_height="@dimen/title_pic_height"
-        android:src="@drawable/light_control_title"
-        />
+        android:src="@drawable/light_control_title"/>
 
 
 </FrameLayout>
