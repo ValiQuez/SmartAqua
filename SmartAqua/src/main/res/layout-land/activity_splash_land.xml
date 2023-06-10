@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/SmartAquaSplashIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/aqua_logo_png" />
+
+    <ProgressBar
+        android:id="@+id/SmartAquaProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SmartAquaSplashIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-116dp"
+        android:layout_marginBottom="-116dp"
+        android:layout_centerInParent="true"
+        android:progressTint="#045C5A" />
+
+    <TextView
+        android:id="@+id/SmartAquaSplashDesc"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="360dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="@string/splashDesc"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:translationY="0dp" />
+
+</RelativeLayout>
