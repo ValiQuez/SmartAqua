@@ -14,9 +14,10 @@
 
     <ImageView
         android:id="@+id/SmartAquaSplashIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="150dp"
         android:src="@drawable/aqua_logo_png" />
 
     <ProgressBar
@@ -25,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/SmartAquaSplashIcon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-116dp"
-        android:layout_marginBottom="-116dp"
+        android:layout_marginTop="-45dp"
+        android:layout_marginBottom="-80dp"
         android:layout_centerInParent="true"
         android:progressTint="#045C5A" />
 
@@ -34,7 +35,7 @@
         android:id="@+id/SmartAquaSplashDesc"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="300dp"
         android:fontFamily="sans-serif-thin"
         android:gravity="center"
         android:text="@string/splashDesc"
