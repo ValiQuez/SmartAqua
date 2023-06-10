@@ -56,5 +56,11 @@
     <string name="contactUs">Contactez-nous</string>
     <string name="settingsDarkMode">Mode sombre</string>
     <string name="settingsMute">Application muette</string>
+    <string name="settingsAccessDenied">Accès refusé</string>
+    <string name="settingsAccessGranted">Accès autorisé</string>
+    <string name="settingsPermissionBody">Autoriser l\'accès à la position générale de l\'appareil ?</string>
+    <string name="settingsPermissionTitle">Demande d\'accès</string>
+    <string name="settingsPermissionDeny">Refuser</string>
+    <string name="settingsPermissionGrant">Donner accès</string>
 
 </resources>

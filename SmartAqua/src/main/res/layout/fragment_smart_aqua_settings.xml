@@ -133,7 +133,7 @@
         android:layout_marginTop="500dp"
         android:layout_marginStart="160dp"
 
-        android:text="@string/placeholder"
+        android:text="@string/settingsUsrPermBtnTxt"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
