@@ -76,8 +76,8 @@
     <string name="switchTitleImgDesc">Title image for the switch control screen</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
-    <string name="lightbutton2">LIGHT ON</string>
-    <string name="lightbutton1">LIGHT OFF</string>
+    <string name="lightbutton1">LIGHT ON/OFF</string>
+
     <string name="feedback">Feedback</string>
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
 

@@ -13,25 +13,22 @@
     android:orientation="vertical"
     tools:context=".SmartAquaLight">
 
-        <Button
-            android:id="@+id/SmartAquaLightBtn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/turquoise"
-            android:text="@string/lightbutton1"
-            android:translationX="5dp"
-            android:translationY="660dp"/>
+    <Switch
+        android:id="@+id/switchlightButton"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:thumbTint="@color/turquoise"
+        android:trackTint="@color/turquoise"
+        android:translationX="5dp"
+        android:translationY="500dp"
+        android:text="@string/lightbutton1"
+        android:scaleType="centerInside"
+        />
 
-        <Button
-            android:id="@+id/SmartAquaLightBtn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/turquoise"
-            android:text="@string/lightbutton2"
-            android:translationX="5dp"
-            android:translationY="615dp"/>
 
-        <TextView
+
+
+    <TextView
                 android:id="@+id/Lightcontroldec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,16 +39,15 @@
                 android:gravity="center"/>
 
 
-        <ImageView
-            android:id="@+id/SmartAqualightbulb"
-            android:layout_width="251dp"
-            android:layout_height="270dp"
-            android:src="@drawable/aqua_light_bulb"
-            android:translationX="85dp"
-            android:translationY="150dp"/>
-
-
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/SmartAqualightbulb"
+        android:layout_width="251dp"
+        android:layout_height="270dp"
+        android:src="@drawable/aqua_light_bulb"
+        android:translationX="85dp"
+        android:translationY="150dp" />
 
     <ImageView
         android:id="@+id/SmartAquaLightTitle"
