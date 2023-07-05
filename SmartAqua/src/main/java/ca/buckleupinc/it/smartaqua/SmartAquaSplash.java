@@ -20,16 +20,6 @@ public class SmartAquaSplash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Determine the device orientation
-        int orientation = getResources().getConfiguration().orientation;
-
-        // Set the appropriate layout based on the orientation
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            setContentView(R.layout.activity_splash_land);
-        } else {
-            setContentView(R.layout.activity_splash);
-        }
-
             // Delay the execution of the next activity
             new Handler().postDelayed(new Runnable() {
                 @Override
