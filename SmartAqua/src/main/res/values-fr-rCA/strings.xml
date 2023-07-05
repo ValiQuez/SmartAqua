@@ -31,6 +31,11 @@
     <string name="switchWelcome">Commandes de commutation</string>
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
 
+    <string name="water_monitor_desc">Mesurez le niveau PPM de votre système d\'eau</string>
+    <string name="light_monitor_desc">Allumer et éteindre la lumière</string>
+    <string name="temperature_monitor_desc">Mesurer la température de votre système d\'eau</string>
+    <string name="switch_monitor_desc">Allumer et éteindre la pompe à air ou le bain moussant</string>
+
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">Sur</string>
     <string name="tempToggleOFF">Désactivé</string>

@@ -39,6 +39,10 @@
     <string name="app_description">Our goal is to effectively track and control water systems to ensure water quality and minimize damage and costs.</string>
     <string name="feature_description">Our application has 4 different features to maintain a healthy water system</string>
     <string name="members">Smart Aqua Team Members</string>
+    <string name="water_monitor_desc">Measure the PPM Level of your water system</string>
+    <string name="light_monitor_desc">Turn ON and OFF the light</string>
+    <string name="temperature_monitor_desc">Measure the temperature of your water system</string>
+    <string name="switch_monitor_desc">Turn ON and OFF the Air Pump or the Bubble Bath</string>
 
     <!-- SETTINGS PAGE STRINGS  -->
     <string name="settingsTitleImgDesc">Title image for the application settings screen</string>

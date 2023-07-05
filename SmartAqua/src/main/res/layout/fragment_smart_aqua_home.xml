@@ -56,6 +56,22 @@
         android:layout_marginStart="50dp"
         android:src="@drawable/water_quality_pic" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginStart="150dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/water_monitor"/>
+
+    <TextView
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="400dp"
+        android:text="@string/water_monitor_desc"
+        android:textColor="@color/paynes_gray"/>
 
     <ImageView
         android:layout_width="@dimen/home_w"
@@ -64,12 +80,46 @@
         android:layout_marginStart="50dp"
         android:src="@drawable/aqua_light_bulb"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="455dp"
+        android:layout_marginStart="150dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/light_monitor"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="475dp"
+        android:layout_marginStart="150dp"
+        android:textColor="@color/paynes_gray"
+        android:text="@string/light_monitor_desc"/>
+
     <ImageView
         android:layout_width="@dimen/home_w"
         android:layout_height="@dimen/home_h"
         android:layout_marginTop="530dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/temperature_stat_icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginStart="150dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/temperature_monitor"/>
+
+    <TextView
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="150dp"
+        android:textColor="@color/paynes_gray"
+        android:text="@string/temperature_monitor_desc"/>
 
     <ImageView
         android:layout_width="@dimen/home_w"
@@ -78,5 +128,21 @@
         android:layout_marginStart="50dp"
         android:src="@drawable/switch_bubbles_pic"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="605dp"
+        android:layout_marginStart="150dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/switch_control"/>
+
+    <TextView
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="625dp"
+        android:text="@string/switch_monitor_desc"
+        android:textColor="@color/paynes_gray" />
 
 </FrameLayout>
