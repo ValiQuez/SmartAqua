@@ -13,4 +13,6 @@
     <dimen name="member_pics_dimen">120dp</dimen>
     <dimen name="alpha_value">0.8</dimen>
     <dimen name="quality_pic">200dp</dimen>
+    <dimen name="home_w">78dp</dimen>
+    <dimen name="home_h">68dp</dimen>
 </resources>

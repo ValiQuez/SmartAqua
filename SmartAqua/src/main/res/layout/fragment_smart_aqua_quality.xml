@@ -64,10 +64,10 @@
         android:textColor="@color/paynes_gray"/>
 
     <TextView
-        android:layout_width="320dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="385dp"
+        android:layout_marginTop="400dp"
         android:text="@string/info_ppm"
         android:textColor="@color/paynes_gray"
         android:textSize="12sp" />
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="475dp"
         android:text="@string/stat_title"
         android:textColor="@color/couter_space"
         android:textSize="20sp"/>
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="510dp"
         android:textSize="50sp"
         android:textStyle="bold"/>
 
@@ -97,7 +97,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="250dp"
         android:layout_marginStart="80dp"
-        android:src="@drawable/water_quality_picture"/>
+        android:src="@drawable/water_quality_pic"/>
 
 
 </FrameLayout>
