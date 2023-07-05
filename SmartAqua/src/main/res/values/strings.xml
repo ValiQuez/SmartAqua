@@ -60,7 +60,7 @@
     <string name="readings">Temp text for readings</string>
     <string name="measure">PPM -> Parts Per Million</string>
     <string name="explanation">PPM is used to measure the cleanliness of the water system</string>
-    <string name="start_button">Start</string>
+    <string name="record_button">Record</string>
 
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
