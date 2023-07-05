@@ -38,7 +38,6 @@
         android:textSize="50sp"
         android:textStyle="bold"
         android:textColor="@color/couter_space"/>
-    <!--android:text="@string/readings"-->
 
     <View
         android:layout_width="300dp"
@@ -65,6 +64,15 @@
         android:textColor="@color/paynes_gray"/>
 
     <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="385dp"
+        android:text="@string/info_ppm"
+        android:textColor="@color/paynes_gray"
+        android:textSize="12sp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -88,7 +96,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="250dp"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="80dp"
         android:src="@drawable/water_quality_picture"/>
 
 
