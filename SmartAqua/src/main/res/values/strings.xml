@@ -85,6 +85,8 @@
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton1">LIGHT ON/OFF</string>
+    <string name="poplighton">Light ON</string>
+    <string name="poplightoff">Light OFF</string>
 
     <string name="feedback">Feedback</string>
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>

@@ -30,6 +30,8 @@
     <string name="feedback">Retour d\'information</string>
     <string name="switchWelcome">Commandes de commutation</string>
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
+    <string name="poplighton">Light On</string>
+    <string name="poplightoff">Light OFF</string>
 
     <string name="water_monitor_desc">Mesurez le niveau PPM de votre système d\'eau</string>
     <string name="light_monitor_desc">Allumer et éteindre la lumière</string>

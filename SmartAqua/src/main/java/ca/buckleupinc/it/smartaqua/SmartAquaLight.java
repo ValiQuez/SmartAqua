@@ -88,15 +88,15 @@ public class SmartAquaLight extends Fragment {
         // Required empty public constructor
         switchlightButton = view.findViewById(R.id.switchlightButton);
         notificationTextView = view.findViewById(R.id.notificationTextView);
-        notificationTextView.setText("Light is turned Off.");
+        notificationTextView.setText(R.string.poplightoff);
 
         switchlightButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    notificationTextView.setText("Light is turned On.");
+                    notificationTextView.setText(R.string.poplighton);
                 } else {
-                    notificationTextView.setText("Light is turned Off.");
+                    notificationTextView.setText(R.string.poplightoff);
                 }
             }
         });
