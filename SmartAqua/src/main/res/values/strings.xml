@@ -61,6 +61,10 @@
     <string name="measure">PPM -> Parts Per Million</string>
     <string name="explanation">PPM is used to measure the cleanliness of the water system</string>
     <string name="record_button">Record</string>
+    <string name="info_ppm">Ideal levels for the water system is between 400 PPM and 450 PPM. Approximate to the PPM range levels is good as well.</string>
+    <string name="stat_title">Status:</string>
+    <string name="s_good">Good!</string>
+    <string name="s_bad">Bad!</string>
 
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>

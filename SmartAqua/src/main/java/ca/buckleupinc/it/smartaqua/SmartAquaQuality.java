@@ -7,13 +7,18 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +26,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SmartAquaQuality extends Fragment {
+
+    private TextView readings_TDS;
+    private TextView status_TDS;
+    private Handler handler;
+    private Runnable runnable;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,6 +70,26 @@ public class SmartAquaQuality extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                int reading_ran = new Random().nextInt(201)+300;
+                readings_TDS.setText(String.valueOf(reading_ran));
+
+                if (reading_ran >= 390 && reading_ran <= 460) {
+                    status_TDS.setText(R.string.s_good);
+                    status_TDS.setTextColor(Color.GREEN);
+                } else {
+                    status_TDS.setText(R.string.s_bad);
+                    status_TDS.setTextColor(Color.RED);
+                }
+
+                handler.postDelayed(this,5000);
+            }
+        };
+
     }
 
     @Override
@@ -75,6 +105,19 @@ public class SmartAquaQuality extends Fragment {
             view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
         }
 
+        readings_TDS = view.findViewById(R.id.SmartAquaWaterReadings);
+        status_TDS = view.findViewById(R.id.SmartAquaWStatus);
+
         return view;
+    }
+
+    public void onResume(){
+        super.onResume();
+        handler.post(runnable);
+    }
+
+    public void onPause(){
+        super.onPause();
+        handler.removeCallbacks(runnable);
     }
 }

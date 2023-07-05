@@ -20,20 +20,12 @@
         android:layout_height="@dimen/title_pic_height"
         android:src="@drawable/water_quality_title"/>
 
-    <ImageView
-        android:id="@+id/SmartAquaWQPicture"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/water_quality_picture" />
-
     <Button
         android:id="@+id/SmartAquaWQButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/record_button"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="325dp"
         android:layout_marginStart="275dp"
         android:backgroundTint="@color/couter_space"/>
 
@@ -43,16 +35,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="175dp"
-        android:text="@string/readings"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         android:textColor="@color/couter_space"/>
+    <!--android:text="@string/readings"-->
 
     <View
         android:layout_width="300dp"
         android:layout_height="2dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="205dp"
+        android:layout_marginTop="250dp"
         android:background="@color/couter_space"
         android:alpha="0.8"/>
 
@@ -60,7 +52,7 @@
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="265dp"
         android:text="@string/measure"
         android:textColor="@color/paynes_gray"/>
 
@@ -68,9 +60,36 @@
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="235dp"
+        android:layout_marginTop="285dp"
         android:text="@string/explanation"
         android:textColor="@color/paynes_gray"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="450dp"
+        android:text="@string/stat_title"
+        android:textColor="@color/couter_space"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/SmartAquaWStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="480dp"
+        android:textSize="50sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/SmartAquaWQPicture"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="90dp"
+        android:src="@drawable/water_quality_picture"/>
 
 
 </FrameLayout>

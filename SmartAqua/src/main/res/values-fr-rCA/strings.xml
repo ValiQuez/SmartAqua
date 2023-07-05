@@ -48,6 +48,10 @@
     <string name="settingsResetValues">Réinitialiser TOUTES les valeurs et tous les paramètres dans l\'application</string>
     <string name="settingsResetBtn">RÉINITIALISER</string>
     <string name="settingsTitleImgDesc">Image du titre de l\'écran des paramètres de l\'application</string>
+    <string name="info_ppm">Les niveaux idéaux pour le système d\'eau se situent entre 400 PPM et 450 PPM. Une approximation des niveaux de gamme PPM est également bonne.</string>
+    <string name="stat_title">Statut:</string>
+    <string name="s_good">Bien!</string>
+    <string name="s_bad">Mauvais!</string>
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
     <string name="feedback_hint">Tapez ici…</string>
