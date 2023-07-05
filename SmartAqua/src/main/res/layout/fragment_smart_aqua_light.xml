@@ -18,11 +18,23 @@
         android:id="@+id/switchlightButton"
         android:layout_width="242dp"
         android:layout_height="60dp"
-        android:text="@string/lightbutton1"
-        android:thumbTint="@color/turquoise"
-        android:trackTint="@color/turquoise"
         android:layout_marginStart="95dp"
-        android:layout_marginTop="475dp"/>
+        android:layout_marginTop="475dp"
+        android:text="@string/lightbutton1"
+        android:thumbTint="@color/ash_gray"
+        android:trackTint="@color/columbia_blue" />
+
+    <TextView
+        android:id="@+id/notificationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/reseda_green"
+        android:textStyle="bold"
+        android:translationX="5dp"
+        android:translationY="450dp"
+        />
 
     <TextView
                 android:id="@+id/Lightcontroldec"
