@@ -13,6 +13,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -34,12 +35,12 @@ public class SmartAquaSettings extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view;
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_settings_land, container, false);
+            view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
         }
         else {
             view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
