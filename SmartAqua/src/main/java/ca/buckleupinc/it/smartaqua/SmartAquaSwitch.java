@@ -6,7 +6,6 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -34,12 +33,7 @@ public class SmartAquaSwitch extends Fragment {
         // Inflate the layout for this fragment
         View view;
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
-        }
-        else {
-            view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
-        }
+        view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
 
         Switch switchAir = view.findViewById(R.id.SmartAquaSwitchAir);
         Switch switchBubble = view.findViewById(R.id.SmartAquaSwitchBubble);
