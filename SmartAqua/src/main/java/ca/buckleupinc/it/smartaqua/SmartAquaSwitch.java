@@ -35,7 +35,7 @@ public class SmartAquaSwitch extends Fragment {
         View view;
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_switch_land, container, false);
+            view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
         }
         else {
             view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
