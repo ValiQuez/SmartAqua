@@ -6,7 +6,11 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
@@ -56,5 +60,19 @@ public class SmartAquaTemperature extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            view = inflater.inflate(R.layout.fragment_smart_aqua_temperature,container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
+        }
+        return view;
     }
 }
