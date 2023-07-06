@@ -7,63 +7,29 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SmartAquaSwitch#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SmartAquaSwitch extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private TextView statusAir;
+    private TextView statusBubble;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public SmartAquaSwitch(){
 
-    public SmartAquaSwitch() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SmartAquaSwitch.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SmartAquaSwitch newInstance(String param1, String param2) {
-        SmartAquaSwitch fragment = new SmartAquaSwitch();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view;
@@ -74,6 +40,33 @@ public class SmartAquaSwitch extends Fragment {
         else {
             view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
         }
+
+        Switch switchAir = view.findViewById(R.id.SmartAquaSwitchAir);
+        Switch switchBubble = view.findViewById(R.id.SmartAquaSwitchBubble);
+        statusAir = view.findViewById(R.id.SmartAquaSwitchStatusAir);
+        statusBubble = view.findViewById(R.id.SmartAquaSwitchStatusBubble);
+        statusAir.setText(R.string.off);
+        statusBubble.setText(R.string.off);
+
+        switchAir.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                statusAir.setText(R.string.on);
+                statusAir.setTextColor(Color.GREEN);
+            } else {
+                statusAir.setText(R.string.off);
+                statusAir.setTextColor(Color.RED);
+            }
+        });
+
+        switchBubble.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                statusBubble.setText(R.string.on);
+                statusBubble.setTextColor(Color.GREEN);
+            } else {
+                statusBubble.setText(R.string.off);
+                statusBubble.setTextColor(Color.RED);
+            }
+        });
 
         return view;
     }
