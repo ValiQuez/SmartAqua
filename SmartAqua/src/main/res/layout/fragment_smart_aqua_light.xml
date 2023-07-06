@@ -26,15 +26,14 @@
 
     <TextView
         android:id="@+id/notificationTextView"
-        android:layout_width="match_parent"
+        android:layout_width="391dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/reseda_green"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:translationX="5dp"
-        android:translationY="450dp"
-        />
+        android:translationY="450dp" />
 
     <TextView
                 android:id="@+id/Lightcontroldec"
