@@ -39,12 +39,7 @@ public class SmartAquaSettings extends Fragment {
                              Bundle savedInstanceState) {
         View view;
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
-        }
-        else {
-            view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
-        }
+        view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
 
         ToggleButton toggleLockBtn = view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
         int currentOrientation = getResources().getConfiguration().orientation;

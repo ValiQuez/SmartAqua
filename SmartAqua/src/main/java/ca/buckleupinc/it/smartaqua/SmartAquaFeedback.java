@@ -6,7 +6,6 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,12 +21,7 @@ public class SmartAquaFeedback extends Fragment {
                              Bundle savedInstanceState) {
         View view;
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_feedback, container, false);
-        }
-        else {
-            view = inflater.inflate(R.layout.fragment_smart_aqua_feedback, container, false);
-        }
+        view = inflater.inflate(R.layout.fragment_smart_aqua_feedback, container, false);
 
         return view;
     }
