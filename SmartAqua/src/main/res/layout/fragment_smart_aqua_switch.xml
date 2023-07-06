@@ -17,11 +17,10 @@
         android:layout_width="@dimen/title_pic_width"
         android:layout_height="@dimen/title_pic_height"
         android:src="@drawable/switch_control_title"
-
         android:contentDescription="@string/switchTitleImgDesc"/>
 
     <Switch
-        android:id="@+id/SmartAquaSwitch"
+        android:id="@+id/SmartAquaSwitchAir"
         android:layout_width="160dp"
         android:layout_height="70dp"
 
@@ -30,10 +29,10 @@
 
         android:text="@string/switchName"
         android:textSize="20sp"
-        android:textColor="@color/turquoise" />
+        android:textColor="@color/turquoise"/>
 
     <TextView
-        android:id="@+id/SmartAquaSwitchStatus"
+        android:id="@+id/SmartAquaSwitchStatusAir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -46,7 +45,7 @@
         android:textSize="20sp"/>
 
     <Switch
-        android:id="@+id/SmartAquaSwitch2"
+        android:id="@+id/SmartAquaSwitchBubble"
         android:layout_width="160dp"
         android:layout_height="70dp"
 
@@ -58,7 +57,7 @@
         android:textColor="@color/turquoise"/>
 
     <TextView
-        android:id="@+id/SmartAquaSwitchStatus2"
+        android:id="@+id/SmartAquaSwitchStatusBubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
