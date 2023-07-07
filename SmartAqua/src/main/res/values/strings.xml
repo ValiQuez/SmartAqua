@@ -74,8 +74,10 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
     <string name="tempToggleOFF">OFF</string>
-    <string name="tempReadings">Place holder for temperature readings</string>
+    <string name="tempReadings">Temperature readings </string>
     <string name="tempControlDescription">Accurate temperature control for water, with on/off capability</string>
+    <string name="tempReadings2">Temp: </string>
+
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>
