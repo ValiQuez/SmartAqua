@@ -62,12 +62,7 @@ public class SmartAquaQuality extends Fragment {
         // Inflate the layout for this fragment
         View view;
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_quality_land, container, false);
-        }
-        else {
-            view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
-        }
+        view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
 
         readings_TDS = view.findViewById(R.id.SmartAquaWaterReadings);
         status_TDS = view.findViewById(R.id.SmartAquaWStatus);

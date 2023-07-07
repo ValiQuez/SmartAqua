@@ -71,12 +71,7 @@ public class SmartAquaHome extends Fragment {
 
         View view;
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            view = inflater.inflate(R.layout.fragment_smart_aqua_home_land, container, false);
-        }
-        else {
-            view = inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
-        }
+        view = inflater.inflate(R.layout.fragment_smart_aqua_home, container, false);
 
         return view;
     }

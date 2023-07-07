@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmartAquaHome">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/SmartAquaHomeLogo"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/aqua_logo_png"/>
+
+    <TextView
+        android:id="@+id/SmartAquaGreeting"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/homeFragmentGreeting"
+        android:textColor="@color/couter_space"/>
+
+    <TextView
+        android:id="@+id/SmartAquaAppDesc"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/app_description"
+        android:textColor="@color/eerie_black"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/SmartAquaFeatures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="@string/feature_description"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="@dimen/home_w"
+        android:layout_height="@dimen/home_h"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/water_quality_pic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="130dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/water_monitor"/>
+
+    <TextView
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="220dp"
+        android:text="@string/water_monitor_desc"
+        android:textColor="@color/paynes_gray"/>
+
+    <ImageView
+        android:layout_width="@dimen/home_w"
+        android:layout_height="@dimen/home_h"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/aqua_light_bulb"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="130dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/light_monitor"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginStart="130dp"
+        android:textColor="@color/paynes_gray"
+        android:text="@string/light_monitor_desc"/>
+
+    <ImageView
+        android:layout_width="@dimen/home_w"
+        android:layout_height="@dimen/home_h"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="370dp"
+        android:src="@drawable/temperature_stat_icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="470dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/temperature_monitor"/>
+
+    <TextView
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginStart="470dp"
+        android:textColor="@color/paynes_gray"
+        android:text="@string/temperature_monitor_desc"/>
+
+    <ImageView
+        android:layout_width="@dimen/home_w"
+        android:layout_height="@dimen/home_h"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="370dp"
+        android:src="@drawable/switch_bubbles_pic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="470dp"
+        android:textStyle="bold"
+        android:textColor="@color/reseda_green"
+        android:text="@string/switch_control"/>
+
+    <TextView
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="470dp"
+        android:layout_marginTop="320dp"
+        android:text="@string/switch_monitor_desc"
+        android:textColor="@color/paynes_gray" />
+
+</FrameLayout>
