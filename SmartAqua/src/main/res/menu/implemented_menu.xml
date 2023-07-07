@@ -20,13 +20,13 @@
     <item
         android:id="@+id/SmartAquaSetM"
         android:title="@string/settings"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/SmartAquaFeedbackM"
         android:title="@string/feedback"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/SmartAquaContactUsM"
         android:title="@string/contactUs"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 </menu>
