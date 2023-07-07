@@ -42,7 +42,7 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">Sur</string>
     <string name="tempToggleOFF">Désactivé</string>
-    <string name="tempReadings">Support de place pour les relevés de température</string>
+    <string name="tempReadings">Relevés de température</string>
     <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
     <string name="tempReadings2">Temp: </string>
 
