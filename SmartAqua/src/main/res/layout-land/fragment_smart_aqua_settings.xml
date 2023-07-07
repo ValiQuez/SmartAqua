@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,7 +40,7 @@
         android:background="@color/turquoise"
 
         android:layout_marginTop="115dp"
-        android:layout_marginStart="285dp"
+        android:layout_marginStart="275dp"
 
         android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
@@ -44,8 +51,8 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="205dp"
+        android:layout_marginStart="390dp"
+        android:layout_marginTop="155dp"
 
         android:text="@string/settingsResetValues"
         android:textColor="@color/turquoise"
@@ -58,8 +65,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/turquoise"
 
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="275dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="600dp"
 
         android:text="@string/settingsResetBtn"
         android:textColor="@color/white"
@@ -85,7 +92,7 @@
         android:background="@color/turquoise"
 
         android:layout_marginTop="265dp"
-        android:layout_marginStart="285dp"
+        android:layout_marginStart="275dp"
 
         android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
@@ -96,8 +103,8 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="450dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="205dp"
 
         android:text="@string/settingsMute"
         android:textColor="@color/turquoise"
@@ -110,8 +117,8 @@
         android:layout_height="wrap_content"
         android:background="@color/turquoise"
 
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="600dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="275dp"
 
         android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
