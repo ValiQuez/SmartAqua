@@ -13,6 +13,7 @@ Nicholas Dibiase - N01367109
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="green">#00FF00</color>
+    <color name="transparency">#00000000</color>
 
     <!-- MAIN COLOURS FROM LOGO -->
     <color name="turquoise">#045C5A</color>
@@ -37,5 +38,7 @@ Nicholas Dibiase - N01367109
     <color name="russian_violet">#0B0033</color>
     <color name="eerie_black">#1D1E18</color>
     <color name="midnight_green">#114B5F</color>
+    <color name="golden_star">#D4AF37</color>
+    <color name="light_gray">#8D8C8A</color>
 
 </resources>

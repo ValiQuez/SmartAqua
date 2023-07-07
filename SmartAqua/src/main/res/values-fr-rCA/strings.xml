@@ -67,7 +67,18 @@
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
     <string name="feedback_hint">Tapez ici…</string>
+    <string name="insert_name">Name:</string>
+    <string name="insert_email">Email:</string>
+    <string name="insert_phone">Phone:</string>
+    <string name="insert_comments">Comments:</string>
+    <string name="hint_name">Type name…</string>
+    <string name="hint_email">Type email…</string>
+    <string name="hint_phone">Type phone…</string>
+    <string name="hint_comment">Type comment…</string>
+    <string name="hint_rate">Rate our app!</string>
     <string name="submit">Soumettre</string>
+
+
     <string name="contactUs">Contactez-nous</string>
     <string name="settingsDarkMode">Mode sombre</string>
     <string name="settingsMute">Application muette</string>
