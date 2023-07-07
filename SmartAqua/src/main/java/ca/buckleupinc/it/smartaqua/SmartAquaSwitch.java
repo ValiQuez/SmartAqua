@@ -18,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class SmartAquaSwitch extends Fragment {
 
     private TextView statusAir;
@@ -46,9 +48,13 @@ public class SmartAquaSwitch extends Fragment {
             if (isChecked) {
                 statusAir.setText(R.string.on);
                 statusAir.setTextColor(Color.GREEN);
+                Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOn, Snackbar.LENGTH_SHORT);
+                snackbar.show();
             } else {
                 statusAir.setText(R.string.off);
                 statusAir.setTextColor(Color.RED);
+                Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOff, Snackbar.LENGTH_SHORT);
+                snackbar.show();
             }
         });
 
@@ -56,9 +62,13 @@ public class SmartAquaSwitch extends Fragment {
             if (isChecked) {
                 statusBubble.setText(R.string.on);
                 statusBubble.setTextColor(Color.GREEN);
+                Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOn, Snackbar.LENGTH_SHORT);
+                snackbar.show();
             } else {
                 statusBubble.setText(R.string.off);
                 statusBubble.setTextColor(Color.RED);
+                Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOff, Snackbar.LENGTH_SHORT);
+                snackbar.show();
             }
         });
 

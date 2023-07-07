@@ -77,5 +77,10 @@
     <string name="settingsPermissionTitle">Demande d\'accès</string>
     <string name="settingsPermissionDeny">Refuser</string>
     <string name="settingsPermissionGrant">Donner accès</string>
+    <string name="settingsUsrPermBtnTxt">Emplacement</string>
+    <string name="snackbarAirOff">La pompe à air est éteinte</string>
+    <string name="snackbarBubbleOn">Le bain moussant est activé</string>
+    <string name="snackbarBubbleOff">Le bain moussant est éteint</string>
+    <string name="snackbarAirOn">La pompe à air est allumée</string>
 
 </resources>

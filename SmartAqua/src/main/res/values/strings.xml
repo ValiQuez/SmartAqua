@@ -52,7 +52,7 @@
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
     <string name="settingsMute">Mute App</string>
-    <string name="settingsUsrPermBtnTxt" translatable="false">Location</string>
+    <string name="settingsUsrPermBtnTxt">Location</string>
     <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
     <string name="settingsPermissionGrant">Give Access</string>
@@ -85,6 +85,10 @@
     <string name="switchWelcome">Switch Controls</string>
     <string name="switchBubblesImgDesc">Image of flowing air bubbles</string>
     <string name="switchTitleImgDesc">Title image for the switch control screen</string>
+    <string name="snackbarAirOn">Air pump is on</string>
+    <string name="snackbarAirOff">Air pump is off</string>
+    <string name="snackbarBubbleOn">Bubble Bath is on</string>
+    <string name="snackbarBubbleOff">Bubble Bath is off</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton1">LIGHT ON/OFF</string>
