@@ -47,28 +47,28 @@
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/SmartAquaResetValues"
+        android:id="@+id/SmartAquaMute"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="40dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="250dp"
 
-        android:text="@string/settingsResetValues"
+        android:text="@string/settingsMute"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
         android:textSize="17sp"/>
 
-    <Button
-        android:id="@+id/SmartAquaResetBtn"
-        android:layout_width="wrap_content"
+    <ToggleButton
+        android:id="@+id/SmartAquaMuteToggleBtn"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/turquoise"
+        android:background="@color/turquoise"
 
-        android:layout_marginTop="380dp"
-        android:layout_marginStart="280dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="290dp"
 
-        android:text="@string/settingsResetBtn"
+        android:text="@string/settingsTogglePortraitBtn"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
@@ -99,28 +99,28 @@
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/SmartAquaMute"
+        android:id="@+id/SmartAquaResetValues"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="40dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="390dp"
 
-        android:text="@string/settingsMute"
+        android:text="@string/settingsResetValues"
         android:textColor="@color/turquoise"
         android:textStyle="bold"
         android:textSize="17sp"/>
 
-    <ToggleButton
-        android:id="@+id/SmartAquaMuteToggleBtn"
-        android:layout_width="75dp"
+    <Button
+        android:id="@+id/SmartAquaResetBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/turquoise"
+        android:backgroundTint="@color/turquoise"
 
-        android:layout_marginTop="245dp"
-        android:layout_marginStart="290dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginStart="280dp"
 
-        android:text="@string/settingsTogglePortraitBtn"
+        android:text="@string/settingsResetBtn"
         android:textColor="@color/white"
         android:textSize="15sp" />
 

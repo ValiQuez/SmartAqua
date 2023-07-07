@@ -6,10 +6,12 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -41,6 +43,7 @@ public class SmartAquaSettings extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
 
+        //=====LOCK LANDSCAPE MODE=====
         ToggleButton toggleLockBtn = view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
         int currentOrientation = getResources().getConfiguration().orientation;
         toggleLockBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -57,6 +60,7 @@ public class SmartAquaSettings extends Fragment {
             }
         });
 
+        //=====LOCATION USER PERMISSION REQUEST=====
         Button btn = view.findViewById(R.id.SmartAquaUsrPermBtn);
         btn.setOnClickListener(view1 -> {
 
@@ -85,6 +89,27 @@ public class SmartAquaSettings extends Fragment {
                 alert.show();
             }
         });
+
+        //=====MUTE APP=====
+        AudioManager aManager = (AudioManager)getActivity().getSystemService(Context.AUDIO_SERVICE);
+        ToggleButton muteToggleBtn = view.findViewById(R.id.SmartAquaMuteToggleBtn);
+        muteToggleBtn.setOnClickListener(v -> {
+            if(muteToggleBtn.isChecked()){
+                //mutes device's volume
+                aManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
+
+                //Snackbar snackbar = Snackbar.make(view, "App has been muted", Snackbar.LENGTH_SHORT);
+                //snackbar.show();
+            }
+            else{
+                //unmutes device's volume
+                aManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
+
+                //Snackbar snackbar = Snackbar.make(view, "App has been unmuted", Snackbar.LENGTH_SHORT);
+                //snackbar.show();
+            }
+        });
+
         return view;
     }
 
