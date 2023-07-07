@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "602047322206",
+    "project_id": "buckleup-smartaqua",
+    "storage_bucket": "buckleup-smartaqua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602047322206:android:6ef0d054482ed13ede3ccf",
+        "android_client_info": {
+          "package_name": "ca.buckleupinc.it.smartaqua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602047322206-qe7k942a3t71dm5poq72qr7jradu1234.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXNpEvQFoUr3991tV-5Pi5n27YqgZyA8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602047322206-qe7k942a3t71dm5poq72qr7jradu1234.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
