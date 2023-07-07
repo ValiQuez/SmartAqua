@@ -6,7 +6,6 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -16,7 +15,9 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -63,6 +64,9 @@ public class SmartAquaQuality extends Fragment {
         View view;
 
         view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
+
+        Button dbButton = view.findViewById(R.id.SmartAquaWQButton);
+        dbButton.setOnClickListener(view1 -> Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show());
 
         readings_TDS = view.findViewById(R.id.SmartAquaWaterReadings);
         status_TDS = view.findViewById(R.id.SmartAquaWStatus);

@@ -69,6 +69,7 @@
     <string name="stat_title">Status:</string>
     <string name="s_good">Good!</string>
     <string name="s_bad">Bad!</string>
+    <string name="save_data">Reading saved in database!</string>
 
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
