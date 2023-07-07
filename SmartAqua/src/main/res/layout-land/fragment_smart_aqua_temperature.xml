@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="150dp"
         android:layout_marginStart="-290dp"
         android:checked="false"
         android:padding="10dp"
@@ -94,11 +94,31 @@
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="30dp"
         android:max="100"
         android:progress="50"
         android:progressTint="@color/russian_violet"
         android:thumbTint="@color/russian_violet" />
+
+    <TextView
+        android:id="@+id/SmartAquaTempReading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170sp"
+        android:layout_marginStart="100dp"
+        android:text="@string/tempReadings2"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/SmartAquaTempReading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="170dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
 
 </FrameLayout>
