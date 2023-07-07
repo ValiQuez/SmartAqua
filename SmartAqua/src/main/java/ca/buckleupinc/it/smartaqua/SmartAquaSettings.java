@@ -68,6 +68,7 @@ public class SmartAquaSettings extends Fragment {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(getResources().getString(R.string.settingsPermissionTitle));
                 builder.setMessage(getResources().getString(R.string.settingsPermissionBody));
+                builder.setIcon(R.drawable.location_icon);
                 builder.setPositiveButton(R.string.settingsPermissionGrant, (dialogInterface, i) -> {
 
                     //Toast.makeText(getActivity(),R.string.settingsAccessGranted, Toast.LENGTH_SHORT).show();
