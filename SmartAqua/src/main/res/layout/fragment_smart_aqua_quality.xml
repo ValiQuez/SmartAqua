@@ -22,12 +22,12 @@
 
     <Button
         android:id="@+id/SmartAquaWQButton"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:text="@string/record_button"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="325dp"
-        android:layout_marginStart="275dp"
-        android:backgroundTint="@color/couter_space"/>
+        android:backgroundTint="@color/couter_space"
+        android:text="@string/record_button" />
 
     <TextView
         android:id="@+id/SmartAquaWaterReadings"

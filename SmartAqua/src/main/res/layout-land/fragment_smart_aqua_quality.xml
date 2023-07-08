@@ -22,11 +22,11 @@
 
     <Button
         android:id="@+id/SmartAquaWQButton"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="@string/record_button"
-        android:layout_marginTop="325dp"
-        android:layout_marginStart="275dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginStart="225dp"
         android:backgroundTint="@color/couter_space"/>
 
     <TextView
@@ -67,10 +67,10 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="325dp"
         android:text="@string/info_ppm"
         android:textColor="@color/paynes_gray"
-        android:textSize="12sp" />
+        android:textSize="12sp"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -19,6 +19,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Random;
 
 public class SmartAquaQuality extends Fragment {
@@ -27,6 +30,8 @@ public class SmartAquaQuality extends Fragment {
     private TextView status_TDS;
     private Handler handler;
     private Runnable runnable;
+
+    private DatabaseReference dbRef;
 
     public SmartAquaQuality() {
         // Required empty public constructor
@@ -65,11 +70,20 @@ public class SmartAquaQuality extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_smart_aqua_quality, container, false);
 
-        Button dbButton = view.findViewById(R.id.SmartAquaWQButton);
-        dbButton.setOnClickListener(view1 -> Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show());
-
         readings_TDS = view.findViewById(R.id.SmartAquaWaterReadings);
         status_TDS = view.findViewById(R.id.SmartAquaWStatus);
+
+        Button dbButton = view.findViewById(R.id.SmartAquaWQButton);
+
+        dbButton.setOnClickListener(view1 ->{
+            String reading_TDS_str = readings_TDS.getText().toString();
+            String status_TDS_str = status_TDS.getText().toString();
+
+            SmartAquaQualityData qualityData = new SmartAquaQualityData(reading_TDS_str, status_TDS_str);
+            dbRef = FirebaseDatabase.getInstance().getReference("Quality Data Readings");
+            dbRef.child(reading_TDS_str).setValue(qualityData);
+            Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
+        });
 
         return view;
     }
