@@ -39,9 +39,12 @@
         android:hint="@string/hint_name"
         android:layout_marginStart="50dp"
         android:layout_marginTop="185dp"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        android:background="@drawable/smart_aqua_et_border"
+        android:inputType="text"
+        android:autofillHints="name"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,9 +59,12 @@
         android:hint="@string/hint_email"
         android:layout_marginStart="50dp"
         android:layout_marginTop="265dp"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        android:background="@drawable/smart_aqua_et_border"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,9 +79,12 @@
         android:hint="@string/hint_phone"
         android:layout_marginStart="50dp"
         android:layout_marginTop="345dp"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        android:background="@drawable/smart_aqua_et_border"
+        android:inputType="number"
+        android:autofillHints="phone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,9 +99,11 @@
         android:hint="@string/hint_comment"
         android:layout_marginStart="50dp"
         android:layout_marginTop="425dp"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        android:background="@drawable/smart_aqua_et_border"
+        android:inputType="text"/>
 
     <RatingBar
         android:id="@+id/SmartAquaRatingBar"
