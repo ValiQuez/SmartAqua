@@ -54,7 +54,7 @@ public class SmartAquaFeedback extends Fragment {
 
                 SmartAquaReviews reviews = new SmartAquaReviews(name, email, comment, model, number, rating);
                 dbReference = FirebaseDatabase.getInstance().getReference("SmartAquaReviews");
-                DatabaseReference childReference = dbReference.child(email.replace(".", "_"));
+                DatabaseReference childReference = dbReference.child(email.replace(".", ","));
                 childReference.setValue(reviews);
 
                 Toast.makeText(getActivity(), R.string.reviewSent, Toast.LENGTH_SHORT).show();
