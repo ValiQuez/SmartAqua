@@ -44,7 +44,9 @@ public class SmartAquaTemperature extends Fragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                textView.setText(String.valueOf(progress));
+                int celsiusTemperature = progress - 50; // Convert progress to Celsius range (-50 to 50)
+                String temperatureText = celsiusTemperature + "°C";
+                textView.setText(temperatureText);
             }
 
             @Override
