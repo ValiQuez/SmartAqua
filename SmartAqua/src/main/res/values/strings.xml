@@ -113,6 +113,10 @@
     <string name="hint_rate">Rate our app!</string>
     <string name="reviewSent">Your review has been sent to the team. Thank you!</string>
     <string name="reviewEmpty">Please fill all the fields</string>
+    <string name="reviewSendAlertTitle">Confirm sending your review</string>
+    <string name="reviewSendAlertBody">You are about to send the review to our development team. Do you confirm?</string>
+    <string name="reviewSendAlert">Send</string>
+    <string name="reviewSendDenied">Review was not sent</string>
 
 
 </resources>

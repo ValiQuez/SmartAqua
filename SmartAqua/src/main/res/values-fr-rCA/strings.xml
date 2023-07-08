@@ -95,5 +95,9 @@
     <string name="snackbarBubbleOn">Le bain moussant est activé</string>
     <string name="snackbarBubbleOff">Le bain moussant est éteint</string>
     <string name="snackbarAirOn">La pompe à air est allumée</string>
+    <string name="reviewSendAlertBody">Vous êtes sur le point d\'envoyer l\'avis à notre équipe de développement. Vous confirmez ?</string>
+    <string name="reviewSendDenied">L\'avis n\'a pas été envoyé</string>
+    <string name="reviewSendAlert">Envoyer</string>
+    <string name="reviewSendAlertTitle">Confirmez l\'envoi de votre avis</string>
 
 </resources>

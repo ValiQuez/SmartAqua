@@ -6,6 +6,7 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.app.AlertDialog;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,23 +54,40 @@ public class SmartAquaFeedback extends Fragment {
 
             if(!name.equals("") && !email.equals("") && !comment.equals("") && !number.equals("") && rating!=0) {
 
-                SmartAquaReviews reviews = new SmartAquaReviews(name, email, comment, model, number, rating);
-                dbReference = FirebaseDatabase.getInstance().getReference("SmartAquaReviews");
-                DatabaseReference childReference = dbReference.child(email.replace(".", ","));
-                childReference.setValue(reviews);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(getResources().getString(R.string.reviewSendAlertTitle));
+                builder.setMessage(getResources().getString(R.string.reviewSendAlertBody));
+                builder.setIcon(R.drawable.icon_error_48px);
+                builder.setPositiveButton(R.string.reviewSendAlert, (dialogInterface, i) -> {
 
-                Toast.makeText(getActivity(), R.string.reviewSent, Toast.LENGTH_SHORT).show();
+                    SmartAquaReviews reviews = new SmartAquaReviews(name, email, comment, model, number, rating);
+                    dbReference = FirebaseDatabase.getInstance().getReference("SmartAquaReviews");
+                    DatabaseReference childReference = dbReference.child(email.replace(".", ","));
+                    childReference.setValue(reviews);
 
-                ETname.setText("");
-                ETemail.setText("");
-                ETcomment.setText("");
-                ETnumber.setText("");
-                RBrating.setRating(0);
+                    Toast.makeText(getActivity(), R.string.reviewSent, Toast.LENGTH_SHORT).show();
+
+                    ETname.setText("");
+                    ETemail.setText("");
+                    ETcomment.setText("");
+                    ETnumber.setText("");
+                    RBrating.setRating(0);
+                });
+
+                builder.setNegativeButton(R.string.no, (dialogInterface, i) -> {
+                    Snackbar deniedBar = Snackbar.make(view, R.string.reviewSendDenied, Snackbar.LENGTH_SHORT);
+                    deniedBar.show();
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+
             } else {
                 Toast.makeText(getActivity(), R.string.reviewEmpty, Toast.LENGTH_SHORT).show();
             }
 
         });
+
 
         return view;
     }
