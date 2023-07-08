@@ -45,7 +45,14 @@ public class SmartAquaTemperature extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 int celsiusTemperature = progress - 50; // Convert progress to Celsius range (-50 to 50)
-                String temperatureText = celsiusTemperature + "°C";
+                String temperatureText;
+                if (celsiusTemperature >= 0) {
+                    temperatureText = celsiusTemperature + "°C";
+                    textView.setTextColor(Color.RED); // Set text color to red for positive temperatures
+                } else {
+                    temperatureText = celsiusTemperature + "°C";
+                    textView.setTextColor(Color.BLUE); // Set text color to blue for negative temperatures
+                }
                 textView.setText(temperatureText);
             }
 
