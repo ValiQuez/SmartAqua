@@ -34,6 +34,7 @@
         android:text="@string/insert_name"/>
 
     <EditText
+        android:id="@+id/SmartAquaETName"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:hint="@string/hint_name"
@@ -54,6 +55,7 @@
         android:text="@string/insert_email"/>
 
     <EditText
+        android:id="@+id/SmartAquaETEmail"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:hint="@string/hint_email"
@@ -74,6 +76,7 @@
         android:text="@string/insert_phone"/>
 
     <EditText
+        android:id="@+id/SmartAquaETPhone"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:hint="@string/hint_phone"
@@ -83,8 +86,8 @@
         android:paddingEnd="10dp"
         android:textSize="15sp"
         android:background="@drawable/smart_aqua_et_border"
-        android:inputType="number"
-        android:autofillHints="phone"/>
+        android:inputType="phone"
+        android:autofillHints="phone" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,6 +97,7 @@
         android:text="@string/insert_comments"/>
 
     <EditText
+        android:id="@+id/SmartAquaETComment"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:hint="@string/hint_comment"
