@@ -111,7 +111,7 @@
     <string name="hint_phone">Type phone…</string>
     <string name="hint_comment">Type comment…</string>
     <string name="hint_rate">Rate our app!</string>
-    <string name="reviewSent">The review has been sent to the team. Thank you!</string>
+    <string name="reviewSent">Your review has been sent to the team. Thank you!</string>
     <string name="reviewEmpty">Please fill all the fields</string>
 
 

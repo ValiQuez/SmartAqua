@@ -57,7 +57,7 @@ public class SmartAquaFeedback extends Fragment {
                 DatabaseReference childReference = dbReference.child(email.replace(".", "_"));
                 childReference.setValue(reviews);
 
-                Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.reviewSent, Toast.LENGTH_SHORT).show();
 
                 ETname.setText("");
                 ETemail.setText("");
@@ -65,7 +65,7 @@ public class SmartAquaFeedback extends Fragment {
                 ETnumber.setText("");
                 RBrating.setRating(0);
             } else {
-                Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.reviewEmpty, Toast.LENGTH_SHORT).show();
             }
 
         });
