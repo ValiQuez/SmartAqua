@@ -80,7 +80,7 @@ public class SmartAquaQuality extends Fragment {
             String status_TDS_str = status_TDS.getText().toString();
 
             SmartAquaQualityData qualityData = new SmartAquaQualityData(reading_TDS_str, status_TDS_str);
-            dbRef = FirebaseDatabase.getInstance().getReference("Quality Data Readings");
+            dbRef = FirebaseDatabase.getInstance().getReference("QualityDataReadings");
             dbRef.child(reading_TDS_str).setValue(qualityData);
             Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
         });
