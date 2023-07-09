@@ -145,7 +145,7 @@ public class SmartAquaSettings extends Fragment {
                 // Display the current location
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
-                String currentLocation = "Latitude: " + latitude + "\nLongitude: " + longitude;
+                String currentLocation = getString(R.string.settingscurrentLocation, latitude, longitude);
                 Toast.makeText(getActivity(), currentLocation, Toast.LENGTH_SHORT).show();
             }
 
