@@ -44,14 +44,14 @@
     <string name="tempToggleOFF">Désactivé</string>
     <string name="tempReadings">Relevés de température</string>
     <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
-    <string name="tempReadings2">Temp: </string>
-    <string name="tempContentTitle">Temperature Status </string>
-    <string name="tempCharSequence">Temperature Channel </string>
-    <string name="tempDescription">Channel for Temperature Notifications  </string>
+    <string name="tempReadings2">Température: </string>
+    <string name="tempContentTitle">État de la température </string>
+    <string name="tempCharSequence">Canal de température </string>
+    <string name="tempDescription">Canal pour les notifications de température </string>
     <string name="tempNoti_ON">Temperature turned on </string>
-    <string name="tempNoti_OFF">Temperature turned off </string>
+    <string name="tempNoti_OFF">Température activée</string>
     <string name="tempCelcius">°C </string>
-    <string name="tempChannelID">TemperatureNotificationChannel </string>
+    <string name="tempChannelID">Canal de notification de température </string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Texte temporaire pour les lectures</string>

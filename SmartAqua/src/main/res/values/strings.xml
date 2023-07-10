@@ -84,7 +84,7 @@
     <string name="tempNoti_ON">Temperature turned on </string>
     <string name="tempNoti_OFF">Temperature turned off </string>
     <string name="tempCelcius">°C </string>
-    <string name="tempChannelID">TemperatureNotificationChannel </string>
+    <string name="tempChannelID">Temperature Notification Channel </string>
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>
