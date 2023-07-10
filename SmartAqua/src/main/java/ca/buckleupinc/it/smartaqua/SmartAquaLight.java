@@ -47,11 +47,11 @@ public class SmartAquaLight extends Fragment {
 
         switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                notificationTextView.setText(R.string.poplighton);
-                sendNotification("Light is on");
+                notificationTextView.setText(R.string.notificationlighton);
+                sendNotification(getString(R.string.notificationlighton));
             } else {
-                notificationTextView.setText(R.string.poplightoff);
-                sendNotification("Light is off");
+                notificationTextView.setText(R.string.notificationlightoff);
+                sendNotification(getString(R.string.notificationlightoff));
             }
         });
 
@@ -62,13 +62,13 @@ public class SmartAquaLight extends Fragment {
 
     private void sendNotification(String message) {
         // Create a notification channel
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Light Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, getString(R.string.lightnotification), NotificationManager.IMPORTANCE_DEFAULT);
         notificationManager.createNotificationChannel(channel);
 
-        // Creates a notification
+// Creates a notification
         Notification.Builder builder = new Notification.Builder(requireActivity(), CHANNEL_ID)
                 .setSmallIcon(R.drawable.notification)
-                .setContentTitle("Light Status")
+                .setContentTitle(getString(R.string.lightstatus))
                 .setContentText(message)
                 .setAutoCancel(true);
 

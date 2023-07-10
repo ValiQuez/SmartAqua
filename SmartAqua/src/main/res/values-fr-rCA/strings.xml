@@ -32,6 +32,10 @@
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
     <string name="poplighton">lumière allumée</string>
     <string name="poplightoff">lumière éteinte</string>
+    <string name="lightnotification">Light Notification</string>
+    <string name="lightstatus">Light Status</string>
+    <string name="notificationlightoff">Light is off</string>
+    <string name="notificationlighton">Light is on</string>
 
     <!-- ALL SCREEN DISC STRINGS -->
     <string name="water_monitor_desc">Mesurez le niveau PPM de votre système d\'eau</string>
