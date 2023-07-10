@@ -78,7 +78,13 @@
     <string name="tempReadings">Temperature readings </string>
     <string name="tempControlDescription">Accurate temperature control for water, with on/off capability</string>
     <string name="tempReadings2">Temp: </string>
-
+    <string name="tempContentTitle">Temperature Status </string>
+    <string name="tempCharSequence">Temperature Channel </string>
+    <string name="tempDescription">Channel for Temperature Notifications </string>
+    <string name="tempNoti_ON">Temperature turned on </string>
+    <string name="tempNoti_OFF">Temperature turned off </string>
+    <string name="tempCelcius">°C </string>
+    <string name="tempChannelID">TemperatureNotificationChannel </string>
 
     <!-- SWITCH SCREEN STRINGS  -->
     <string name="switchName">Air Pump</string>

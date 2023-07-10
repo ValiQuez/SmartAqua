@@ -47,10 +47,10 @@ public class SmartAquaTemperature extends Fragment {
                 int celsiusTemperature = progress - 50; // Convert progress to Celsius range (-50 to 50)
                 String temperatureText;
                 if (celsiusTemperature >= 0) {
-                    temperatureText = celsiusTemperature + "°C";
+                    temperatureText = celsiusTemperature + getString(R.string.tempCelcius);;
                     textView.setTextColor(Color.RED); // Set text color to red for positive temperatures
                 } else {
-                    temperatureText = celsiusTemperature + "°C";
+                    temperatureText = celsiusTemperature + getString(R.string.tempCelcius);;
                     textView.setTextColor(Color.BLUE); // Set text color to blue for negative temperatures
                 }
                 textView.setText(temperatureText);
@@ -69,7 +69,7 @@ public class SmartAquaTemperature extends Fragment {
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String message = isChecked ? "Temperature turned on" : "Temperature turned off";
+                String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
                 displayNotification(message);
             }
         });
@@ -85,7 +85,7 @@ public class SmartAquaTemperature extends Fragment {
 
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.notification)
-                .setContentTitle("Temperature Status")
+                .setContentTitle(getString(R.string.tempContentTitle))
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .build();
@@ -96,8 +96,8 @@ public class SmartAquaTemperature extends Fragment {
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Temperature Channel";
-            String description = "Channel for Temperature Notifications";
+            CharSequence name = getString(R.string.tempCharSequence);
+            String description = getString(R.string.tempDescription);
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
