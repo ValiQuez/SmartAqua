@@ -6,6 +6,8 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import static android.app.UiModeManager.MODE_NIGHT_YES;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,6 +23,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -32,6 +35,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SmartAquaSettings extends Fragment {
 
@@ -67,6 +72,21 @@ public class SmartAquaSettings extends Fragment {
             } else {
                 // The toggle is disabled
                 getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+            }
+        });
+
+        //=====DARK MODE=====
+        ToggleButton darkTB = view.findViewById(R.id.SmartAquaDarkModeToggleBtn);
+        darkTB.setOnClickListener( v -> {
+            if(darkTB.isChecked()){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                Snackbar ON_SnackBar = Snackbar.make(view, R.string.darkModeON, Snackbar.LENGTH_SHORT);
+                ON_SnackBar.show();
+            }
+            else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                Snackbar OFF_SnackBar = Snackbar.make(view, R.string.darkModeOFF, Snackbar.LENGTH_SHORT);
+                OFF_SnackBar.show();
             }
         });
 
