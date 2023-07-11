@@ -18,6 +18,7 @@ Nicholas Dibiase - N01367109
     <!-- MAIN COLOURS FROM LOGO -->
     <color name="turquoise">#045C5A</color>
     <color name="light_green">#8CBDA4</color>
+    <color name="yellow">#F1E044</color>
 
     <!-- SECONDARY COLOURS -->
     <color name="oxford_blue">#1B263B</color>
