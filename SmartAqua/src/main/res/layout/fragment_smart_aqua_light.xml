@@ -21,8 +21,10 @@
         android:layout_marginStart="95dp"
         android:layout_marginTop="475dp"
         android:text="@string/lightbutton1"
+        android:textStyle="bold"
         android:thumbTint="@color/ash_gray"
-        android:trackTint="@color/columbia_blue" />
+        android:trackTint="@color/columbia_blue"
+        />
 
     <TextView
         android:id="@+id/notificationTextView"
