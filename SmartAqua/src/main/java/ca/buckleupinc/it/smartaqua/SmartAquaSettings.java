@@ -7,9 +7,7 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -18,6 +16,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -89,7 +88,11 @@ public class SmartAquaSettings extends Fragment {
 
         //=====LOCATION USER PERMISSION REQUEST=====
         Button btn = view.findViewById(R.id.SmartAquaUsrPermBtn);
-        btn.setOnClickListener(view1 -> requestLocationPermission());
+        btn.setOnClickListener(view1 -> {
+            LocationPermissionTask permissionTask = new LocationPermissionTask();
+            permissionTask.execute();
+        });
+
 
         //=====MUTE APP=====
         AudioManager aManager = (AudioManager)getActivity().getSystemService(Context.AUDIO_SERVICE);
@@ -122,45 +125,24 @@ public class SmartAquaSettings extends Fragment {
 
         return view;
     }
-    private void requestLocationPermission() {
-        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                showPermissionExplanationDialog();
+
+    private class LocationPermissionTask extends AsyncTask<Void, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            return ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED;
+        }
+        @Override
+        protected void onPostExecute(Boolean isPermissionGranted) {
+            if (isPermissionGranted) {
+                // Permission already granted, display current location
+                displayCurrentLocation();
             } else {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                         LOCATION_PERMISSION_REQUEST_CODE);
             }
-        } else {
-            // Permission already granted, displays current location
-            displayCurrentLocation();
         }
-    }
-
-    private void showPermissionExplanationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(getResources().getString(R.string.settingsPermissionTitle));
-        builder.setMessage(getResources().getString(R.string.settingsPermissionBody));
-        builder.setIcon(R.drawable.location_icon);
-        builder.setPositiveButton(R.string.settingsPermissionGrant, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Request location permission
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        LOCATION_PERMISSION_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton(R.string.settingsPermissionDeny, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Permission denied, do nothing
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
     }
 
     private void displayCurrentLocation() {
@@ -217,9 +199,8 @@ public class SmartAquaSettings extends Fragment {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Location permission granted, display current location
                 displayCurrentLocation();
-            } else {
-                // Location permission denied, do nothing
-            }
+            }  // Location permission denied, do nothing
+
         }
     }
 
