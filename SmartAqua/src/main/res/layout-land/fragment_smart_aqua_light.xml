@@ -19,6 +19,7 @@
         android:layout_height="107dp"
         android:scaleType="centerInside"
         android:text="@string/lightbutton1"
+        android:textStyle="bold"
         android:thumbTint="@color/turquoise"
         android:trackTint="@color/turquoise"
         android:translationX="15dp"
