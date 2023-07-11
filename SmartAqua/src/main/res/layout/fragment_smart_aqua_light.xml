@@ -21,10 +21,7 @@
         android:layout_marginStart="95dp"
         android:layout_marginTop="475dp"
         android:text="@string/lightbutton1"
-        android:textStyle="bold"
-        android:thumbTint="@color/ash_gray"
-        android:trackTint="@color/columbia_blue"
-        />
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/notificationTextView"
@@ -55,7 +52,6 @@
         android:layout_width="251dp"
         android:layout_height="270dp"
         android:src="@drawable/aqua_light_bulb"
-        android:background="@color/white"
         android:translationX="85dp"
         android:translationY="150dp" />
 

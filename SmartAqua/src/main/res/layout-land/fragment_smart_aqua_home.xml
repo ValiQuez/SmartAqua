@@ -27,8 +27,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="30dp"
-        android:text="@string/homeFragmentGreeting"
-        android:textColor="@color/couter_space"/>
+        android:text="@string/homeFragmentGreeting"/>
 
     <TextView
         android:id="@+id/SmartAquaAppDesc"
@@ -37,7 +36,6 @@
         android:layout_marginStart="320dp"
         android:layout_marginTop="60dp"
         android:text="@string/app_description"
-        android:textColor="@color/eerie_black"
         android:textSize="17sp"/>
 
     <TextView
@@ -69,8 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
         android:layout_marginTop="220dp"
-        android:text="@string/water_monitor_desc"
-        android:textColor="@color/paynes_gray"/>
+        android:text="@string/water_monitor_desc"/>
 
     <ImageView
         android:layout_width="@dimen/home_w"
@@ -93,7 +90,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
         android:layout_marginStart="130dp"
-        android:textColor="@color/paynes_gray"
         android:text="@string/light_monitor_desc"/>
 
     <ImageView
@@ -117,7 +113,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
         android:layout_marginStart="470dp"
-        android:textColor="@color/paynes_gray"
         android:text="@string/temperature_monitor_desc"/>
 
     <ImageView
@@ -141,7 +136,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="470dp"
         android:layout_marginTop="320dp"
-        android:text="@string/switch_monitor_desc"
-        android:textColor="@color/paynes_gray" />
+        android:text="@string/switch_monitor_desc"/>
 
 </FrameLayout>

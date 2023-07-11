@@ -73,6 +73,8 @@
     <string name="s_good">Bien!</string>
     <string name="s_bad">Mauvais!</string>
     <string name="save_data">Reading saved in database!</string>
+    <string name="darkModeON">Dark Mode ON</string>
+    <string name="darkModeOFF">Dark Mode OFF</string>
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
     <string name="feedback_hint">Tapez ici…</string>

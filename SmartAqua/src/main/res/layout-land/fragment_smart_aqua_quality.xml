@@ -26,8 +26,7 @@
         android:layout_height="wrap_content"
         android:text="@string/record_button"
         android:layout_marginTop="275dp"
-        android:layout_marginStart="225dp"
-        android:backgroundTint="@color/couter_space"/>
+        android:layout_marginStart="225dp"/>
 
     <TextView
         android:id="@+id/SmartAquaWaterReadings"
@@ -36,15 +35,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="125dp"
         android:textSize="50sp"
-        android:textStyle="bold"
-        android:textColor="@color/couter_space"/>
+        android:textStyle="bold"/>
 
     <View
         android:layout_width="300dp"
         android:layout_height="2dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="200dp"
-        android:background="@color/couter_space"
+        android:background="@color/paynes_gray"
         android:alpha="0.8"/>
 
     <TextView
@@ -52,16 +50,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="215dp"
-        android:text="@string/measure"
-        android:textColor="@color/paynes_gray"/>
+        android:text="@string/measure"/>
 
     <TextView
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="235dp"
-        android:text="@string/explanation"
-        android:textColor="@color/paynes_gray"/>
+        android:text="@string/explanation"/>
 
     <TextView
         android:layout_width="220dp"
@@ -69,7 +65,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="325dp"
         android:text="@string/info_ppm"
-        android:textColor="@color/paynes_gray"
         android:textSize="12sp"/>
 
     <TextView
@@ -78,7 +73,6 @@
         android:layout_marginStart="450dp"
         android:layout_marginTop="250dp"
         android:text="@string/stat_title"
-        android:textColor="@color/couter_space"
         android:textSize="20sp"/>
 
     <TextView
@@ -97,6 +91,5 @@
         android:layout_marginTop="25dp"
         android:layout_marginStart="450dp"
         android:src="@drawable/water_quality_pic"/>
-
 
 </FrameLayout>

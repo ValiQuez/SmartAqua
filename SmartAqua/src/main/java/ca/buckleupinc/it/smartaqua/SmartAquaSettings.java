@@ -6,10 +6,10 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import static android.app.UiModeManager.MODE_NIGHT_YES;
+
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -21,6 +21,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -32,6 +33,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SmartAquaSettings extends Fragment {
 
@@ -70,6 +73,21 @@ public class SmartAquaSettings extends Fragment {
             }
         });
 
+        //=====DARK MODE=====
+        ToggleButton darkTB = view.findViewById(R.id.SmartAquaDarkModeToggleBtn);
+        darkTB.setOnClickListener( v -> {
+            if(darkTB.isChecked()){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                Snackbar ON_SnackBar = Snackbar.make(view, R.string.darkModeON, Snackbar.LENGTH_SHORT);
+                ON_SnackBar.show();
+            }
+            else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                Snackbar OFF_SnackBar = Snackbar.make(view, R.string.darkModeOFF, Snackbar.LENGTH_SHORT);
+                OFF_SnackBar.show();
+            }
+        });
+
         //=====LOCATION USER PERMISSION REQUEST=====
         Button btn = view.findViewById(R.id.SmartAquaUsrPermBtn);
         btn.setOnClickListener(view1 -> requestLocationPermission());
@@ -101,7 +119,6 @@ public class SmartAquaSettings extends Fragment {
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                showPermissionExplanationDialog();
             } else {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
@@ -113,29 +130,7 @@ public class SmartAquaSettings extends Fragment {
         }
     }
 
-    private void showPermissionExplanationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(getResources().getString(R.string.settingsPermissionTitle));
-        builder.setMessage(getResources().getString(R.string.settingsPermissionBody));
-        builder.setIcon(R.drawable.location_icon);
-        builder.setPositiveButton(R.string.settingsPermissionGrant, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Request location permission
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        LOCATION_PERMISSION_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton(R.string.settingsPermissionDeny, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Permission denied, do nothing
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
+
 
     private void displayCurrentLocation() {
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
