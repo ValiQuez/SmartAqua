@@ -62,6 +62,7 @@
     <string name="settingscurrentLocation">Latitude: %1$.2f\nLongitude: %2$.2f</string>
     <string name="darkModeON">Dark Mode ON</string>
     <string name="darkModeOFF">Dark Mode OFF</string>
+    <string name="reset_snackbar">Settings were reset to default</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>

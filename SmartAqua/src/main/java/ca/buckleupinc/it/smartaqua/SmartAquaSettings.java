@@ -6,8 +6,6 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import static android.app.UiModeManager.MODE_NIGHT_YES;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -68,7 +66,6 @@ public class SmartAquaSettings extends Fragment {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
                 }
                 getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
-                //Toast.makeText(getActivity(),R.string.on,Toast.LENGTH_SHORT).show();
             } else {
                 // The toggle is disabled
                 getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
@@ -77,16 +74,16 @@ public class SmartAquaSettings extends Fragment {
 
         //=====DARK MODE=====
         ToggleButton darkTB = view.findViewById(R.id.SmartAquaDarkModeToggleBtn);
-        darkTB.setOnClickListener( v -> {
-            if(darkTB.isChecked()){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        darkTB.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked){
                 Snackbar ON_SnackBar = Snackbar.make(view, R.string.darkModeON, Snackbar.LENGTH_SHORT);
                 ON_SnackBar.show();
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }
-            else{
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            else {
                 Snackbar OFF_SnackBar = Snackbar.make(view, R.string.darkModeOFF, Snackbar.LENGTH_SHORT);
                 OFF_SnackBar.show();
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
         });
 
@@ -97,8 +94,8 @@ public class SmartAquaSettings extends Fragment {
         //=====MUTE APP=====
         AudioManager aManager = (AudioManager)getActivity().getSystemService(Context.AUDIO_SERVICE);
         ToggleButton muteToggleBtn = view.findViewById(R.id.SmartAquaMuteToggleBtn);
-        muteToggleBtn.setOnClickListener(v -> {
-            if(muteToggleBtn.isChecked()){
+        muteToggleBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked){
                 //mutes device's volume
                 aManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
 
@@ -112,6 +109,15 @@ public class SmartAquaSettings extends Fragment {
                 //Snackbar snackbar = Snackbar.make(view, "App has been unmuted", Snackbar.LENGTH_SHORT);
                 //snackbar.show();
             }
+        });
+
+        Button resetBTN = view.findViewById(R.id.SmartAquaResetBtn);
+        resetBTN.setOnClickListener(v -> {
+            toggleLockBtn.setChecked(false);
+            darkTB.setChecked(false);
+            muteToggleBtn.setChecked(false);
+            Snackbar resetSnackbar = Snackbar.make(view, R.string.reset_snackbar, Snackbar.LENGTH_SHORT);
+            resetSnackbar.show();
         });
 
         return view;

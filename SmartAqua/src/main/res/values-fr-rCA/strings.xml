@@ -75,6 +75,7 @@
     <string name="save_data">Reading saved in database!</string>
     <string name="darkModeON">Dark Mode ON</string>
     <string name="darkModeOFF">Dark Mode OFF</string>
+    <string name="reset_snackbar">Settings were reset to default</string>
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
     <string name="feedback_hint">Tapez ici…</string>
