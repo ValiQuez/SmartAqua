@@ -7,9 +7,7 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -101,7 +99,6 @@ public class SmartAquaSettings extends Fragment {
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                showPermissionExplanationDialog();
             } else {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
@@ -113,29 +110,7 @@ public class SmartAquaSettings extends Fragment {
         }
     }
 
-    private void showPermissionExplanationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(getResources().getString(R.string.settingsPermissionTitle));
-        builder.setMessage(getResources().getString(R.string.settingsPermissionBody));
-        builder.setIcon(R.drawable.location_icon);
-        builder.setPositiveButton(R.string.settingsPermissionGrant, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Request location permission
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        LOCATION_PERMISSION_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton(R.string.settingsPermissionDeny, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Permission denied, do nothing
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
+
 
     private void displayCurrentLocation() {
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
