@@ -11,7 +11,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/columbia_blue"
     tools:context=".SmartAquaTemperature">
 
     <ImageView
@@ -44,8 +43,8 @@
         android:textStyle="bold"
         android:textOff="@string/tempToggleON"
         android:textOn="@string/tempToggleOFF"
-        app:showText="true"
-        android:backgroundTint="@color/silver_lake_blue"/>
+        android:textColor="@color/white"
+        app:showText="true"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"

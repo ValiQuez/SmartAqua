@@ -20,8 +20,6 @@
         android:scaleType="centerInside"
         android:text="@string/lightbutton1"
         android:textStyle="bold"
-        android:thumbTint="@color/turquoise"
-        android:trackTint="@color/turquoise"
         android:translationX="15dp"
         android:translationY="240dp" />
 
@@ -56,7 +54,6 @@
         android:layout_width="213dp"
         android:layout_height="228dp"
         android:src="@drawable/aqua_light_bulb"
-        android:background="@color/white"
         android:translationX="400dp"
         android:translationY="5dp" />
 
