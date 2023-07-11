@@ -17,7 +17,7 @@
     <Switch
         android:id="@+id/switchlightButton"
         android:layout_width="242dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginStart="95dp"
         android:layout_marginTop="475dp"
         android:text="@string/lightbutton1"

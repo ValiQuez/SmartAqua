@@ -76,3 +76,4 @@ public class SmartAquaLight extends Fragment {
         notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
 }
+

@@ -16,13 +16,15 @@
     <Switch
         android:id="@+id/switchlightButton"
         android:layout_width="222dp"
-        android:layout_height="107dp"
+        android:layout_height="108dp"
+        android:scaleX="1.1"
+        android:scaleY="1.2"
         android:scaleType="centerInside"
         android:text="@string/lightbutton1"
         android:textStyle="bold"
         android:thumbTint="@color/turquoise"
         android:trackTint="@color/turquoise"
-        android:translationX="15dp"
+        android:translationX="20dp"
         android:translationY="240dp" />
 
     <TextView
