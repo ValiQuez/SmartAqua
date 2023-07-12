@@ -40,18 +40,15 @@ public class SmartAquaTemperature extends Fragment {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
         seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
-
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                int celsiusTemperature = progress - 50; // Convert progress to Celsius range (-50 to 50)
-                String temperatureText;
-                if (celsiusTemperature >= 0) {
-                    temperatureText = celsiusTemperature + getString(R.string.tempCelcius);;
-                    textView.setTextColor(Color.RED); // Set text color to red for positive temperatures
+                int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
+                String temperatureText = temperatureRange + getString(R.string.tempCelcius);
+                if (temperatureRange > 20) {
+                    textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
                 } else {
-                    temperatureText = celsiusTemperature + getString(R.string.tempCelcius);;
-                    textView.setTextColor(Color.BLUE); // Set text color to blue for negative temperatures
+                    textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
                 }
                 textView.setText(temperatureText);
             }
