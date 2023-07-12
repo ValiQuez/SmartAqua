@@ -41,17 +41,17 @@ public class SmartAquaSwitch extends Fragment {
         Switch switchBubble = view.findViewById(R.id.SmartAquaSwitchBubble);
         statusAir = view.findViewById(R.id.SmartAquaSwitchStatusAir);
         statusBubble = view.findViewById(R.id.SmartAquaSwitchStatusBubble);
-        statusAir.setText(R.string.off);
-        statusBubble.setText(R.string.off);
+        statusAir.setText(R.string.OFF);
+        statusBubble.setText(R.string.OFF);
 
         switchAir.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                statusAir.setText(R.string.on);
+                statusAir.setText(R.string.ON);
                 statusAir.setTextColor(Color.GREEN);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
-                statusAir.setText(R.string.off);
+                statusAir.setText(R.string.OFF);
                 statusAir.setTextColor(Color.RED);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
@@ -60,12 +60,12 @@ public class SmartAquaSwitch extends Fragment {
 
         switchBubble.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                statusBubble.setText(R.string.on);
+                statusBubble.setText(R.string.ON);
                 statusBubble.setTextColor(Color.GREEN);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
-                statusBubble.setText(R.string.off);
+                statusBubble.setText(R.string.OFF);
                 statusBubble.setTextColor(Color.RED);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();

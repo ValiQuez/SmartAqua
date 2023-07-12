@@ -39,7 +39,7 @@
         android:layout_marginStart="265dp"
         android:layout_marginTop="220dp"
 
-        android:text="@string/off"
+        android:text="@string/OFF"
         android:textColor="@color/red"
         android:textStyle="bold"
         android:textSize="20sp"/>
@@ -64,7 +64,7 @@
         android:layout_marginStart="265dp"
         android:layout_marginTop="310dp"
 
-        android:text="@string/off"
+        android:text="@string/OFF"
         android:textColor="@color/red"
         android:textStyle="bold"
         android:textSize="20sp"/>
