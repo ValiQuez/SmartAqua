@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_aqua_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAqua"
+        android:forceDarkAllowed="false"
         tools:targetApi="31">
         <!--<service
             android:foregroundServiceType="location"
