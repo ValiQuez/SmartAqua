@@ -6,136 +6,186 @@
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SmartAquaHome">
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ImageView
-        android:id="@+id/SmartAquaHomeLogo"
-        android:layout_width="@dimen/title_pic_width"
-        android:layout_height="@dimen/title_pic_height"
-        android:layout_marginStart="30dp"
-        android:src="@drawable/aqua_logo_png"/>
-
-    <TextView
-        android:id="@+id/SmartAquaGreeting"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/homeFragmentGreeting"/>
-
-    <TextView
-        android:id="@+id/SmartAquaAppDesc"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/app_description"
-        android:textSize="17sp"/>
-
-    <TextView
-        android:id="@+id/SmartAquaFeatures"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="@string/feature_description"
-        android:textAlignment="center"/>
+        tools:context=".SmartAquaHome">
 
-    <ImageView
-        android:layout_width="@dimen/home_w"
-        android:layout_height="@dimen/home_h"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="30dp"
-        android:src="@drawable/water_quality_picture_test"/>
+        <ImageView
+            android:id="@+id/SmartAquaHomeLogo"
+            android:layout_width="@dimen/title_pic_width"
+            android:layout_height="@dimen/title_pic_height"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/aqua_logo_png"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="130dp"
-        android:textStyle="bold"
-        android:textColor="@color/reseda_green"
-        android:text="@string/water_monitor"/>
+        <TextView
+            android:id="@+id/SmartAquaGreeting"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/homeFragmentGreeting"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaHomeLogo"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="232dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="220dp"
-        android:text="@string/water_monitor_desc"/>
+        <TextView
+            android:id="@+id/SmartAquaAppDesc"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/app_description"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaHomeLogo"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaGreeting" />
 
-    <ImageView
-        android:layout_width="@dimen/home_w"
-        android:layout_height="@dimen/home_h"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="30dp"
-        android:src="@drawable/aqua_smart_light_bulb_on_small"/>
+        <TextView
+            android:id="@+id/SmartAquaFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/feature_description"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaHomeLogo"
+            tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="130dp"
-        android:textStyle="bold"
-        android:textColor="@color/reseda_green"
-        android:text="@string/light_monitor"/>
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="@dimen/home_w"
+            android:layout_height="@dimen/home_h"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/water_quality_picture_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeatures" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
-        android:layout_marginStart="130dp"
-        android:text="@string/light_monitor_desc"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/water_monitor"
+            android:textColor="@color/reseda_green"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeatures" />
 
-    <ImageView
-        android:layout_width="@dimen/home_w"
-        android:layout_height="@dimen/home_h"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="370dp"
-        android:src="@drawable/temperature_stat_icon"/>
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="212dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/water_monitor_desc"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="470dp"
-        android:textStyle="bold"
-        android:textColor="@color/reseda_green"
-        android:text="@string/temperature_monitor"/>
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="@dimen/home_w"
+            android:layout_height="@dimen/home_h"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/aqua_smart_light_bulb_on_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <TextView
-        android:layout_width="232dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="470dp"
-        android:text="@string/temperature_monitor_desc"/>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/light_monitor"
+            android:textColor="@color/reseda_green"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <ImageView
-        android:layout_width="@dimen/home_w"
-        android:layout_height="@dimen/home_h"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="370dp"
-        android:src="@drawable/switch_bubbles_pic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/light_monitor_desc"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="470dp"
-        android:textStyle="bold"
-        android:textColor="@color/reseda_green"
-        android:text="@string/switch_control"/>
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="@dimen/home_w"
+            android:layout_height="@dimen/home_h"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/temperature_stat_icon"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeatures" />
 
-    <TextView
-        android:layout_width="214dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="470dp"
-        android:layout_marginTop="320dp"
-        android:text="@string/switch_monitor_desc"/>
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/temperature_monitor"
+            android:textColor="@color/reseda_green"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeatures" />
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/temperature_monitor_desc"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="@dimen/home_w"
+            android:layout_height="@dimen/home_h"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/switch_bubbles_pic"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="19dp"
+            android:text="@string/switch_control"
+            android:textColor="@color/reseda_green"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/switch_monitor_desc"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
