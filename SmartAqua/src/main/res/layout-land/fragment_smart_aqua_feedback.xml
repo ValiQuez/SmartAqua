@@ -1,122 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- CENG-322-0NA: Group 6
      Denis Shwaloff - N01424883
      Alvaro Rodrigo Chavez Moya - N01455107
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SmartAquaFeedback"
-    tools:ignore="MissingDefaultResource">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/SmartAquaFTitle"
-        android:layout_width="@dimen/title_pic_width"
-        android:layout_height="@dimen/title_pic_height"
-        android:src="@drawable/feedback_title" />
-
-    <TextView
-        android:id="@+id/SmartAquaFText"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/feedback_text"/>
+        tools:context=".SmartAquaFeedback">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/insert_name"/>
+        <ImageView
+            android:id="@+id/SmartAquaFTitle"
+            android:layout_width="@dimen/title_pic_width"
+            android:layout_height="@dimen/title_pic_height"
+            android:src="@drawable/feedback_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/hint_name"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="60dp"
-        android:paddingLeft="10dp"
-        android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        <TextView
+            android:id="@+id/SmartAquaFText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/feedback_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFTitle" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/insert_email"/>
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/insert_name"
+            app:layout_constraintStart_toStartOf="@+id/SmartAquaETName"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFText" />
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/hint_email"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="140dp"
-        android:paddingLeft="10dp"
-        android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        <EditText
+            android:id="@+id/SmartAquaETName"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="name"
+            android:background="@drawable/smart_aqua_et_border"
+            android:hint="@string/hint_name"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="200dp"
-        android:text="@string/insert_phone"/>
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/insert_email"
+            app:layout_constraintStart_toStartOf="@+id/SmartAquaETEmail"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaETName" />
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/hint_phone"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="220dp"
-        android:paddingLeft="10dp"
-        android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        <EditText
+            android:id="@+id/SmartAquaETEmail"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/smart_aqua_et_border"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="280dp"
-        android:text="@string/insert_comments"/>
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/hint_comment"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="300dp"
-        android:paddingLeft="10dp"
-        android:textSize="15sp"
-        android:background="@drawable/smart_aqua_et_border"/>
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/insert_phone"
+            app:layout_constraintStart_toStartOf="@+id/SmartAquaETPhone"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaETEmail" />
 
-    <RatingBar
-        android:id="@+id/SmartAquaRatingBar"
-        android:theme="@style/RatingBar"
-        android:contentDescription="@string/hint_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="20dp"/>
+        <EditText
+            android:id="@+id/SmartAquaETPhone"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="phone"
+            android:background="@drawable/smart_aqua_et_border"
+            android:hint="@string/hint_phone"
+            android:inputType="phone"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
-    <Button
-        android:id="@+id/SmartAquaFeedbackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/submit"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="95dp"
-        android:backgroundTint="@color/turquoise"/>
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/insert_comments"
+            app:layout_constraintStart_toStartOf="@+id/SmartAquaETComment"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaETPhone" />
 
-    <ImageView
-        android:id="@+id/SmartAquaFeedbackPic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/feedback_pic"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="270dp"/>
+        <EditText
+            android:id="@+id/SmartAquaETComment"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/smart_aqua_et_border"
+            android:hint="@string/hint_comment"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25"
+            android:autofillHints=""/>
 
-</FrameLayout>
+        <RatingBar
+            android:id="@+id/SmartAquaRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:contentDescription="@string/hint_rate"
+            android:theme="@style/RatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaETComment" />
+
+        <Button
+            android:id="@+id/SmartAquaFeedbackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaRatingBar" />
+
+        <ImageView
+            android:id="@+id/SmartAquaFeedbackPic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/feedback_pic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeedbackBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
