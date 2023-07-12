@@ -48,10 +48,10 @@
     <string name="settingsTitleImgDesc">Title image for the application settings screen</string>
     <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>
     <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
-    <string name="settingsResetValues">Reset ALL values and settings in the application</string>
+    <string name="settingsResetValues">Reset ALL settings in the application</string>
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
-    <string name="settingsMute">Mute App</string>
+    <string name="settingsMute">Mute</string>
     <string name="settingsUsrPermBtnTxt">Location</string>
     <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
@@ -113,7 +113,7 @@
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
 
     <!-- FEEDBACK STRINGS -->
-    <string name="feedback_text">Tell us what you think! :)</string>
+    <string name="feedback_text">Tell us what you think!</string>
     <string name="feedback_hint">Type here…</string>
     <string name="submit">Submit</string>
     <string name="insert_name">Name:</string>
