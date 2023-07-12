@@ -6,124 +6,142 @@
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="MissingDefaultResource">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/SmartAquaSettingsTitle"
-        android:layout_width="@dimen/title_pic_width"
-        android:layout_height="@dimen/title_pic_height"
-        android:src="@drawable/settings_title"
-        android:contentDescription="@string/settingsTitleImgDesc"/>
-
-    <TextView
-        android:id="@+id/SmartAquaPortraitLock"
-        android:layout_width="220dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:context=".SmartAquaSettings">
 
-        android:layout_marginTop="130dp"
-        android:layout_marginStart="35dp"
+        <ImageView
+            android:id="@+id/SmartAquaSettingsTitle"
+            android:layout_width="@dimen/title_pic_width"
+            android:layout_height="@dimen/title_pic_height"
+            android:contentDescription="@string/settingsTitleImgDesc"
+            android:src="@drawable/settings_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:text="@string/settingsLockPortrait"
-        android:textStyle="bold"
-        android:textSize="17sp"
-        />
+        <TextView
+            android:id="@+id/SmartAquaPortraitLock"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
-    <ToggleButton
-        android:id="@+id/SmartAquaPortraitLockToggleBtn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/settingsLockPortrait"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSettingsTitle" />
 
-        android:layout_marginTop="115dp"
-        android:layout_marginStart="275dp"
+        <ToggleButton
+            android:id="@+id/SmartAquaPortraitLockToggleBtn"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
 
-        android:text="@string/settingsTogglePortraitBtn"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/settingsTogglePortraitBtn"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaPortraitLock"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSettingsTitle" />
 
-    <TextView
-        android:id="@+id/SmartAquaResetValues"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/SmartAquaMute"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
-        android:layout_marginStart="390dp"
-        android:layout_marginTop="155dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/settingsMute"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaPortraitLock" />
 
-        android:text="@string/settingsResetValues"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        <ToggleButton
+            android:id="@+id/SmartAquaMuteToggleBtn"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/SmartAquaResetBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/settingsTogglePortraitBtn"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaMute"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaPortraitLockToggleBtn" />
 
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="600dp"
+        <TextView
+            android:id="@+id/SmartAquaDarkMode"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
-        android:text="@string/settingsResetBtn"
-        android:textSize="15sp" />
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/settingsDarkMode"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaMute" />
 
-    <TextView
-        android:id="@+id/SmartAquaDarkMode"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        <ToggleButton
+            android:id="@+id/SmartAquaDarkModeToggleBtn"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="280dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/settingsTogglePortraitBtn"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaDarkMode"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaMuteToggleBtn" />
 
-        android:text="@string/settingsDarkMode"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/SmartAquaResetValues"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
-    <ToggleButton
-        android:id="@+id/SmartAquaDarkModeToggleBtn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/settingsResetValues"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaDarkMode" />
 
-        android:layout_marginTop="265dp"
-        android:layout_marginStart="275dp"
+        <Button
+            android:id="@+id/SmartAquaResetBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:text="@string/settingsTogglePortraitBtn"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/settingsResetBtn"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaResetValues"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaDarkModeToggleBtn" />
 
-    <TextView
-        android:id="@+id/SmartAquaMute"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/SmartAquaUsrPermBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="205dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="45dp"
+            android:text="@string/settingsUsrPermBtnTxt"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaResetValues" />
 
-        android:text="@string/settingsMute"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
-
-    <ToggleButton
-        android:id="@+id/SmartAquaMuteToggleBtn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="275dp"
-
-        android:text="@string/settingsTogglePortraitBtn"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/SmartAquaUsrPermBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="230dp"
-        android:layout_marginStart="485dp"
-
-        android:text="@string/settingsUsrPermBtnTxt"
-        android:textSize="15sp" />
-
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
