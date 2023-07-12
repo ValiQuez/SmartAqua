@@ -11,6 +11,8 @@
     <string name="placeholder" translatable="false">placeholder</string>
     <string name="on">On</string>
     <string name="off">Off</string>
+    <string name="ON">ON</string>
+    <string name="OFF">OFF</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="yes">Yes</string>
@@ -95,10 +97,10 @@
     <string name="switchWelcome">Switch Controls</string>
     <string name="switchBubblesImgDesc">Image of flowing air bubbles</string>
     <string name="switchTitleImgDesc">Title image for the switch control screen</string>
-    <string name="snackbarAirOn">Air pump is on</string>
-    <string name="snackbarAirOff">Air pump is off</string>
-    <string name="snackbarBubbleOn">Bubble Bath is on</string>
-    <string name="snackbarBubbleOff">Bubble Bath is off</string>
+    <string name="snackbarAirOn">Air pump is ON</string>
+    <string name="snackbarAirOff">Air pump is OFF</string>
+    <string name="snackbarBubbleOn">Bubble Bath is ON</string>
+    <string name="snackbarBubbleOff">Bubble Bath is OFF</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton1">LIGHT ON/OFF</string>
