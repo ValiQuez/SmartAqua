@@ -52,7 +52,7 @@
         android:layout_height="@dimen/home_h"
         android:layout_marginTop="380dp"
         android:layout_marginStart="50dp"
-        android:src="@drawable/water_quality_pic" />
+        android:src="@drawable/water_quality_picture_test"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         android:layout_height="@dimen/home_h"
         android:layout_marginTop="455dp"
         android:layout_marginStart="50dp"
-        android:src="@drawable/aqua_light_bulb"/>
+        android:src="@drawable/aqua_smart_light_bulb_on_small"/>
 
     <TextView
         android:layout_width="wrap_content"

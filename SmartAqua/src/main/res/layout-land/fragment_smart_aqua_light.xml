@@ -57,7 +57,7 @@
         android:id="@+id/SmartAqualightbulb"
         android:layout_width="213dp"
         android:layout_height="228dp"
-        android:src="@drawable/aqua_light_bulb"
+        android:src="@drawable/aqua_smart_light_bulb_on"
         android:background="@color/white"
         android:translationX="400dp"
         android:translationY="5dp" />

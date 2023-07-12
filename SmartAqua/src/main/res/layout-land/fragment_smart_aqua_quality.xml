@@ -90,6 +90,6 @@
         android:layout_height="200dp"
         android:layout_marginTop="25dp"
         android:layout_marginStart="450dp"
-        android:src="@drawable/water_quality_pic"/>
+        android:src="@drawable/water_quality_picture_test"/>
 
 </FrameLayout>
