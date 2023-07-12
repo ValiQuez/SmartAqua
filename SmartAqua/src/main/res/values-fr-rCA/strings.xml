@@ -112,5 +112,7 @@
     <string name="reviewSendDenied">L\'avis n\'a pas été envoyé</string>
     <string name="reviewSendAlert">Envoyer</string>
     <string name="reviewSendAlertTitle">Confirmez l\'envoi de votre avis</string>
+    <string name="ON">ALLUMÉ</string>
+    <string name="OFF">ÉTEINDRE</string>
 
 </resources>

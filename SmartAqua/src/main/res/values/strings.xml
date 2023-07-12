@@ -11,6 +11,8 @@
     <string name="placeholder" translatable="false">placeholder</string>
     <string name="on">On</string>
     <string name="off">Off</string>
+    <string name="ON">ON</string>
+    <string name="OFF">OFF</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="yes">Yes</string>
@@ -48,10 +50,10 @@
     <string name="settingsTitleImgDesc">Title image for the application settings screen</string>
     <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>
     <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
-    <string name="settingsResetValues">Reset ALL values and settings in the application</string>
+    <string name="settingsResetValues">Reset ALL settings in the application</string>
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
-    <string name="settingsMute">Mute App</string>
+    <string name="settingsMute">Mute</string>
     <string name="settingsUsrPermBtnTxt">Location</string>
     <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
@@ -95,10 +97,10 @@
     <string name="switchWelcome">Switch Controls</string>
     <string name="switchBubblesImgDesc">Image of flowing air bubbles</string>
     <string name="switchTitleImgDesc">Title image for the switch control screen</string>
-    <string name="snackbarAirOn">Air pump is on</string>
-    <string name="snackbarAirOff">Air pump is off</string>
-    <string name="snackbarBubbleOn">Bubble Bath is on</string>
-    <string name="snackbarBubbleOff">Bubble Bath is off</string>
+    <string name="snackbarAirOn">Air pump is ON</string>
+    <string name="snackbarAirOff">Air pump is OFF</string>
+    <string name="snackbarBubbleOn">Bubble Bath is ON</string>
+    <string name="snackbarBubbleOff">Bubble Bath is OFF</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightbutton1">LIGHT ON/OFF</string>
@@ -113,7 +115,7 @@
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
 
     <!-- FEEDBACK STRINGS -->
-    <string name="feedback_text">Tell us what you think! :)</string>
+    <string name="feedback_text">Tell us what you think!</string>
     <string name="feedback_hint">Type here…</string>
     <string name="submit">Submit</string>
     <string name="insert_name">Name:</string>
