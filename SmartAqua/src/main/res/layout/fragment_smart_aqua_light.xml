@@ -17,9 +17,6 @@
         android:orientation="vertical"
         tools:context=".SmartAquaLight">
 
-
-        <!-- TODO: Update blank fragment layout -->
-
         <Switch
             android:id="@+id/switchlightButton"
             android:layout_width="wrap_content"
