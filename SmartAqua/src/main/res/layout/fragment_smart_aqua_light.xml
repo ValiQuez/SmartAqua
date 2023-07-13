@@ -5,89 +5,80 @@
      Alvaro Rodrigo Chavez Moya - N01455107
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SmartAquaLight">
+    android:layout_height="wrap_content">
 
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <Switch
-        android:id="@+id/switchlightButton"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="475dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="44dp"
-        android:minHeight="48dp"
-        android:text="@string/lightbutton1"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Lightcontroldec"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/notificationTextView"
-        android:layout_width="391dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="465dp"
-        android:gravity="center"
-        android:textColor="@color/reseda_green"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:translationX="5dp"
-        android:translationY="450dp"
-        app:layout_constraintBottom_toTopOf="@+id/switchlightButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/Lightcontroldec"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:text="@string/lightcontroldescription"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:translationY="550dp"
-        app:layout_constraintEnd_toEndOf="@+id/notificationTextView"
-        app:layout_constraintStart_toStartOf="@+id/notificationTextView"
-        app:layout_constraintTop_toBottomOf="@+id/notificationTextView" />
-
-    <ImageView
-        android:id="@+id/SmartAqualightbulb"
-        android:layout_width="251dp"
-        android:layout_height="270dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="4dp"
-        android:src="@drawable/aqua_smart_light_bulb_on"
-        android:translationX="85dp"
-        android:translationY="150dp"
-        app:layout_constraintBottom_toTopOf="@+id/notificationTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/SmartAquaLightTitle"
-        android:layout_width="@dimen/title_pic_width"
-        android:layout_height="@dimen/title_pic_height"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="151dp"
-        android:src="@drawable/light_control_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        tools:context=".SmartAquaLight">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- TODO: Update blank fragment layout -->
+
+        <Switch
+            android:id="@+id/switchlightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:minHeight="48dp"
+            android:text="@string/lightbutton1"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notificationTextView" />
+
+        <TextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:textColor="@color/reseda_green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAqualightbulb" />
+
+        <TextView
+            android:id="@+id/Lightcontroldec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="@string/lightcontroldescription"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/notificationTextView"
+            app:layout_constraintStart_toStartOf="@+id/notificationTextView"
+            app:layout_constraintTop_toBottomOf="@+id/switchlightButton" />
+
+        <ImageView
+            android:id="@+id/SmartAqualightbulb"
+            android:layout_width="251dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/aqua_smart_light_bulb_on"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaLightTitle" />
+
+        <ImageView
+            android:id="@+id/SmartAquaLightTitle"
+            android:layout_width="@dimen/title_pic_width"
+            android:layout_height="@dimen/title_pic_height"
+            android:src="@drawable/light_control_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
