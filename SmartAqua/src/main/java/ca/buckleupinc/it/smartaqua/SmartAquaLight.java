@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class SmartAquaLight extends Fragment {
     private Switch switchlightButton;
     private TextView notificationTextView;
     private NotificationManager notificationManager;
+    private ImageView lightBulbImage;
 
     public SmartAquaLight() {
 
@@ -44,17 +46,19 @@ public class SmartAquaLight extends Fragment {
         switchlightButton = view.findViewById(R.id.switchlightButton);
         notificationTextView = view.findViewById(R.id.notificationTextView);
         notificationTextView.setText(R.string.poplightoff);
+        lightBulbImage = view.findViewById(R.id.SmartAqualightbulbOff);
 
         switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 notificationTextView.setText(R.string.notificationlighton);
+                lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_on);
                 sendNotification(getString(R.string.notificationlighton));
             } else {
                 notificationTextView.setText(R.string.notificationlightoff);
+                lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_off);
                 sendNotification(getString(R.string.notificationlightoff));
             }
         });
-
         notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 
         return view;
