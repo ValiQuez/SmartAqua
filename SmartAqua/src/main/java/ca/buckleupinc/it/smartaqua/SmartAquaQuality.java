@@ -9,6 +9,7 @@ package ca.buckleupinc.it.smartaqua;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -19,9 +20,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SmartAquaQuality extends Fragment {
@@ -30,8 +36,8 @@ public class SmartAquaQuality extends Fragment {
     private TextView status_TDS;
     private Handler handler;
     private Runnable runnable;
-
     private DatabaseReference dbRef;
+    private List<Integer> tdsDataList;
 
     public SmartAquaQuality() {
         // Required empty public constructor
@@ -45,7 +51,10 @@ public class SmartAquaQuality extends Fragment {
         runnable = new Runnable() {
             @Override
             public void run() {
-                int reading_ran = new Random().nextInt(201)+300;
+                int randomIndex = new Random().nextInt(tdsDataList.size());
+                int reading_ran = tdsDataList.get(randomIndex);
+                readings_TDS.setText(String.valueOf(reading_ran));
+                //int reading_ran = new Random().nextInt(201)+300;
                 readings_TDS.setText(String.valueOf(reading_ran));
 
                 if (reading_ran >= 390 && reading_ran <= 460) {
@@ -59,7 +68,7 @@ public class SmartAquaQuality extends Fragment {
                 handler.postDelayed(this,5000);
             }
         };
-
+        tdsDataList = new ArrayList<>();
     }
 
     @Override
@@ -85,13 +94,36 @@ public class SmartAquaQuality extends Fragment {
             Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
         });
 
+        readDataFromDatabase();
+
         return view;
     }
 
-    public void onResume(){
+    private void readDataFromDatabase() {
+        DatabaseReference tdsDataRef = FirebaseDatabase.getInstance().getReference("TDS_DATA");
+
+        tdsDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    int tdsData = snapshot.getValue(Integer.class);
+                    tdsDataList.add(tdsData);
+                }
+                // Start displaying random TDS data
+                handler.post(runnable);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle any errors that occur during data reading
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    /*public void onResume(){
         super.onResume();
         handler.post(runnable);
-    }
+    }*/
 
     public void onPause(){
         super.onPause();

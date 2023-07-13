@@ -75,6 +75,7 @@
     <string name="s_good">Good!</string>
     <string name="s_bad">Bad!</string>
     <string name="save_data">Reading saved in database!</string>
+    <string name="failedDB">Failed to read TDS Data</string>
 
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
