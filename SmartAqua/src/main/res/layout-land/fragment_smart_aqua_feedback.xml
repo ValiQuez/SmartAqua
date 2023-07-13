@@ -46,7 +46,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETName"
-            android:layout_width="300dp"
+            android:layout_width="600dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="name"
@@ -72,7 +72,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETEmail"
-            android:layout_width="300dp"
+            android:layout_width="600dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="emailAddress"
@@ -98,7 +98,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETPhone"
-            android:layout_width="300dp"
+            android:layout_width="600dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="phone"
@@ -123,7 +123,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETComment"
-            android:layout_width="300dp"
+            android:layout_width="600dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/smart_aqua_et_border"

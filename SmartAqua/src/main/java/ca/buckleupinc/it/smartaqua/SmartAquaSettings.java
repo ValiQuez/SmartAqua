@@ -34,13 +34,15 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.google.android.material.snackbar.Snackbar;
-
 public class SmartAquaSettings extends Fragment {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private LocationManager locationManager;
     private LocationListener locationListener;
+
+    public SmartAquaSettings() {
+        // Required empty public constructor
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class SmartAquaSettings extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
 
-        SharedPreferences settingsPreferences = getActivity().getSharedPreferences("SmartAquaSettings",Context.MODE_PRIVATE);
+        SharedPreferences settingsPreferences = getActivity().getSharedPreferences("UserPrefSettings",Context.MODE_PRIVATE);
 
         //=====LOCK LANDSCAPE MODE=====
         ToggleButton toggleLockBtn = view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
@@ -76,16 +78,24 @@ public class SmartAquaSettings extends Fragment {
 
         //=====DARK MODE=====
         ToggleButton darkTB = view.findViewById(R.id.SmartAquaDarkModeToggleBtn);
+        darkTB.setOnCheckedChangeListener(null); // Remove previous listener temporarily
+
+        // Get the initial state from SharedPreferences
+        final boolean[] darkModeCheckState = {settingsPreferences.getBoolean("DarkModeToggleState", false)};
+        darkTB.setChecked(darkModeCheckState[0]);
+
         darkTB.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                Snackbar ON_SnackBar = Snackbar.make(view, R.string.darkModeON, Snackbar.LENGTH_SHORT);
-                ON_SnackBar.show();
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            // Check if the state has actually changed
+            if (isChecked != darkModeCheckState[0]) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    Toast.makeText(getActivity(), R.string.darkModeON, Toast.LENGTH_SHORT).show();
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                settingsPreferences.edit().putBoolean("DarkModeToggleState", isChecked).apply();
+                darkModeCheckState[0] = isChecked; // Update the initial state
             }
-            else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-            settingsPreferences.edit().putBoolean("DarkModeToggleState", isChecked).apply();
         });
 
         //=====LOCATION USER PERMISSION REQUEST=====
@@ -97,18 +107,27 @@ public class SmartAquaSettings extends Fragment {
 
 
         //=====MUTE APP=====
-        AudioManager aManager = (AudioManager)getActivity().getSystemService(Context.AUDIO_SERVICE);
         ToggleButton muteToggleBtn = view.findViewById(R.id.SmartAquaMuteToggleBtn);
+        muteToggleBtn.setOnCheckedChangeListener(null); // Remove previous listener temporarily
+
+        // Get the initial state from SharedPreferences
+        final boolean[] muteCheckState = {settingsPreferences.getBoolean("MuteToggleState", false)};
+        muteToggleBtn.setChecked(muteCheckState[0]);
+
         muteToggleBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                //mutes device's volume
-                aManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
+            // Check if the state has actually changed
+            if (isChecked != muteCheckState[0]) {
+                AudioManager aManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
+                if (isChecked) {
+                    // mutes device's volume
+                    aManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
+                } else {
+                    // unmutes device's volume
+                    aManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
+                }
+                settingsPreferences.edit().putBoolean("MuteToggleState", isChecked).apply();
+                muteCheckState[0] = isChecked; // Update the initial state
             }
-            else{
-                //unmutes device's volume
-                aManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
-            }
-            settingsPreferences.edit().putBoolean("MuteToggleState", isChecked).apply();
         });
 
         //=====RESET SETTINGS=====
@@ -120,8 +139,7 @@ public class SmartAquaSettings extends Fragment {
 
             settingsPreferences.edit().clear().apply();
 
-            Snackbar resetSnackbar = Snackbar.make(view, R.string.reset_snackbar, Snackbar.LENGTH_SHORT);
-            resetSnackbar.show();
+            Toast.makeText(getActivity(), R.string.reset_snackbar, Toast.LENGTH_SHORT).show();
         });
 
         toggleLockBtn.setChecked(settingsPreferences.getBoolean("LockToggleState", false));
@@ -216,6 +234,4 @@ public class SmartAquaSettings extends Fragment {
             locationManager.removeUpdates(locationListener);
         }
     }
-
-
 }
