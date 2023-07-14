@@ -1,78 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="MissingDefaultResource">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/SmartAquaSwitchTitle"
-        android:layout_width="@dimen/title_pic_width"
-        android:layout_height="@dimen/title_pic_height"
-        android:src="@drawable/switch_control_title"
-
-        android:contentDescription="@string/switchTitleImgDesc"/>
-
-    <Switch
-        android:id="@+id/SmartAquaSwitchAir"
-        android:layout_width="160dp"
-        android:layout_height="70dp"
-
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="150dp"
-
-        android:text="@string/switchName"
-        android:textSize="20sp"
-        android:textColor="@color/turquoise" />
-
-    <TextView
-        android:id="@+id/SmartAquaSwitchStatusAir"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:context=".SmartAquaSwitch">
 
-        android:layout_marginStart="265dp"
-        android:layout_marginTop="170dp"
+        <ImageView
+            android:id="@+id/SmartAquaSwitchTitle"
+            android:layout_width="@dimen/title_pic_width"
+            android:layout_height="@dimen/title_pic_height"
+            android:contentDescription="@string/switchTitleImgDesc"
+            android:src="@drawable/switch_control_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:text="@string/off"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        <Switch
+            android:id="@+id/SmartAquaSwitchAir"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
 
-    <Switch
-        android:id="@+id/SmartAquaSwitchBubble"
-        android:layout_width="160dp"
-        android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="350dp"
+            android:text="@string/switchName"
+            android:textColor="@color/turquoise"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSwitchTitle" />
 
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="230dp"
+        <TextView
+            android:id="@+id/SmartAquaSwitchStatusAir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:text="@string/switchName2"
-        android:textSize="20sp"
-        android:textColor="@color/turquoise"/>
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="325dp"
+            android:text="@string/OFF"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaSwitchAir"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSwitchTitle" />
 
-    <TextView
-        android:id="@+id/SmartAquaSwitchStatusBubble"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <Switch
+            android:id="@+id/SmartAquaSwitchBubble"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
 
-        android:layout_marginStart="265dp"
-        android:layout_marginTop="250dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="350dp"
+            android:text="@string/switchName2"
+            android:textColor="@color/turquoise"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSwitchAir" />
 
-        android:text="@string/off"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/SmartAquaSwitchStatusBubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <ImageView
-        android:id="@+id/iSmartAquaSwitchBubblesImg"
-        android:layout_width="225dp"
-        android:layout_height="200dp"
-        android:src="@drawable/switch_bubbles_pic"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="325dp"
+            android:text="@string/OFF"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/SmartAquaSwitchBubble"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaSwitchStatusAir" />
 
-        android:layout_marginStart="400dp"
-        android:layout_marginTop="125dp"
+        <ImageView
+            android:id="@+id/iSmartAquaSwitchBubblesImg"
+            android:layout_width="225dp"
+            android:layout_height="200dp"
 
-        android:contentDescription="@string/switchBubblesImgDesc"
-        android:alpha="0.9"/>
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="50dp"
+            android:alpha="0.9"
+            android:contentDescription="@string/switchBubblesImgDesc"
+            android:src="@drawable/switch_bubbles_pic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.849"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
