@@ -50,11 +50,11 @@ public class SmartAquaLight extends Fragment {
 
         switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                notificationTextView.setText(R.string.notificationlighton);
+                notificationTextView.setText(R.string.poplighton);
                 lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_on);
                 sendNotification(getString(R.string.notificationlighton));
             } else {
-                notificationTextView.setText(R.string.notificationlightoff);
+                notificationTextView.setText(R.string.poplightoff);
                 lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_off);
                 sendNotification(getString(R.string.notificationlightoff));
             }

@@ -107,8 +107,8 @@
     <string name="poplighton">Light ON</string>
     <string name="lightnotification">Light Notification</string>
     <string name="lightstatus">Light Status</string>
-    <string name="notificationlightoff">Light is off</string>
-    <string name="notificationlighton">Light is on</string>
+    <string name="notificationlightoff">Light is OFF</string>
+    <string name="notificationlighton">Light is ON</string>
     <string name="poplightoff">Light OFF</string>
 
     <string name="feedback">Feedback</string>
