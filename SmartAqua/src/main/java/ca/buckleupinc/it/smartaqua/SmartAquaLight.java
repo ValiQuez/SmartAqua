@@ -11,6 +11,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,26 +43,31 @@ public class SmartAquaLight extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_smart_aqua_light, container, false);
 
-
         switchlightButton = view.findViewById(R.id.switchlightButton);
         notificationTextView = view.findViewById(R.id.notificationTextView);
         notificationTextView.setText(R.string.poplightoff);
         lightBulbImage = view.findViewById(R.id.SmartAqualightbulb);
 
+        SharedPreferences lightPref = getActivity().getSharedPreferences("LightPref", Context.MODE_PRIVATE);
+        switchlightButton.setOnCheckedChangeListener(null);
+        boolean previousState = lightPref.getBoolean("LightPref", false);
+        switchlightButton.setChecked(previousState);
+        updateUI(previousState);
+
         switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                notificationTextView.setText(R.string.poplighton);
-                lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_on);
-                sendNotification(getString(R.string.notificationlighton));
-            } else {
-                notificationTextView.setText(R.string.poplightoff);
-                lightBulbImage.setImageResource(R.drawable.aqua_smart_light_bulb_off);
-                sendNotification(getString(R.string.notificationlightoff));
-            }
+            notificationTextView.setText(isChecked ? R.string.poplighton : R.string.poplightoff);
+            updateUI(isChecked); // Update UI based on the new state
+            sendNotification(isChecked ? getString(R.string.notificationlighton) : getString(R.string.notificationlightoff));
+            lightPref.edit().putBoolean("LightPref", isChecked).apply();
         });
+
         notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 
         return view;
+    }
+
+    private void updateUI(boolean isChecked) {
+        lightBulbImage.setImageResource(isChecked ? R.drawable.aqua_smart_light_bulb_on : R.drawable.aqua_smart_light_bulb_off);
     }
 
     private void sendNotification(String message) {
@@ -69,7 +75,7 @@ public class SmartAquaLight extends Fragment {
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, getString(R.string.lightnotification), NotificationManager.IMPORTANCE_DEFAULT);
         notificationManager.createNotificationChannel(channel);
 
-// Creates a notification
+        // Creates a notification
         Notification.Builder builder = new Notification.Builder(requireActivity(), CHANNEL_ID)
                 .setSmallIcon(R.drawable.notification)
                 .setContentTitle(getString(R.string.lightstatus))
