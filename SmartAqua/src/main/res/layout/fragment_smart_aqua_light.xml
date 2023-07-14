@@ -63,16 +63,6 @@
             android:layout_width="251dp"
             android:layout_height="270dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/aqua_smart_light_bulb_on"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SmartAquaLightTitle" />
-
-        <ImageView
-            android:id="@+id/SmartAqualightbulbOff"
-            android:layout_width="251dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="20dp"
             android:src="@drawable/aqua_smart_light_bulb_off"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

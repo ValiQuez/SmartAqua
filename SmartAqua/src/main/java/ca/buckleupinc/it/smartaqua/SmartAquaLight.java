@@ -46,7 +46,7 @@ public class SmartAquaLight extends Fragment {
         switchlightButton = view.findViewById(R.id.switchlightButton);
         notificationTextView = view.findViewById(R.id.notificationTextView);
         notificationTextView.setText(R.string.poplightoff);
-        lightBulbImage = view.findViewById(R.id.SmartAqualightbulbOff);
+        lightBulbImage = view.findViewById(R.id.SmartAqualightbulb);
 
         switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
