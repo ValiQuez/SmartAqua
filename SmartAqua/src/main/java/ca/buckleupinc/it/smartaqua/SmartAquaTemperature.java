@@ -24,11 +24,15 @@ import android.annotation.SuppressLint;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
     private SeekBar seekBar;
     private TextView textView;
+    private SharedPreferences sharedPreferences;
+
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -40,6 +44,9 @@ public class SmartAquaTemperature extends Fragment {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
         seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean toggleState = sharedPreferences.getBoolean("toggle_state", false);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -63,11 +70,16 @@ public class SmartAquaTemperature extends Fragment {
         });
 
         ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
+        toggleButton.setChecked(toggleState);
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
                 displayNotification(message);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("toggle_state", isChecked);
+                editor.apply();
             }
         });
 
