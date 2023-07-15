@@ -46,18 +46,24 @@ public class SmartAquaTemperature extends Fragment {
         textView = view.findViewById(R.id.SmartAquaTempReading3);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        boolean toggleState = sharedPreferences.getBoolean("toggle_state", false);
+        int savedProgress = sharedPreferences.getInt("TemperatureProgress", 0);
+        int savedTemperatureRange = sharedPreferences.getInt("TemperatureRange", 18); // Default value is 18
+        boolean toggleState = sharedPreferences.getBoolean("TempPref", false);
+
+        seekBar.setProgress(savedProgress); // Set the saved progress
+        setTemperatureText(savedTemperatureRange); // Set the saved temperature range
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
-                String temperatureText = temperatureRange + getString(R.string.tempCelcius);
-                if (temperatureRange > 20) {
-                    textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
-                } else {
-                    textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
-                }
-                textView.setText(temperatureText);
+                setTemperatureText(temperatureRange); // Update temperature text
+
+                // Save the progress and temperature range in shared preferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("TemperatureProgress", progress);
+                editor.putInt("TemperatureRange", temperatureRange);
+                editor.apply();
             }
 
             @Override
@@ -77,13 +83,24 @@ public class SmartAquaTemperature extends Fragment {
                 String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
                 displayNotification(message);
 
+                // Save the toggle state in shared preferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("toggle_state", isChecked);
+                editor.putBoolean("TempPref", isChecked);
                 editor.apply();
             }
         });
 
         return view;
+    }
+
+    private void setTemperatureText(int temperatureRange) {
+        String temperatureText = temperatureRange + getString(R.string.tempCelcius);
+        if (temperatureRange > 20) {
+            textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
+        } else {
+            textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
+        }
+        textView.setText(temperatureText);
     }
 
     @SuppressLint("MissingPermission")
