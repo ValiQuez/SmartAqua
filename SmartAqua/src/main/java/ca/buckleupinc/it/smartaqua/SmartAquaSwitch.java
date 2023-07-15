@@ -6,6 +6,8 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -24,6 +26,7 @@ public class SmartAquaSwitch extends Fragment {
 
     private TextView statusAir;
     private TextView statusBubble;
+    private SharedPreferences switchPref;
 
     public SmartAquaSwitch(){
 
@@ -41,37 +44,66 @@ public class SmartAquaSwitch extends Fragment {
         Switch switchBubble = view.findViewById(R.id.SmartAquaSwitchBubble);
         statusAir = view.findViewById(R.id.SmartAquaSwitchStatusAir);
         statusBubble = view.findViewById(R.id.SmartAquaSwitchStatusBubble);
-        statusAir.setText(R.string.OFF);
-        statusBubble.setText(R.string.OFF);
+
+        switchPref = getActivity().getSharedPreferences("SwitchPref", Context.MODE_PRIVATE);
+
+        boolean switchAirState = switchPref.getBoolean("SwitchAirState", false);
+        boolean switchBubbleState = switchPref.getBoolean("SwitchBubbleState", false);
+        switchAir.setChecked(switchAirState);
+        switchBubble.setChecked(switchBubbleState);
+
+        // Restore TextView states
+        boolean statusAirState = switchPref.getBoolean("StatusAirState", false);
+        boolean statusBubbleState = switchPref.getBoolean("StatusBubbleState", false);
+        setStatusText(statusAir, statusAirState);
+        setStatusText(statusBubble, statusBubbleState);
 
         switchAir.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                statusAir.setText(R.string.ON);
-                statusAir.setTextColor(Color.GREEN);
+                setStatusText(statusAir, true);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
-                statusAir.setText(R.string.OFF);
-                statusAir.setTextColor(Color.RED);
+                setStatusText(statusAir, false);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
+            switchPref.edit().putBoolean("SwitchAirState", isChecked).apply();
         });
 
         switchBubble.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                statusBubble.setText(R.string.ON);
-                statusBubble.setTextColor(Color.GREEN);
+                setStatusText(statusBubble, true);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
-                statusBubble.setText(R.string.OFF);
-                statusBubble.setTextColor(Color.RED);
+                setStatusText(statusBubble, false);
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
+            switchPref.edit().putBoolean("SwitchBubbleState", isChecked).apply();
         });
 
         return view;
+    }
+
+    private void setStatusText(TextView textView, boolean isOn) {
+        if (isOn) {
+            textView.setText(R.string.ON);
+            textView.setTextColor(Color.GREEN);
+        } else {
+            textView.setText(R.string.OFF);
+            textView.setTextColor(Color.RED);
+        }
+        switchPref.edit().putBoolean(getStatusKey(textView), isOn).apply();
+    }
+
+    private String getStatusKey(TextView textView) {
+        if (textView == statusAir) {
+            return "StatusAirState";
+        } else if (textView == statusBubble) {
+            return "StatusBubbleState";
+        }
+        return "";
     }
 }
