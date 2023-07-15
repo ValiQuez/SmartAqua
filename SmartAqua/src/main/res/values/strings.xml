@@ -86,8 +86,8 @@
     <string name="tempContentTitle">Temperature Status </string>
     <string name="tempCharSequence">Temperature Channel </string>
     <string name="tempDescription">Channel for Temperature Notifications </string>
-    <string name="tempNoti_ON">Temperature turned on </string>
-    <string name="tempNoti_OFF">Temperature turned off </string>
+    <string name="tempNoti_ON">Temperature turned ON </string>
+    <string name="tempNoti_OFF">Temperature turned OFF </string>
     <string name="tempCelcius">°C </string>
     <string name="tempChannelID">Temperature Notification Channel </string>
 
