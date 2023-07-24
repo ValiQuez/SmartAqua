@@ -24,11 +24,15 @@ import android.annotation.SuppressLint;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
     private SeekBar seekBar;
     private TextView textView;
+    private SharedPreferences sharedPreferences;
+
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -40,17 +44,26 @@ public class SmartAquaTemperature extends Fragment {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
         seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int savedProgress = sharedPreferences.getInt("TemperatureProgress", 0);
+        int savedTemperatureRange = sharedPreferences.getInt("TemperatureRange", 18); // Default value is 18
+        boolean toggleState = sharedPreferences.getBoolean("TempPref", false);
+
+        seekBar.setProgress(savedProgress); // Set the saved progress
+        setTemperatureText(savedTemperatureRange); // Set the saved temperature range
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
-                String temperatureText = temperatureRange + getString(R.string.tempCelcius);
-                if (temperatureRange > 20) {
-                    textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
-                } else {
-                    textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
-                }
-                textView.setText(temperatureText);
+                setTemperatureText(temperatureRange); // Update temperature text
+
+                // Save the progress and temperature range in shared preferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("TemperatureProgress", progress);
+                editor.putInt("TemperatureRange", temperatureRange);
+                editor.apply();
             }
 
             @Override
@@ -63,15 +76,31 @@ public class SmartAquaTemperature extends Fragment {
         });
 
         ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
+        toggleButton.setChecked(toggleState);
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
                 displayNotification(message);
+
+                // Save the toggle state in shared preferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("TempPref", isChecked);
+                editor.apply();
             }
         });
 
         return view;
+    }
+
+    private void setTemperatureText(int temperatureRange) {
+        String temperatureText = temperatureRange + getString(R.string.tempCelcius);
+        if (temperatureRange > 20) {
+            textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
+        } else {
+            textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
+        }
+        textView.setText(temperatureText);
     }
 
     @SuppressLint("MissingPermission")
