@@ -40,7 +40,7 @@ public class SmartAquaQuality extends Fragment {
     private List<Integer> tdsDataList;
 
     public SmartAquaQuality() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -120,10 +120,7 @@ public class SmartAquaQuality extends Fragment {
         });
     }
 
-    /*public void onResume(){
-        super.onResume();
-        handler.post(runnable);
-    }*/
+
 
     public void onPause(){
         super.onPause();
