@@ -88,30 +88,10 @@ public class SmartAquaSettings extends Fragment {
             permissionTask.execute();
         });
 
-
         //=====MUTE APP=====
         ToggleButton muteToggleBtn = view.findViewById(R.id.SmartAquaMuteToggleBtn);
-        muteToggleBtn.setOnCheckedChangeListener(null); // Remove previous listener temporarily
-
-        // Get the initial state from SharedPreferences
-        final boolean[] muteCheckState = {settingsPreferences.getBoolean("MuteToggleState", false)};
-        muteToggleBtn.setChecked(muteCheckState[0]);
-
-        muteToggleBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Check if the state has actually changed
-            if (isChecked != muteCheckState[0]) {
-                AudioManager aManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-                if (isChecked) {
-                    // mutes device's volume
-                    aManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
-                } else {
-                    // unmutes device's volume
-                    aManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
-                }
-                settingsPreferences.edit().putBoolean("MuteToggleState", isChecked).apply();
-                muteCheckState[0] = isChecked; // Update the initial state
-            }
-        });
+        SmartAquaMute muteHandler = new SmartAquaMute(muteToggleBtn, settingsPreferences, getActivity());
+        muteToggleBtn.setOnCheckedChangeListener(muteHandler);
 
         //=====RESET SETTINGS=====
         Button resetBTN = view.findViewById(R.id.SmartAquaResetBtn);
