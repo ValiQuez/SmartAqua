@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-    //Alert Dialog message on Back Key pressed
+
     @Override
     public void onBackPressed(){
         new AlertDialog.Builder(this)

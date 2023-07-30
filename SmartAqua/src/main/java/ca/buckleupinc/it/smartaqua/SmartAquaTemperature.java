@@ -33,7 +33,6 @@ public class SmartAquaTemperature extends Fragment {
     private TextView textView;
     private SharedPreferences sharedPreferences;
 
-
     public SmartAquaTemperature() {
         // Required empty public constructor
     }
@@ -56,7 +55,7 @@ public class SmartAquaTemperature extends Fragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
+                int temperatureRange = (int)(progress * 0.09) + 18; // Map progress from 18-27
                 setTemperatureText(temperatureRange); // Update temperature text
 
                 // Save the progress and temperature range in shared preferences
@@ -67,12 +66,10 @@ public class SmartAquaTemperature extends Fragment {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
         ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
