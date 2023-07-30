@@ -78,25 +78,8 @@ public class SmartAquaSettings extends Fragment {
 
         //=====DARK MODE=====
         ToggleButton darkTB = view.findViewById(R.id.SmartAquaDarkModeToggleBtn);
-        darkTB.setOnCheckedChangeListener(null); // Remove previous listener temporarily
-
-        // Get the initial state from SharedPreferences
-        final boolean[] darkModeCheckState = {settingsPreferences.getBoolean("DarkModeToggleState", false)};
-        darkTB.setChecked(darkModeCheckState[0]);
-
-        darkTB.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Check if the state has actually changed
-            if (isChecked != darkModeCheckState[0]) {
-                if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    Toast.makeText(getActivity(), R.string.darkModeON, Toast.LENGTH_SHORT).show();
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                }
-                settingsPreferences.edit().putBoolean("DarkModeToggleState", isChecked).apply();
-                darkModeCheckState[0] = isChecked; // Update the initial state
-            }
-        });
+        SmartAquaDarkMode darkModeHandler = new SmartAquaDarkMode(darkTB, settingsPreferences);
+        darkTB.setOnCheckedChangeListener(darkModeHandler);
 
         //=====LOCATION USER PERMISSION REQUEST=====
         Button btn = view.findViewById(R.id.SmartAquaUsrPermBtn);
