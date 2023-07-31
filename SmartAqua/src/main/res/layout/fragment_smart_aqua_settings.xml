@@ -32,7 +32,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="30dp"
 
             android:layout_marginTop="30dp"
             android:text="@string/settingsLockPortrait"
@@ -59,7 +59,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="30dp"
 
             android:layout_marginTop="30dp"
             android:text="@string/settingsMute"
@@ -86,7 +86,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="30dp"
 
             android:layout_marginTop="42dp"
             android:text="@string/settingsDarkMode"
@@ -113,7 +113,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:text="@string/settingsResetValues"
             android:textSize="17sp"
@@ -138,12 +138,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="15dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:text="@string/settingsUsrPermBtnTxt"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaResetValues" />
 
