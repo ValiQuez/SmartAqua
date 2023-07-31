@@ -54,7 +54,7 @@
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
     <string name="settingsMute">Mute</string>
-    <string name="settingsUsrPermBtnTxt">Location</string>
+    <string name="settingsUsrPermBtnTxt">Provide current location</string>
     <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
     <string name="settingsPermissionGrant">Give Access</string>
