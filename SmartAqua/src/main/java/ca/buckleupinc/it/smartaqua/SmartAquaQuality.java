@@ -42,6 +42,12 @@ public class SmartAquaQuality extends Fragment {
     private int lastDisplayedIndex = -1;
     private SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_KEY = "SmartAquaQualityData";
+    private static final String SHARED_PREF_READINGS = "QualityDataReadings";
+    private static final String TDS_DATA_REF = "TDS_DATA";
+    private static final String OFFLINE_REF = ".info/connected";
+    private static final String COMMA = ",";
+    private static final String EMPTY = "";
+    private static final String TDS_LIST = "tdsDataList";
 
     public SmartAquaQuality() {
 
@@ -54,6 +60,7 @@ public class SmartAquaQuality extends Fragment {
         handler = new Handler();
         tdsDataList = new ArrayList<>();
         sharedPreferences = requireContext().getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE);
+        loadDataFromSharedPreferences();
 
         runnable = new Runnable() {
             @Override
@@ -92,19 +99,20 @@ public class SmartAquaQuality extends Fragment {
             String status_TDS_str = status_TDS.getText().toString();
 
             SmartAquaQualityData qualityData = new SmartAquaQualityData(reading_TDS_str, status_TDS_str);
-            dbRef = FirebaseDatabase.getInstance().getReference("QualityDataReadings");
+            dbRef = FirebaseDatabase.getInstance().getReference(SHARED_PREF_READINGS);
             dbRef.child(reading_TDS_str).setValue(qualityData);
             Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
         });
 
         setupNetworkConnectivityListener();
+        loadDataFromSharedPreferences();
         readDataFromDatabase();
 
         return view;
     }
 
     private void readDataFromDatabase() {
-        DatabaseReference tdsDataRef = FirebaseDatabase.getInstance().getReference("TDS_DATA");
+        DatabaseReference tdsDataRef = FirebaseDatabase.getInstance().getReference(TDS_DATA_REF);
 
         tdsDataRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -133,16 +141,16 @@ public class SmartAquaQuality extends Fragment {
         StringBuilder dataStringBuilder = new StringBuilder();
 
         for (int tdsData : tdsDataList) {
-            dataStringBuilder.append(tdsData).append(",");
+            dataStringBuilder.append(tdsData).append(COMMA);
         }
 
-        editor.putString("tdsDataList", dataStringBuilder.toString());
+        editor.putString(TDS_LIST, dataStringBuilder.toString());
         editor.apply();
     }
 
     private void loadDataFromSharedPreferences() {
-        String dataString = sharedPreferences.getString("tdsDataList", "");
-        String[] dataValues = dataString.split(",");
+        String dataString = sharedPreferences.getString(TDS_LIST, EMPTY);
+        String[] dataValues = dataString.split(COMMA);
 
         tdsDataList.clear();
         for (String value : dataValues) {
@@ -153,7 +161,7 @@ public class SmartAquaQuality extends Fragment {
     }
 
     private void setupNetworkConnectivityListener() {
-        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(OFFLINE_REF);
         connectedRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -186,5 +194,19 @@ public class SmartAquaQuality extends Fragment {
     public void onPause() {
         super.onPause();
         handler.removeCallbacks(runnable);
+        saveDataToSharedPreferences();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // Load cached data from SharedPreferences when the app resumes
+        loadDataFromSharedPreferences();
+
+        // Fetch data from the Firebase Realtime Database
+        readDataFromDatabase();
+
+        // Start displaying random TDS data after onResume to ensure the latest data is shown
+        handler.post(runnable);
     }
 }
