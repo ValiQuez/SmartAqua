@@ -16,22 +16,6 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/SmartAquaFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:src="@drawable/info_icon"
-            android:backgroundTint="@color/light_green"
-            android:contentDescription="@string/description" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

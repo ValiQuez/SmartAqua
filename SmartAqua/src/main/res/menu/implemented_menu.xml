@@ -15,7 +15,6 @@
         android:title="@string/home"
         android:tooltipText="@string/home"
         app:showAsAction="withText|always" />
-
     <item
         android:id="@+id/SmartAquaSetM"
         android:icon="@drawable/settings"
@@ -24,6 +23,10 @@
     <item
         android:id="@+id/SmartAquaFeedbackM"
         android:title="@string/feedback"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/SmartAquaAboutUsM"
+        android:title="@string/about_us_t"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/SmartAquaContactUsM"

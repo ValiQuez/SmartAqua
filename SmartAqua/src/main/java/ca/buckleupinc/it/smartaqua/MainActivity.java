@@ -25,9 +25,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,14 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-        FloatingActionButton FAB_Btn = findViewById(R.id.SmartAquaFAB);
-        FAB_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaAboutUs()).commit();
-            }
-        });
 
         SharedPreferences sharedPref = getSharedPreferences("UserPrefSettings", Context.MODE_PRIVATE);
         boolean darkModeEnabled = sharedPref.getBoolean("DarkModeToggleState", false);
@@ -116,6 +106,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaSettings()).commit();
         } else if (itemId == R.id.SmartAquaFeedbackM) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaFeedback()).commit();
+        } else if (itemId == R.id.SmartAquaAboutUsM) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaAboutUs()).commit();
         } else if (itemId == R.id.SmartAquaContactUsM) {
             String phoneNum = "519-902-1759";
 

@@ -20,14 +20,25 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class SmartAquaQuality extends Fragment {
@@ -108,6 +119,18 @@ public class SmartAquaQuality extends Fragment {
         loadDataFromSharedPreferences();
         readDataFromDatabase();
 
+        FloatingActionButton quality_fab = view.findViewById(R.id.SmartAquaFAB);
+        quality_fab.setOnClickListener(viewFAB -> {
+            String reading_TDS_str = readings_TDS.getText().toString();
+            String status_TDS_str = status_TDS.getText().toString();
+
+            // Save the data to a text file
+            saveDataToFile(reading_TDS_str, status_TDS_str);
+
+            // Show a toast message to indicate the download
+            Toast.makeText(getActivity(), R.string.wq_download_message, Toast.LENGTH_SHORT).show();
+        });
+
         return view;
     }
 
@@ -187,6 +210,57 @@ public class SmartAquaQuality extends Fragment {
         } else {
             status_TDS.setText(R.string.s_bad);
             status_TDS.setTextColor(Color.RED);
+        }
+    }
+
+    private void saveDataToFile(String reading, String status) {
+        String folderName = "SmartAquaQualityReadings";
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
+
+        // Save JSON data
+        String jsonFileName = "SmartAquaReading_" + timeStamp + ".json";
+        File folder = new File(getActivity().getExternalFilesDir(null), folderName);
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+
+        File jsonFile = new File(folder, jsonFileName);
+
+        try {
+            FileOutputStream jsonFileOutputStream = new FileOutputStream(jsonFile);
+            OutputStreamWriter jsonOutputStreamWriter = new OutputStreamWriter(jsonFileOutputStream);
+
+            JSONObject dataObject = new JSONObject();
+            dataObject.put("Reading", reading);
+            dataObject.put("Status", status);
+            dataObject.put("DateTime", timeStamp); // Include date and time in JSON
+
+            jsonOutputStreamWriter.write(dataObject.toString());
+
+            jsonOutputStreamWriter.close();
+            jsonFileOutputStream.close();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(getActivity(), R.string.wq_json_error, Toast.LENGTH_SHORT).show();
+        }
+
+        // Save text data
+        String textFileName = "SmartAquaReading_" + timeStamp + ".txt";
+        File textFile = new File(folder, textFileName);
+
+        try {
+            FileOutputStream textFileOutputStream = new FileOutputStream(textFile);
+            OutputStreamWriter textOutputStreamWriter = new OutputStreamWriter(textFileOutputStream);
+
+            textOutputStreamWriter.write("Reading: " + reading + "\n");
+            textOutputStreamWriter.write("Status: " + status + "\n");
+            textOutputStreamWriter.write("DateTime: " + timeStamp + "\n"); // Include date and time in text
+
+            textOutputStreamWriter.close();
+            textFileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getActivity(), R.string.wq_txt_error, Toast.LENGTH_SHORT).show();
         }
     }
 
