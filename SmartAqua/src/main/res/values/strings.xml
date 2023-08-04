@@ -18,6 +18,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="home">Home</string>
+    <string name="description" translatable="false">SmartAquaDescription</string>
 
     <!-- SPLASH SCREEN STRINGS  -->
     <string name="splashDesc">Empowering users with smart automation and real-time monitoring for optimal aquarium and water system health.</string>
