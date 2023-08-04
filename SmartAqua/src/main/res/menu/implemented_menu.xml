@@ -12,15 +12,15 @@
     <item
         android:id="@+id/SmartAquaHomeBtn"
         android:icon="@drawable/home"
-        android:iconTint="@color/white"
         android:title="@string/home"
         android:tooltipText="@string/home"
         app:showAsAction="withText|always" />
 
     <item
         android:id="@+id/SmartAquaSetM"
+        android:icon="@drawable/settings"
         android:title="@string/settings"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="withText|ifRoom"/>
     <item
         android:id="@+id/SmartAquaFeedbackM"
         android:title="@string/feedback"
