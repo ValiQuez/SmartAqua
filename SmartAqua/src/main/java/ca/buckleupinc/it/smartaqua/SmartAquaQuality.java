@@ -27,18 +27,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 public class SmartAquaQuality extends Fragment {
@@ -121,13 +111,8 @@ public class SmartAquaQuality extends Fragment {
 
         FloatingActionButton quality_fab = view.findViewById(R.id.SmartAquaFAB);
         quality_fab.setOnClickListener(viewFAB -> {
-            String reading_TDS_str = readings_TDS.getText().toString();
-            String status_TDS_str = status_TDS.getText().toString();
-
-            // Save the data to a text file
-            saveDataToFile(reading_TDS_str, status_TDS_str);
-
-            // Show a toast message to indicate the download
+            SmartAquaDownloaderManager fileDownloader = new SmartAquaDownloaderManager(requireContext());
+            fileDownloader.saveDataToFile(readings_TDS.getText().toString(), status_TDS.getText().toString());
             Toast.makeText(getActivity(), R.string.wq_download_message, Toast.LENGTH_SHORT).show();
         });
 
@@ -212,7 +197,7 @@ public class SmartAquaQuality extends Fragment {
             status_TDS.setTextColor(Color.RED);
         }
     }
-
+/*
     private void saveDataToFile(String reading, String status) {
         String folderName = "SmartAquaQualityReadings";
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
@@ -262,7 +247,7 @@ public class SmartAquaQuality extends Fragment {
             e.printStackTrace();
             Toast.makeText(getActivity(), R.string.wq_txt_error, Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     @Override
     public void onPause() {
