@@ -116,4 +116,9 @@
     <string name="OFF">ÉTEINDRE</string>
     <string name="reviewSendingReview">Envoi de votre avis…</string>
 
+    <!-- ABOUT US STRINGS -->
+    <string name="about_us_descp">The Smart Aqua is a Capstone Project from the Computer Engineering Tech
+        Program at Humber College.\nDeveloped in the Software Project Class (CENG 322). Soon to be implemented with the
+        Hardware device which is under production.</string>
+
 </resources>

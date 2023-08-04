@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CENG-322-0NA: Group 6
+     Denis Shwaloff - N01424883
+     Alvaro Rodrigo Chavez Moya - N01455107
+     Paolo Adrian Quezon - N01424883
+     Nicholas Dibiase - N01367109           -->
+
+<!--ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SmartAquaHome">
+
+    <ImageView
+        android:id="@+id/SmartAquaAUTitle"
+        android:layout_width="@dimen/title_pic_width"
+        android:layout_height="@dimen/title_pic_height"
+        android:src="@drawable/about_us_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="@string/about_us_descp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SmartAquaAUTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--/ScrollView-->

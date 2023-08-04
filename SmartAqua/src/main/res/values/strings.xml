@@ -136,5 +136,10 @@
     <string name="reviewSendDenied">Sending review cancelled</string>
     <string name="reviewSendingReview">Sending your review…</string>
 
+    <!-- ABOUT US STRINGS -->
+    <string name="about_us_descp">The Smart Aqua is a Capstone Project from the Computer Engineering Tech
+        Program at Humber College.\n\nDeveloped in the Software Project Class (CENG 322).\n\nSoon to be implemented with the
+        hardware device which is under production.</string>
+
 
 </resources>
