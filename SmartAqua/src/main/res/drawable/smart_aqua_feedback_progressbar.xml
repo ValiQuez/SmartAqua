@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- smart_aqua_feedback_progressbar.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define the background of the ProgressBar -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/light_gray" />
+        </shape>
+    </item>
+
+    <!-- Define the progress of the ProgressBar -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="@color/turquoise" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

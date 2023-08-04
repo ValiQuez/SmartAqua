@@ -133,6 +133,7 @@
     <string name="reviewSendAlertBody">You are about to send the review to our development team. Do you confirm?</string>
     <string name="reviewSendAlert">Send</string>
     <string name="reviewSendDenied">Review was not sent</string>
+    <string name="reviewSendingReview">Sending your review…</string>
 
 
 </resources>

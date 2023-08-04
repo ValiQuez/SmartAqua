@@ -4,7 +4,7 @@
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.SmartAqua" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -13,11 +13,18 @@
         <item name="colorSecondary">@color/silver_lake_blue</item>
         <item name="colorOnSecondary">@color/oxford_blue</item>
         <item name="colorButtonNormal">@color/turquoise</item>
+
+        <item name="progressBarStyle">@style/ProgressBarStyle</item>
     </style>
 
     <style name="RatingBar">
         <item name="colorControlNormal">@color/light_gray</item>
         <item name="colorControlActivated">@color/golden_star</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="@android:style/Widget.ProgressBar.Horizontal">
+
+        <item name="android:progressDrawable">@drawable/smart_aqua_feedback_progressbar</item>
     </style>
 
     <style name="Theme.SmartAqua" parent="Base.Theme.SmartAqua" />

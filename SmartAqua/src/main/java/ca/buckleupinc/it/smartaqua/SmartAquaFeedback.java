@@ -30,6 +30,7 @@ public class SmartAquaFeedback extends Fragment {
     RatingBar RBrating;
     String model;
     DatabaseReference dbReference;
+    private SmartAquaFeedbackProgressbar progressBarHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +43,8 @@ public class SmartAquaFeedback extends Fragment {
         ETcomment = view.findViewById(R.id.SmartAquaETComment);
         ETnumber = view.findViewById(R.id.SmartAquaETPhone);
         RBrating = view.findViewById(R.id.SmartAquaRatingBar);
+        progressBarHandler = new SmartAquaFeedbackProgressbar(view);
+        progressBarHandler.setProgressbarInvisible();
 
         feedbackBtn.setOnClickListener(v -> {
 
@@ -59,6 +62,9 @@ public class SmartAquaFeedback extends Fragment {
                 builder.setMessage(getResources().getString(R.string.reviewSendAlertBody));
                 builder.setIcon(R.drawable.icon_error_48px);
                 builder.setPositiveButton(R.string.reviewSendAlert, (dialogInterface, i) -> {
+
+                    Toast.makeText(getActivity(), R.string.reviewSendingReview, Toast.LENGTH_SHORT).show();
+                    progressBarHandler.showProgressBarAndRunTask();
 
                     SmartAquaReviews reviews = new SmartAquaReviews(name, email, comment, model, number, rating);
                     dbReference = FirebaseDatabase.getInstance().getReference("SmartAquaReviews");
