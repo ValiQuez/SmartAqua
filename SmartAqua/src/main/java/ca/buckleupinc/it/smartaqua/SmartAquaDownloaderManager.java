@@ -21,7 +21,7 @@ public class SmartAquaDownloaderManager {
         this.context = context;
     }
 
-    public void saveDataToFile(String reading, String status) {
+    public void saveWQDataToFile(String reading, String status) {
         String folderName = "SmartAquaQualityReadings";
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
 

@@ -112,7 +112,7 @@ public class SmartAquaQuality extends Fragment {
         FloatingActionButton quality_fab = view.findViewById(R.id.SmartAquaFAB);
         quality_fab.setOnClickListener(viewFAB -> {
             SmartAquaDownloaderManager fileDownloader = new SmartAquaDownloaderManager(requireContext());
-            fileDownloader.saveDataToFile(readings_TDS.getText().toString(), status_TDS.getText().toString());
+            fileDownloader.saveWQDataToFile(readings_TDS.getText().toString(), status_TDS.getText().toString());
             Toast.makeText(getActivity(), R.string.wq_download_message, Toast.LENGTH_SHORT).show();
         });
 
