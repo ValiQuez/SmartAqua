@@ -33,7 +33,7 @@ public class SmartAquaTemperatureTest {
         activity = Robolectric.buildActivity(FragmentActivity.class).create().get();
     }
 
-    //Invalid Test Case 1
+    // Valid Test Case 1
     @Test
     public void testSeekBarProgressAndTemperatureRange() {
         activity.getSupportFragmentManager().beginTransaction()
@@ -57,4 +57,5 @@ public class SmartAquaTemperatureTest {
         // Verify if the displayed temperature text matches the expected value
         assertEquals(expectedTemperatureText, textView.getText().toString());
     }
+
 }
