@@ -1,7 +1,9 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.os.Build;
+import android.view.LayoutInflater;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -11,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.O_MR1)
@@ -24,15 +27,20 @@ public class SmartAquaTemperatureTest {
     }
 
     // Invalid Test Case 1
-    @Test(expected = NullPointerException.class)
-    public void testSeekBarProgressAndTemperatureRange_invalid_nullView() {
+    @Test
+    public void testSeekBarProgressAndTemperatureRange_invalid_negativeProgress() {
         SmartAquaTemperature fragment = new SmartAquaTemperature();
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         transaction.add(fragment, null).commit();
 
         SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
-        // Attempting to access the view of a fragment before its onCreateView() is called
-        // This should throw a NullPointerException
+
+        // Attempt to set a negative progress, which is invalid
+        seekBar.setProgress(-10);
+
+        // Negative progress should not update the temperature text
+        TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
+        assertEquals("18°C", textView.getText().toString());
     }
 
     // Invalid Test Case 2
