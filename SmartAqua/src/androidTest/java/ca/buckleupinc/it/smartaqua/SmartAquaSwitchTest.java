@@ -6,7 +6,9 @@
 package ca.buckleupinc.it.smartaqua;
 
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import androidx.test.espresso.Espresso;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
@@ -21,9 +23,18 @@ public class SmartAquaSwitchTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
 
+    @Test
+    public void testSwitchFragment(){
+        SmartAquaSwitch switchFragment = new SmartAquaSwitch();
+
+        activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.SmartAquaDrawerLayout, switchFragment)
+                .commit());
+    }
 
     @Test
-    public void clickButtonSwitch(){
+    public void clickAirSwitchPress(){
         //SmartAquaSwitch test = new SmartAquaSwitch();
         //View view = test.getView();
 
@@ -35,10 +46,14 @@ public class SmartAquaSwitchTest {
                 .commit());
 
         Espresso.onView(withId(R.id.SmartAquaSwitchAir)).perform(click());
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("ON")));
     }
 
     @Test
-    public void testSwitchFragment(){
+    public void clickBubbleSwitchPress(){
+        //SmartAquaSwitch test = new SmartAquaSwitch();
+        //View view = test.getView();
+
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -46,5 +61,55 @@ public class SmartAquaSwitchTest {
                 .replace(R.id.SmartAquaDrawerLayout, switchFragment)
                 .commit());
 
+        Espresso.onView(withId(R.id.SmartAquaSwitchBubble)).perform(click());
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusBubble)).check(matches(withText("ON")));
     }
+
+    @Test
+    public void clickSwitchInvalid(){
+        //SmartAquaSwitch test = new SmartAquaSwitch();
+        //View view = test.getView();
+
+        SmartAquaSwitch switchFragment = new SmartAquaSwitch();
+
+        activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.SmartAquaDrawerLayout, switchFragment)
+                .commit());
+
+        Espresso.onView(withId(R.id.SmartAquaSwitchAir)).perform(click());
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("OFF")));
+    }
+
+    @Test
+    public void checkSwitchAirTextView(){
+        //SmartAquaSwitch test = new SmartAquaSwitch();
+        //View view = test.getView();
+
+        SmartAquaSwitch switchFragment = new SmartAquaSwitch();
+
+        activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.SmartAquaDrawerLayout, switchFragment)
+                .commit());
+
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("OFF")));
+    }
+
+    @Test
+    public void checkSwitchBubbleTextView(){
+        //SmartAquaSwitch test = new SmartAquaSwitch();
+        //View view = test.getView();
+
+        SmartAquaSwitch switchFragment = new SmartAquaSwitch();
+
+        activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.SmartAquaDrawerLayout, switchFragment)
+                .commit());
+
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("ON")));
+    }
+
+
 }
