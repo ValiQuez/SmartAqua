@@ -31,7 +31,7 @@ public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
     private SeekBar seekBar;
     private TextView textView;
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences tempPref;
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -44,10 +44,10 @@ public class SmartAquaTemperature extends Fragment {
         seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        int savedProgress = sharedPreferences.getInt("TemperatureProgress", 0);
-        int savedTemperatureRange = sharedPreferences.getInt("TemperatureRange", 18); // Default value is 18
-        boolean toggleState = sharedPreferences.getBoolean("TempPref", false);
+        tempPref = PreferenceManager.getDefaultSharedPreferences(getContext()); // Changed variable assignment
+        int savedProgress = tempPref.getInt("TemperatureProgress", 0);
+        int savedTemperatureRange = tempPref.getInt("TemperatureRange", 18); // Default value is 18
+        boolean toggleState = tempPref.getBoolean("TempPref", false);
 
         seekBar.setProgress(savedProgress); // Set the saved progress
         setTemperatureText(savedTemperatureRange); // Set the saved temperature range
@@ -59,7 +59,7 @@ public class SmartAquaTemperature extends Fragment {
                 setTemperatureText(temperatureRange); // Update temperature text
 
                 // Save the progress and temperature range in shared preferences
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                SharedPreferences.Editor editor = tempPref.edit();
                 editor.putInt("TemperatureProgress", progress);
                 editor.putInt("TemperatureRange", temperatureRange);
                 editor.apply();
@@ -81,7 +81,7 @@ public class SmartAquaTemperature extends Fragment {
                 displayNotification(message);
 
                 // Save the toggle state in shared preferences
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                SharedPreferences.Editor editor = tempPref.edit();
                 editor.putBoolean("TempPref", isChecked);
                 editor.apply();
             }
