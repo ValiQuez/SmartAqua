@@ -143,6 +143,8 @@
     <string name="reviewSendAlert">Send</string>
     <string name="reviewSendDenied">Sending review cancelled</string>
     <string name="reviewSendingReview">Sending your review…</string>
+    <string name="reviewTitleImgDesc">Title image for the Feedback page. It says on the image "Feedback" in big letters.</string>
+    <string name="reviewFeedbackImgDesc">Image at the bottom of the Feedback page. Image contains depictions of two hands showing thumbs up and down on top of a speech bubble.</string>
 
     <!-- ABOUT US STRINGS -->
     <string name="about_us_t">About Us</string>

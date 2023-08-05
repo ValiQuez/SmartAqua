@@ -22,6 +22,7 @@
             android:layout_width="@dimen/title_pic_width"
             android:layout_height="@dimen/title_pic_height"
             android:src="@drawable/feedback_title"
+            android:contentDescription="@string/reviewTitleImgDesc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +47,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETName"
-            android:layout_width="600dp"
+            android:layout_width="400dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="name"
@@ -72,7 +73,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETEmail"
-            android:layout_width="600dp"
+            android:layout_width="400dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="emailAddress"
@@ -98,7 +99,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETPhone"
-            android:layout_width="600dp"
+            android:layout_width="400dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:autofillHints="phone"
@@ -123,7 +124,7 @@
 
         <EditText
             android:id="@+id/SmartAquaETComment"
-            android:layout_width="600dp"
+            android:layout_width="400dp"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/smart_aqua_et_border"
@@ -165,6 +166,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginBottom="20dp"
             android:src="@drawable/feedback_pic"
+            android:contentDescription="@string/reviewFeedbackImgDesc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
