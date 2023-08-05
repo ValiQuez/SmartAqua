@@ -1,3 +1,9 @@
+/*  CENG-322-0NA: Group 6
+    Denis Shwaloff - N01422583
+    Alvaro Rodrigo Chavez Moya - N01455107
+    Paolo Adrian Quezon - N01424883
+    Nicholas Dibiase - N01367109            */
+
 package ca.buckleupinc.it.smartaqua;
 
 import android.Manifest;
@@ -40,12 +46,12 @@ public class SmartAquaLocation {
         }
     }
 
-    private class LocationPermissionTask extends AsyncTask<Void, Void, Boolean> {
+    private class LocationPermissionTask extends AsyncTask < Void, Void, Boolean > {
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected Boolean doInBackground(Void...voids) {
             Context context = fragment.getContext();
-            return context != null && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED;
+            return context != null && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) ==
+                    PackageManager.PERMISSION_GRANTED;
         }
 
         @Override
@@ -57,7 +63,9 @@ public class SmartAquaLocation {
                 Context context = fragment.getContext();
                 if (context != null) {
                     ActivityCompat.requestPermissions(fragment.requireActivity(),
-                            new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                            new String[] {
+                                    Manifest.permission.ACCESS_COARSE_LOCATION
+                            },
                             LOCATION_PERMISSION_REQUEST_CODE);
                 }
             }
@@ -82,23 +90,20 @@ public class SmartAquaLocation {
             }
 
             @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-            }
+            public void onStatusChanged(String provider, int status, Bundle extras) {}
 
             @Override
-            public void onProviderEnabled(String provider) {
-            }
+            public void onProviderEnabled(String provider) {}
 
             @Override
-            public void onProviderDisabled(String provider) {
-            }
+            public void onProviderDisabled(String provider) {}
         };
 
         // Check if location services are enabled
         if (isLocationEnabled()) {
             // Request location updates
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) ==
+                    PackageManager.PERMISSION_GRANTED) {
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
             }
         } else {
