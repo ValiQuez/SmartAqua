@@ -6,8 +6,7 @@
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -26,6 +25,7 @@
                 android:layout_width="@dimen/title_pic_width"
                 android:layout_height="@dimen/title_pic_height"
                 android:src="@drawable/water_quality_title"
+                android:contentDescription="@string/description"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,6 +124,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="30dp"
                 android:src="@drawable/water_quality_picture_test"
+                android:contentDescription="@string/description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SmartAquaWQButton" />
@@ -136,8 +137,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:src="@drawable/download_icon"
         android:contentDescription="@string/description"
-        app:backgroundTint="@color/light_green"/>
+        android:src="@drawable/download_icon_blck"
+        app:backgroundTint="@color/light_green" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

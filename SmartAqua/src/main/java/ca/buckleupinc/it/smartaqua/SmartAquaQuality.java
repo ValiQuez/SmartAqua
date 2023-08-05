@@ -197,57 +197,6 @@ public class SmartAquaQuality extends Fragment {
             status_TDS.setTextColor(Color.RED);
         }
     }
-/*
-    private void saveDataToFile(String reading, String status) {
-        String folderName = "SmartAquaQualityReadings";
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
-
-        // Save JSON data
-        String jsonFileName = "SmartAquaReading_" + timeStamp + ".json";
-        File folder = new File(getActivity().getExternalFilesDir(null), folderName);
-        if (!folder.exists()) {
-            folder.mkdirs();
-        }
-
-        File jsonFile = new File(folder, jsonFileName);
-
-        try {
-            FileOutputStream jsonFileOutputStream = new FileOutputStream(jsonFile);
-            OutputStreamWriter jsonOutputStreamWriter = new OutputStreamWriter(jsonFileOutputStream);
-
-            JSONObject dataObject = new JSONObject();
-            dataObject.put("Reading", reading);
-            dataObject.put("Status", status);
-            dataObject.put("DateTime", timeStamp); // Include date and time in JSON
-
-            jsonOutputStreamWriter.write(dataObject.toString());
-
-            jsonOutputStreamWriter.close();
-            jsonFileOutputStream.close();
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(getActivity(), R.string.wq_json_error, Toast.LENGTH_SHORT).show();
-        }
-
-        // Save text data
-        String textFileName = "SmartAquaReading_" + timeStamp + ".txt";
-        File textFile = new File(folder, textFileName);
-
-        try {
-            FileOutputStream textFileOutputStream = new FileOutputStream(textFile);
-            OutputStreamWriter textOutputStreamWriter = new OutputStreamWriter(textFileOutputStream);
-
-            textOutputStreamWriter.write("Reading: " + reading + "\n");
-            textOutputStreamWriter.write("Status: " + status + "\n");
-            textOutputStreamWriter.write("DateTime: " + timeStamp + "\n"); // Include date and time in text
-
-            textOutputStreamWriter.close();
-            textFileOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(getActivity(), R.string.wq_txt_error, Toast.LENGTH_SHORT).show();
-        }
-    }*/
 
     @Override
     public void onPause() {

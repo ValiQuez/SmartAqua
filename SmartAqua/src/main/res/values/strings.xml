@@ -6,6 +6,11 @@
 
 <resources>
     <string name="app_name" translatable="false">Smart Aqua</string>
+    <string name="team_name" translatable="false">Smart Aqua Team</string>
+    <string name="smart_aqua_team_rc" translatable="false">Rodrigo Chavez</string>
+    <string name="smart_aqua_team_nd" translatable="false">Nicholas Dibiase</string>
+    <string name="smart_aqua_team_ds" translatable="false">Denis Shwaloff</string>
+    <string name="smart_aqua_team_pq" translatable="false">Paolo Quezon</string>
 
     <!-- GENERAL STRINGS  -->
     <string name="placeholder" translatable="false">placeholder</string>
