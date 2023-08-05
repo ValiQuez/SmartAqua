@@ -1,7 +1,6 @@
 package ca.buckleupinc.it.smartaqua;
 
 import android.os.Build;
-import android.view.LayoutInflater;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -55,5 +54,16 @@ public class SmartAquaTemperatureTest {
         // Attempting to set progress beyond the maximum value (100)
         seekBar.setProgress(120);
         // This should throw an IllegalArgumentException as it's an invalid progress value
+    }
+
+    // Invalid Test Case 3
+    @Test
+    public void testTextViewInitialization_invalid() {
+        SmartAquaTemperature fragment = new SmartAquaTemperature();
+        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+        transaction.add(fragment, null).commit();
+
+        TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
+        assertNotNull(textView); // This will fail because the textView is not initialized yet
     }
 }
