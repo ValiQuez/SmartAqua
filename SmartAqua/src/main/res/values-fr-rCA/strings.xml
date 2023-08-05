@@ -124,5 +124,7 @@
     <string name="about_us_descp">The Smart Aqua is a Capstone Project from the Computer Engineering Tech
         Program at Humber College.\nDeveloped in the Software Project Class (CENG 322). Soon to be implemented with the
         Hardware device which is under production.</string>
+    <string name="reviewTitleImgDesc">Image de titre pour la page de commentaires. Il est écrit sur l\'image \"Feedback\" en grosses lettres.</string>
+    <string name="reviewFeedbackImgDesc">Image en bas de la page de commentaires. L\'image contient des représentations de deux mains montrant les pouces vers le haut et vers le bas au-dessus d\'une bulle de dialogue.</string>
 
 </resources>
