@@ -27,6 +27,10 @@ public class SmartAquaLight extends Fragment {
     private static final String CHANNEL_ID = "LightNotificationChannel";
     private static final int NOTIFICATION_ID = 1;
 
+    private static final String LIGHT_PREF_KEY = "LightPref";
+    private static final int LIGHT_BULB_ON = R.drawable.aqua_smart_light_bulb_on;
+    private static final int LIGHT_BULB_OFF = R.drawable.aqua_smart_light_bulb_off;
+
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchlightButton;
     private TextView notificationTextView;
@@ -48,9 +52,9 @@ public class SmartAquaLight extends Fragment {
         notificationTextView.setText(R.string.poplightoff);
         lightBulbImage = view.findViewById(R.id.SmartAqualightbulb);
 
-        SharedPreferences lightPref = getActivity().getSharedPreferences("LightPref", Context.MODE_PRIVATE);
+        SharedPreferences lightPref = getActivity().getSharedPreferences(LIGHT_PREF_KEY, Context.MODE_PRIVATE);
         switchlightButton.setOnCheckedChangeListener(null);
-        boolean previousState = lightPref.getBoolean("LightPref", false);
+        boolean previousState = lightPref.getBoolean(LIGHT_PREF_KEY, false);
         switchlightButton.setChecked(previousState);
         updateUI(previousState);
 
@@ -58,7 +62,7 @@ public class SmartAquaLight extends Fragment {
             notificationTextView.setText(isChecked ? R.string.poplighton : R.string.poplightoff);
             updateUI(isChecked); // Update UI based on the new state
             sendNotification(isChecked ? getString(R.string.notificationlighton) : getString(R.string.notificationlightoff));
-            lightPref.edit().putBoolean("LightPref", isChecked).apply();
+            lightPref.edit().putBoolean(LIGHT_PREF_KEY, isChecked).apply();
         });
 
         notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
@@ -67,7 +71,7 @@ public class SmartAquaLight extends Fragment {
     }
 
     private void updateUI(boolean isChecked) {
-        lightBulbImage.setImageResource(isChecked ? R.drawable.aqua_smart_light_bulb_on : R.drawable.aqua_smart_light_bulb_off);
+        lightBulbImage.setImageResource(isChecked ? LIGHT_BULB_ON : LIGHT_BULB_OFF);
     }
 
     private void sendNotification(String message) {
