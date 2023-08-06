@@ -9,8 +9,10 @@ package ca.buckleupinc.it.smartaqua;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +22,19 @@ import android.widget.ToggleButton;
 
 public class SmartAquaSettings extends Fragment {
 
-    public SmartAquaSettings(){}
+    private final static String UserPrefSettingsName = "UserPrefSettings";
+    private final static String LockToggleStateKey = "LockToggleState";
+    private final static String DarkModeToggleStateKey = "DarkModeToggleState";
+    private final static String MuteToggleStateKey = "MuteToggleState";
+
+    public SmartAquaSettings() {}
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_settings, container, false);
 
-        SharedPreferences settingsPreferences = getActivity().getSharedPreferences("UserPrefSettings", Context.MODE_PRIVATE);
+        SharedPreferences settingsPreferences = getActivity().getSharedPreferences(UserPrefSettingsName, Context.MODE_PRIVATE);
 
         //=====LOCK LANDSCAPE MODE=====
         ToggleButton toggleLockBtn = view.findViewById(R.id.SmartAquaPortraitLockToggleBtn);
@@ -60,9 +67,9 @@ public class SmartAquaSettings extends Fragment {
             Toast.makeText(getActivity(), R.string.reset_snackbar, Toast.LENGTH_SHORT).show();
         });
 
-        toggleLockBtn.setChecked(settingsPreferences.getBoolean("LockToggleState", false));
-        darkTB.setChecked(settingsPreferences.getBoolean("DarkModeToggleState", false));
-        muteToggleBtn.setChecked(settingsPreferences.getBoolean("MuteToggleState", false));
+        toggleLockBtn.setChecked(settingsPreferences.getBoolean(LockToggleStateKey, false));
+        darkTB.setChecked(settingsPreferences.getBoolean(DarkModeToggleStateKey, false));
+        muteToggleBtn.setChecked(settingsPreferences.getBoolean(MuteToggleStateKey, false));
 
         return view;
     }

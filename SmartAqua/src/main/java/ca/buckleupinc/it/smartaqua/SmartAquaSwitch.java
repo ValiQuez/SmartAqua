@@ -28,11 +28,16 @@ public class SmartAquaSwitch extends Fragment {
     private TextView statusBubble;
     private SharedPreferences switchPref;
 
-    public SmartAquaSwitch(){}
+    private static final String SwitchPref = "SwitchPref";
+    private static final String SwitchAirStateKey = "SwitchAirState";
+    private static final String SwitchBubbleStateKey = "SwitchBubbleState";
+    private static final String EmptyString = "";
+
+    public SmartAquaSwitch() {
+    }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view;
         view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
@@ -42,16 +47,16 @@ public class SmartAquaSwitch extends Fragment {
         statusAir = view.findViewById(R.id.SmartAquaSwitchStatusAir);
         statusBubble = view.findViewById(R.id.SmartAquaSwitchStatusBubble);
 
-        switchPref = getActivity().getSharedPreferences("SwitchPref", Context.MODE_PRIVATE);
+        switchPref = getActivity().getSharedPreferences(SwitchPref, Context.MODE_PRIVATE);
 
-        boolean switchAirState = switchPref.getBoolean("SwitchAirState", false);
-        boolean switchBubbleState = switchPref.getBoolean("SwitchBubbleState", false);
+        boolean switchAirState = switchPref.getBoolean(SwitchAirStateKey, false);
+        boolean switchBubbleState = switchPref.getBoolean(SwitchBubbleStateKey, false);
         switchAir.setChecked(switchAirState);
         switchBubble.setChecked(switchBubbleState);
 
         // Restore TextView states
-        boolean statusAirState = switchPref.getBoolean("StatusAirState", false);
-        boolean statusBubbleState = switchPref.getBoolean("StatusBubbleState", false);
+        boolean statusAirState = switchPref.getBoolean(SwitchAirStateKey, false);
+        boolean statusBubbleState = switchPref.getBoolean(SwitchBubbleStateKey, false);
         setStatusText(statusAir, statusAirState);
         setStatusText(statusBubble, statusBubbleState);
 
@@ -65,7 +70,7 @@ public class SmartAquaSwitch extends Fragment {
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
-            switchPref.edit().putBoolean("SwitchAirState", isChecked).apply();
+            switchPref.edit().putBoolean(SwitchAirStateKey, isChecked).apply();
         });
 
         switchBubble.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -78,7 +83,7 @@ public class SmartAquaSwitch extends Fragment {
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
-            switchPref.edit().putBoolean("SwitchBubbleState", isChecked).apply();
+            switchPref.edit().putBoolean(SwitchBubbleStateKey, isChecked).apply();
         });
 
         return view;
@@ -97,10 +102,10 @@ public class SmartAquaSwitch extends Fragment {
 
     private String getStatusKey(TextView textView) {
         if (textView == statusAir) {
-            return "StatusAirState";
+            return SwitchAirStateKey;
         } else if (textView == statusBubble) {
-            return "StatusBubbleState";
+            return SwitchBubbleStateKey;
         }
-        return "";
+        return EmptyString;
     }
 }
