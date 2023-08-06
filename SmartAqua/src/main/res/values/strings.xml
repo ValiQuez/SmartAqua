@@ -5,24 +5,31 @@
      Nicholas Dibiase - N01367109           -->
 
 <resources>
+
+    <!-- TEAM STRINGS  -->
     <string name="app_name" translatable="false">Smart Aqua</string>
     <string name="team_name" translatable="false">Smart Aqua Team</string>
+
     <string name="smart_aqua_team_rc" translatable="false">Rodrigo Chavez</string>
     <string name="smart_aqua_team_nd" translatable="false">Nicholas Dibiase</string>
     <string name="smart_aqua_team_ds" translatable="false">Denis Shwaloff</string>
     <string name="smart_aqua_team_pq" translatable="false">Paolo Quezon</string>
 
     <!-- GENERAL STRINGS  -->
-    <string name="placeholder" translatable="false">placeholder</string>
     <string name="on">On</string>
     <string name="off">Off</string>
     <string name="ON">ON</string>
     <string name="OFF">OFF</string>
+
     <string name="open">Open</string>
     <string name="close">Close</string>
+
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
     <string name="home">Home</string>
+
+    <string name="placeholder" translatable="false">placeholder</string>
     <string name="description" translatable="false">SmartAquaDescription</string>
 
     <!-- SPLASH SCREEN STRINGS  -->
@@ -35,6 +42,7 @@
     <string name="water_monitor">Water Quality</string>
     <string name="light_monitor">Light Control</string>
     <string name="temperature_monitor">Temperature Control</string>
+
     <string name="switch_control">Switch Control</string>
 
     <!-- OPTIONS MENU STRINGS  -->
@@ -44,44 +52,57 @@
 
     <!-- MAIN PAGE STRINGS  -->
     <string name="homeFragmentGreeting">Welcome to Smart Aqua</string>
+
     <string name="app_description">Our goal is to effectively track and control water systems to ensure water quality, while minimizing damage and costs.</string>
     <string name="feature_description">Our application has 4 different features to maintain a healthy water system.</string>
-    <string name="members">Smart Aqua Team Members</string>
+
     <string name="water_monitor_desc">Measure the PPM Level of your water system</string>
     <string name="light_monitor_desc">Turn ON and OFF the light</string>
     <string name="temperature_monitor_desc">Measure the temperature of your water system</string>
     <string name="switch_monitor_desc">Turn ON and OFF the Air Pump or the Bubble Bath</string>
 
+    <string name="members">Smart Aqua Team Members</string>
+
     <!-- SETTINGS PAGE STRINGS  -->
     <string name="settingsTitleImgDesc">Title image for the application settings screen</string>
+
     <string name="settingsLockPortrait">Lock Application in Portrait Mode</string>
     <string name="settingsTogglePortraitBtn" translatable="false">PortraitToggleButton</string>
+
     <string name="settingsResetValues">Reset ALL Settings</string>
+    <string name="reset_snackbar">Settings have been reset to default</string>
+
     <string name="settingsResetBtn">RESET</string>
     <string name="settingsDarkMode">Dark Mode</string>
     <string name="settingsMute">Mute</string>
+    <string name="settingscurrentLocation">Your Latitude: %1$.2f\nYour Longitude: %2$.2f</string>
+
     <string name="settingsUsrPermBtnTxt">Provide Current Location</string>
-    <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionBody">Provide permission to access device\'s general location?</string>
+    <string name="settingsPermissionTitle">Access Request</string>
     <string name="settingsPermissionGrant">Give Access</string>
     <string name="settingsPermissionDeny">Deny</string>
+
     <string name="settingsAccessDenied">Access Denied</string>
     <string name="settingsAccessGranted">Access Granted</string>
-    <string name="settingscurrentLocation">Your Latitude: %1$.2f\nYour Longitude: %2$.2f</string>
+
     <string name="darkModeON">Dark Mode is ON</string>
-    <string name="reset_snackbar">Settings have been reset to default</string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Temp text for readings</string>
     <string name="measure">PPM -> Parts Per Million</string>
+
     <string name="explanation">PPM is used to measure the cleanliness of the water system</string>
     <string name="record_button">Record</string>
     <string name="info_ppm">Ideal PPM Levels: 400 PPM - 450 PPM. Approximate level to the PPM range levels is good as well.</string>
+
     <string name="stat_title">Status:</string>
     <string name="s_good">Good!</string>
     <string name="s_bad">Danger!</string>
+
     <string name="save_data">Reading saved in database!</string>
     <string name="failedDB">Failed to read TDS Data</string>
+
     <string name="wq_download_message">Quality Reading Saved!</string>
     <string name="wq_txt_error">Error downloading text data to file</string>
     <string name="wq_json_error">Error downloading JSON data to file</string>
@@ -89,58 +110,70 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">ON</string>
     <string name="tempToggleOFF">OFF</string>
-    <string name="tempReadings">Temperature readings </string>
-    <string name="tempControlDescription">Accurate temperature control for water, with on/off capability</string>
-    <string name="tempReadings2">Temp: </string>
-    <string name="tempContentTitle">Temperature Status </string>
-    <string name="tempCharSequence">Temperature Channel </string>
-    <string name="tempDescription">Channel for Temperature Notifications </string>
     <string name="tempNoti_ON">Temperature turned ON </string>
     <string name="tempNoti_OFF">Temperature turned OFF </string>
-    <string name="tempCelcius">°C </string>
+
+    <string name="tempReadings">Temperature readings </string>
+    <string name="tempReadings2">Temp: </string>
+
+    <string name="tempControlDescription">Accurate temperature control for water, with on/off capability</string>
+    <string name="tempContentTitle">Temperature Status </string>
+
+    <string name="tempCharSequence">Temperature Channel </string>
+    <string name="tempDescription">Channel for Temperature Notifications </string>
     <string name="tempChannelID">Temperature Notification Channel </string>
 
+    <string name="tempCelcius">°C </string>
+
     <!-- SWITCH SCREEN STRINGS  -->
-    <string name="switchName">Air Pump</string>
-    <string name="switchName2">Bubble Bath</string>
     <string name="switchWelcome">Switch Controls</string>
     <string name="switchBubblesImgDesc">Image of flowing air bubbles</string>
     <string name="switchTitleImgDesc">Title image for the switch control screen</string>
+
+    <string name="switchName">Air Pump</string>
+    <string name="switchName2">Bubble Bath</string>
+
     <string name="snackbarAirOn">Air pump is ON</string>
     <string name="snackbarAirOff">Air pump is OFF</string>
     <string name="snackbarBubbleOn">Bubble Bath is ON</string>
     <string name="snackbarBubbleOff">Bubble Bath is OFF</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
+    <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
+
     <string name="lightbutton1">LIGHT ON/OFF</string>
     <string name="poplighton">Light ON</string>
-    <string name="lightnotification">Light Notification</string>
-    <string name="lightstatus">Light Status</string>
+    <string name="poplightoff">Light OFF</string>
     <string name="notificationlightoff">Light is OFF</string>
     <string name="notificationlighton">Light is ON</string>
-    <string name="poplightoff">Light OFF</string>
 
-    <string name="feedback">Feedback</string>
-    <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
+    <string name="lightnotification">Light Notification</string>
+    <string name="lightstatus">Light Status</string>
 
     <!-- FEEDBACK STRINGS -->
     <string name="feedback_text">Tell us what you think!</string>
     <string name="feedback_hint">Type here…</string>
     <string name="submit">Submit Review</string>
+
     <string name="insert_name">Name:</string>
     <string name="insert_email">Email:</string>
     <string name="insert_phone">Phone:</string>
     <string name="insert_comments">Comment:</string>
+
     <string name="hint_name">Your Name</string>
     <string name="hint_email">Your E-mail</string>
     <string name="hint_phone">Your Phone</string>
     <string name="hint_comment">Your Comment</string>
     <string name="hint_rate">Rate our app!</string>
+
     <string name="reviewSent">Your review has been sent to the team. Thank you!</string>
     <string name="reviewEmpty">Please fill all fields to send your review</string>
     <string name="reviewSendAlertTitle">Confirm sending your review</string>
     <string name="reviewSendAlertBody">You are about to send your review to our team. Confirm this action?</string>
     <string name="reviewSendAlert">Send</string>
+
+    <string name="feedback">Feedback</string>
+
     <string name="reviewSendDenied">Sending review cancelled</string>
     <string name="reviewSendingReview">Sending your review…</string>
     <string name="reviewTitleImgDesc">Title image for the Feedback page. It says on the image "Feedback" in big letters.</string>
@@ -151,6 +184,5 @@
     <string name="about_us_descp">The Smart Aqua is a Capstone Project from the Computer Engineering Tech
         Program at Humber College.\n\nDeveloped in the Software Project Class (CENG 322).\n\nSoon to be implemented with the
         hardware device which is under production.</string>
-
 
 </resources>

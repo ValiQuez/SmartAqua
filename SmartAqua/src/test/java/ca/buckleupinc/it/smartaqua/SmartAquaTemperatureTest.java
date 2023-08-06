@@ -1,3 +1,9 @@
+/*  CENG-322-0NA: Group 6
+    Denis Shwaloff - N01422583
+    Alvaro Rodrigo Chavez Moya - N01455107
+    Paolo Adrian Quezon - N01424883
+    Nicholas Dibiase - N01367109            */
+
 package ca.buckleupinc.it.smartaqua;
 
 import android.os.Build;
@@ -17,6 +23,7 @@ import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.O_MR1)
+
 public class SmartAquaTemperatureTest {
 
     private FragmentActivity activity;
@@ -53,8 +60,8 @@ public class SmartAquaTemperatureTest {
 
         SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
 
-        // Attempting to set progress beyond the maximum value (100)
-        seekBar.setProgress(120);
+        // Attempting to set progress beyond the max range 27
+        seekBar.setProgress(30);
         // This should throw an IllegalArgumentException as it's an invalid progress value
     }
 
@@ -69,14 +76,29 @@ public class SmartAquaTemperatureTest {
         assertNotNull(textView); // This will fail because the textView is not initialized yet
     }
 
+    // Invalid Test Case 4
+    @Test
+    public void testInvalidTemperatureDisplay() {
+        SmartAquaTemperature fragment = new SmartAquaTemperature();
+        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+        transaction.add(fragment, null).commit();
+
+        SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
+
+        // Setting the progress to a value that should map to a temperature below the lowest range 18
+        seekBar.setProgress(9);
+
+        // The expected temperature text is "Invalid", but we expect it not to match
+        TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
+        assertNotEquals("Invalid", textView.getText().toString());
+    }
+
     // Valid Test Case 1
     @Test
     public void testFragmentNotNull() {
         SmartAquaTemperature fragment = new SmartAquaTemperature();
         assertNotNull("Fragment should not be null", fragment);
     }
-
-
 
     }
 

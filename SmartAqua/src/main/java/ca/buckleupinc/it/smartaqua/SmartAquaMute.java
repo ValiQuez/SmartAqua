@@ -26,7 +26,7 @@ public class SmartAquaMute implements CompoundButton.OnCheckedChangeListener {
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        // Check if the state has actually changed
+        // Check if the state has changed
         if (isChecked != settingsPreferences.getBoolean("MuteToggleState", false)) {
             AudioManager aManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
             if (isChecked) {

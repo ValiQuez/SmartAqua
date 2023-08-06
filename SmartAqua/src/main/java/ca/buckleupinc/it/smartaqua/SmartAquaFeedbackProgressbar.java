@@ -28,8 +28,8 @@ public class SmartAquaFeedbackProgressbar {
     }
 
     private void simulateTaskCompletion() {
-        final int totalIterations = 4; // Adjust the number of iterations as needed
-        final int progressDelayMillis = 1000; // 1000 milliseconds
+        final int totalIterations = 4;
+        final int progressDelayMillis = 1000;
 
         Handler handler = new Handler();
         for (int i = 1; i <= totalIterations; i++) {
@@ -38,8 +38,7 @@ public class SmartAquaFeedbackProgressbar {
             handler.postDelayed(() -> {
                 progressBar.setProgress(progress);
                 if (progress == 100) {
-                    progressBar.setVisibility(View.INVISIBLE);
-                    // Proceed with the rest of the program logic here
+                    setProgressbarInvisible();
                 }
             }, i * progressDelayMillis);
         }
