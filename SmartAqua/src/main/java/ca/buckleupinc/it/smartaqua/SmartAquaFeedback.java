@@ -31,6 +31,10 @@ public class SmartAquaFeedback extends Fragment {
     String model;
     DatabaseReference dbReference;
     private SmartAquaFeedbackProgressbar progressBarHandler;
+    private static final String SmartAquaReviewsPath = "SmartAquaReviews";
+    private static final String EmptyString = "";
+    private static final String DotTarget = ".";
+    private static final String CommaTargetReplacement = ",";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +59,7 @@ public class SmartAquaFeedback extends Fragment {
             float rating = RBrating.getRating();
             model = Build.MODEL;
 
-            if(!name.equals("") && !email.equals("") && !comment.equals("") && !number.equals("") && rating!=0) {
+            if (!name.equals(EmptyString) && !email.equals(EmptyString) && !comment.equals(EmptyString) && !number.equals(EmptyString) && rating != 0) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(getResources().getString(R.string.reviewSendAlertTitle));
@@ -67,16 +71,16 @@ public class SmartAquaFeedback extends Fragment {
                     progressBarHandler.showProgressBarAndRunTask();
 
                     SmartAquaReviews reviews = new SmartAquaReviews(name, email, comment, model, number, rating);
-                    dbReference = FirebaseDatabase.getInstance().getReference("SmartAquaReviews");
-                    DatabaseReference childReference = dbReference.child(email.replace(".", ","));
+                    dbReference = FirebaseDatabase.getInstance().getReference(SmartAquaReviewsPath);
+                    DatabaseReference childReference = dbReference.child(email.replace(DotTarget, CommaTargetReplacement));
                     childReference.setValue(reviews);
 
                     Toast.makeText(getActivity(), R.string.reviewSent, Toast.LENGTH_SHORT).show();
 
-                    ETname.setText("");
-                    ETemail.setText("");
-                    ETcomment.setText("");
-                    ETnumber.setText("");
+                    ETname.setText(EmptyString);
+                    ETemail.setText(EmptyString);
+                    ETcomment.setText(EmptyString);
+                    ETnumber.setText(EmptyString);
                     RBrating.setRating(0);
                 });
 

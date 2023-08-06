@@ -16,6 +16,7 @@ public class SmartAquaLandscapeMode {
     private final Activity activity;
     private final ToggleButton toggleLockBtn;
     private final SharedPreferences settingsPreferences;
+    private final static String LockToggleStateKey = "LockToggleState";
 
     public SmartAquaLandscapeMode(Activity activity, ToggleButton toggleLockBtn, SharedPreferences settingsPreferences) {
         this.activity = activity;
@@ -23,7 +24,7 @@ public class SmartAquaLandscapeMode {
         this.settingsPreferences = settingsPreferences;
 
         // Set the initial state of the toggle button
-        toggleLockBtn.setChecked(settingsPreferences.getBoolean("LockToggleState", false));
+        toggleLockBtn.setChecked(settingsPreferences.getBoolean(LockToggleStateKey, false));
 
         // Set the listener for the toggle button
         toggleLockBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -34,7 +35,7 @@ public class SmartAquaLandscapeMode {
                 // The toggle is disabled
                 unlockOrientation();
             }
-            settingsPreferences.edit().putBoolean("LockToggleState", isChecked).apply();
+            settingsPreferences.edit().putBoolean(LockToggleStateKey, isChecked).apply();
         });
     }
 

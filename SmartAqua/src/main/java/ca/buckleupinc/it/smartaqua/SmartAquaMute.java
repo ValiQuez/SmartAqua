@@ -17,6 +17,7 @@ public class SmartAquaMute implements CompoundButton.OnCheckedChangeListener {
     private final ToggleButton muteToggleBtn;
     private final SharedPreferences settingsPreferences;
     private final Context context;
+    private final static String MuteToggleStateKey = "MuteToggleState";
 
     public SmartAquaMute(ToggleButton muteToggleBtn, SharedPreferences settingsPreferences, Context context) {
         this.muteToggleBtn = muteToggleBtn;
@@ -27,7 +28,7 @@ public class SmartAquaMute implements CompoundButton.OnCheckedChangeListener {
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         // Check if the state has changed
-        if (isChecked != settingsPreferences.getBoolean("MuteToggleState", false)) {
+        if (isChecked != settingsPreferences.getBoolean(MuteToggleStateKey, false)) {
             AudioManager aManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
             if (isChecked) {
                 // mutes device's volume
@@ -36,7 +37,7 @@ public class SmartAquaMute implements CompoundButton.OnCheckedChangeListener {
                 // unmutes device's volume
                 aManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
             }
-            settingsPreferences.edit().putBoolean("MuteToggleState", isChecked).apply();
+            settingsPreferences.edit().putBoolean(MuteToggleStateKey, isChecked).apply();
         }
     }
 }
