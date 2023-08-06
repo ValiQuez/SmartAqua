@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,7 @@ public class SmartAquaTemperatureTest {
 
     @Before
     public void setUp() {
+        activity = Robolectric.buildActivity(FragmentActivity.class).create().get();
         activity = Robolectric.buildActivity(FragmentActivity.class).create().start().resume().get();
     }
 
@@ -66,4 +68,16 @@ public class SmartAquaTemperatureTest {
         TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
         assertNotNull(textView); // This will fail because the textView is not initialized yet
     }
-}
+
+    // Valid Test Case 1
+    @Test
+    public void testFragmentNotNull() {
+        SmartAquaTemperature fragment = new SmartAquaTemperature();
+        assertNotNull("Fragment should not be null", fragment);
+    }
+
+
+
+    }
+
+
