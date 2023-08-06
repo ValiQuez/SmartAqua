@@ -6,6 +6,7 @@
 
 package ca.buckleupinc.it.smartaqua;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -20,15 +21,20 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.annotation.SuppressLint;
+
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
+    private static final String TEMPERATURE_PROGRESS_KEY = "TemperatureProgress";
+    private static final String TEMPERATURE_RANGE_KEY = "TemperatureRange";
+    private static final String TEMP_PREF_KEY = "TempPref";
+
     private SeekBar seekBar;
     private TextView textView;
     private SharedPreferences tempPref;
@@ -45,9 +51,9 @@ public class SmartAquaTemperature extends Fragment {
         textView = view.findViewById(R.id.SmartAquaTempReading3);
 
         tempPref = PreferenceManager.getDefaultSharedPreferences(getContext()); // Changed variable assignment
-        int savedProgress = tempPref.getInt("TemperatureProgress", 0);
-        int savedTemperatureRange = tempPref.getInt("TemperatureRange", 18); // Default value is 18
-        boolean toggleState = tempPref.getBoolean("TempPref", false);
+        int savedProgress = tempPref.getInt(TEMPERATURE_PROGRESS_KEY, 0);
+        int savedTemperatureRange = tempPref.getInt(TEMPERATURE_RANGE_KEY, 18); // Default value is 18
+        boolean toggleState = tempPref.getBoolean(TEMP_PREF_KEY, false);
 
         seekBar.setProgress(savedProgress); // Set the saved progress
         setTemperatureText(savedTemperatureRange); // Set the saved temperature range
@@ -55,21 +61,23 @@ public class SmartAquaTemperature extends Fragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                int temperatureRange = (int)(progress * 0.09) + 18; // Map progress from 18-27
+                int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
                 setTemperatureText(temperatureRange); // Update temperature text
 
                 // Save the progress and temperature range in shared preferences
                 SharedPreferences.Editor editor = tempPref.edit();
-                editor.putInt("TemperatureProgress", progress);
-                editor.putInt("TemperatureRange", temperatureRange);
+                editor.putInt(TEMPERATURE_PROGRESS_KEY, progress);
+                editor.putInt(TEMPERATURE_RANGE_KEY, temperatureRange);
                 editor.apply();
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
         });
 
         ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
@@ -82,7 +90,7 @@ public class SmartAquaTemperature extends Fragment {
 
                 // Save the toggle state in shared preferences
                 SharedPreferences.Editor editor = tempPref.edit();
-                editor.putBoolean("TempPref", isChecked);
+                editor.putBoolean(TEMP_PREF_KEY, isChecked);
                 editor.apply();
             }
         });

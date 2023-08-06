@@ -17,23 +17,32 @@ public class SmartAquaQualityDataTest {
     public void validTest_getStatus_TDS() {
         String reading = "407";
         String status = "Good!";
-        SmartAquaQualityData test1 = new SmartAquaQualityData(reading,status);
-        assertEquals("Good!",test1.getStatus_TDS());
+        SmartAquaQualityData test2 = new SmartAquaQualityData(reading,status);
+        assertEquals("Good!",test2.getStatus_TDS());
     }
 
     @Test
     public void invalidTest_GetReading_TDS() {
         String reading = "234";
         String status = "Danger!";
-        SmartAquaQualityData test1 = new SmartAquaQualityData(reading,status);
-        assertNotEquals("450",test1.getReading_TDS());
+        SmartAquaQualityData test3 = new SmartAquaQualityData(reading,status);
+        assertEquals("450",test3.getReading_TDS());
     }
     @Test
     public void invalidTest_getStatus_TDS() {
         String reading = "407";
         String status = "Good!";
-        SmartAquaQualityData test1 = new SmartAquaQualityData(reading,status);
-        assertNotEquals("Danger!",test1.getStatus_TDS());
+        SmartAquaQualityData test4 = new SmartAquaQualityData(reading,status);
+        assertEquals("Danger!",test4.getReading_TDS());
+    }
+
+    @Test
+    public void overwriteReading(){
+        String reading = "407";
+        String status = "Good!";
+        SmartAquaQualityData test5 = new SmartAquaQualityData(reading,status);
+        test5.setReading_TDS("598");
+        assertEquals("598",test5.getReading_TDS());
     }
 
 }

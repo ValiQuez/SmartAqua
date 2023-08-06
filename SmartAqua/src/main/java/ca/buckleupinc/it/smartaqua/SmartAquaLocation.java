@@ -28,6 +28,10 @@ public class SmartAquaLocation {
     private LocationListener locationListener;
     private Fragment fragment;
 
+    private static final String PERMISSION_ACCESS_COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
+    private static final String LOCATION_PROVIDER_NETWORK = LocationManager.NETWORK_PROVIDER;
+    private static final String LOCATION_PROVIDER_GPS = LocationManager.GPS_PROVIDER;
+
     public SmartAquaLocation(Fragment fragment) {
         this.fragment = fragment;
     }
@@ -46,11 +50,11 @@ public class SmartAquaLocation {
         }
     }
 
-    private class LocationPermissionTask extends AsyncTask < Void, Void, Boolean > {
+    private class LocationPermissionTask extends AsyncTask<Void, Void, Boolean> {
         @Override
-        protected Boolean doInBackground(Void...voids) {
+        protected Boolean doInBackground(Void... voids) {
             Context context = fragment.getContext();
-            return context != null && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) ==
+            return context != null && ActivityCompat.checkSelfPermission(context, PERMISSION_ACCESS_COARSE_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED;
         }
 
@@ -63,9 +67,7 @@ public class SmartAquaLocation {
                 Context context = fragment.getContext();
                 if (context != null) {
                     ActivityCompat.requestPermissions(fragment.requireActivity(),
-                            new String[] {
-                                    Manifest.permission.ACCESS_COARSE_LOCATION
-                            },
+                            new String[]{PERMISSION_ACCESS_COARSE_LOCATION},
                             LOCATION_PERMISSION_REQUEST_CODE);
                 }
             }
@@ -90,21 +92,24 @@ public class SmartAquaLocation {
             }
 
             @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {}
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
 
             @Override
-            public void onProviderEnabled(String provider) {}
+            public void onProviderEnabled(String provider) {
+            }
 
             @Override
-            public void onProviderDisabled(String provider) {}
+            public void onProviderDisabled(String provider) {
+            }
         };
 
         // Check if location services are enabled
         if (isLocationEnabled()) {
             // Request location updates
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) ==
+            if (ActivityCompat.checkSelfPermission(context, PERMISSION_ACCESS_COARSE_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED) {
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+                locationManager.requestLocationUpdates(LOCATION_PROVIDER_NETWORK, 0, 0, locationListener);
             }
         } else {
             // Location services are disabled, open settings to enable them
@@ -119,9 +124,8 @@ public class SmartAquaLocation {
             return false;
         }
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        boolean isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        boolean isGpsEnabled = locationManager.isProviderEnabled(LOCATION_PROVIDER_GPS);
+        boolean isNetworkEnabled = locationManager.isProviderEnabled(LOCATION_PROVIDER_NETWORK);
         return isGpsEnabled || isNetworkEnabled;
     }
-
 }
