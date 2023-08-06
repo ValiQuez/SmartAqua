@@ -30,6 +30,11 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
+    private static final String USER_PREF = "UserPrefSettings";
+    private static final String DARK_MODE_STATE = "DarkModeToggleState";
+    private static final String PHONE_NUM = "5199021759";
+    private static final String PHONE_ACTION = "tel:";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,20 +47,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.SmartAquaNavigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        SharedPreferences sharedPref = getSharedPreferences("UserPrefSettings", Context.MODE_PRIVATE);
-        boolean darkModeEnabled = sharedPref.getBoolean("DarkModeToggleState", false);
-        if(darkModeEnabled){
+        SharedPreferences sharedPref = getSharedPreferences(USER_PREF, Context.MODE_PRIVATE);
+        boolean darkModeEnabled = sharedPref.getBoolean(DARK_MODE_STATE, false);
+        if (darkModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        else {
+        } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaHome()).commit();
         }
     }
@@ -85,10 +89,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.implemented_menu, menu);
-        for(int i = 0; i < menu.size(); i++){
+        for (int i = 0; i < menu.size(); i++) {
             MenuItem menuItem = menu.getItem(i);
             SpannableString spannable = new SpannableString(
-                    menu.getItem(i).getTitle().toString()  );
+                    menu.getItem(i).getTitle().toString());
             spannable.setSpan(new ForegroundColorSpan(Color.BLACK),
                     0, spannable.length(), 0);
             menuItem.setTitle(spannable);
@@ -109,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.SmartAquaAboutUsM) {
             getSupportFragmentManager().beginTransaction().replace(R.id.SmartAquaFragmentSection, new SmartAquaAboutUs()).commit();
         } else if (itemId == R.id.SmartAquaContactUsM) {
-            String phoneNum = "519-902-1759";
+            String phoneNum = PHONE_NUM;
 
-            String uri = "tel:" + phoneNum.trim() ;
+            String uri = PHONE_ACTION + phoneNum.trim();
             Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(uri));
             startActivity(intent);
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.icon_error_48px)
                 .setTitle(getResources().getString(R.string.app_name))

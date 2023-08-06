@@ -22,17 +22,27 @@ import java.util.Locale;
 
 public class SmartAquaDownloaderManager {
     private final Context context;
+    private static final String FOLDER_NAME = "SmartAquaQualityReadings";
+    private static final String DATE_FORMAT = "yyyyMMdd_HHmmss";
+    private static final String FILE_NAME = "SmartAquaReading_";
+    private static final String JSON_EXT = ".json";
+    private static final String TXT_EXT = ".txt";
+    private static final String READING = "Reading";
+    private static final String STATUS = "Status";
+    private static final String DATE_TIME = "Date_Time";
+    private static final String SPACE = "\n";
+    private static final String COLON = ": ";
 
     public SmartAquaDownloaderManager(Context context) {
         this.context = context;
     }
 
     public void saveWQDataToFile(String reading, String status) {
-        String folderName = "SmartAquaQualityReadings";
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
+        String folderName = FOLDER_NAME;
+        String timeStamp = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).format(new Date());
 
         // Save JSON data
-        String jsonFileName = "SmartAquaReading_" + timeStamp + ".json";
+        String jsonFileName = FILE_NAME + timeStamp + JSON_EXT;
         File folder = new File(context.getExternalFilesDir(null), folderName);
         if (!folder.exists()) {
             folder.mkdirs();
@@ -45,9 +55,9 @@ public class SmartAquaDownloaderManager {
             OutputStreamWriter jsonOutputStreamWriter = new OutputStreamWriter(jsonFileOutputStream);
 
             JSONObject dataObject = new JSONObject();
-            dataObject.put("Reading", reading);
-            dataObject.put("Status", status);
-            dataObject.put("DateTime", timeStamp);
+            dataObject.put(READING, reading);
+            dataObject.put(STATUS, status);
+            dataObject.put(DATE_TIME, timeStamp);
 
             jsonOutputStreamWriter.write(dataObject.toString());
 
@@ -59,16 +69,16 @@ public class SmartAquaDownloaderManager {
         }
 
         // Save text data
-        String textFileName = "SmartAquaReading_" + timeStamp + ".txt";
+        String textFileName = FILE_NAME + timeStamp + TXT_EXT;
         File textFile = new File(folder, textFileName);
 
         try {
             FileOutputStream textFileOutputStream = new FileOutputStream(textFile);
             OutputStreamWriter textOutputStreamWriter = new OutputStreamWriter(textFileOutputStream);
 
-            textOutputStreamWriter.write("Reading: " + reading + "\n");
-            textOutputStreamWriter.write("Status: " + status + "\n");
-            textOutputStreamWriter.write("DateTime: " + timeStamp + "\n");
+            textOutputStreamWriter.write(READING + COLON + reading + SPACE);
+            textOutputStreamWriter.write(STATUS + COLON + status + SPACE);
+            textOutputStreamWriter.write(DATE_TIME + COLON + timeStamp + SPACE);
 
             textOutputStreamWriter.close();
             textFileOutputStream.close();
