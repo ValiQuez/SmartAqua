@@ -20,9 +20,7 @@ import android.widget.ToggleButton;
 
 public class SmartAquaSettings extends Fragment {
 
-    public SmartAquaSettings() {
-        // Required empty public constructor
-    }
+    public SmartAquaSettings(){}
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

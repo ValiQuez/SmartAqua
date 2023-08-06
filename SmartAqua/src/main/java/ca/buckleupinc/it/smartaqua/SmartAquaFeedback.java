@@ -91,9 +91,7 @@ public class SmartAquaFeedback extends Fragment {
             } else {
                 Toast.makeText(getActivity(), R.string.reviewEmpty, Toast.LENGTH_SHORT).show();
             }
-
         });
-
 
         return view;
     }

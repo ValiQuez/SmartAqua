@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/feedback_text"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaFTitle" />
@@ -42,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/insert_name"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/SmartAquaETName"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaFText" />
 
@@ -68,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/insert_email"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/SmartAquaETEmail"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaETName" />
 
@@ -94,6 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/insert_phone"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/SmartAquaETPhone"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaETEmail" />
 
@@ -119,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/insert_comments"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/SmartAquaETComment"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaETPhone" />
 
