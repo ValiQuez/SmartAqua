@@ -21,8 +21,8 @@
             android:id="@+id/SmartAquaAUTitle"
             android:layout_width="@dimen/title_pic_width"
             android:layout_height="@dimen/title_pic_height"
-            android:src="@drawable/about_us_title"
             android:contentDescription="@string/description"
+            android:src="@drawable/about_us_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,8 +54,8 @@
             android:layout_height="@dimen/member_pics_dimen"
             android:layout_marginStart="25dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/smart_aqua_team_rc"
             android:contentDescription="@string/description"
+            android:src="@drawable/smart_aqua_team_rc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/smartAquaName" />
 
@@ -77,8 +77,8 @@
             android:layout_height="@dimen/member_pics_dimen"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="25dp"
-            android:src="@drawable/smart_aqua_team_nd"
             android:contentDescription="@string/description"
+            android:src="@drawable/smart_aqua_team_nd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/smartAquaName" />
 
@@ -100,8 +100,8 @@
             android:layout_height="@dimen/member_pics_dimen"
             android:layout_marginStart="25dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/smart_aqua_team_ds"
             android:contentDescription="@string/description"
+            android:src="@drawable/smart_aqua_team_ds"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameRC" />
 
@@ -125,8 +125,8 @@
             android:layout_height="@dimen/member_pics_dimen"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="25dp"
-            android:src="@drawable/smart_aqua_team_pq"
             android:contentDescription="@string/description"
+            android:src="@drawable/smart_aqua_team_pq"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameND" />
 
