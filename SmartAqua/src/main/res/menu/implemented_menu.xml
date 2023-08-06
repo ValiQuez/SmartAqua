@@ -6,8 +6,8 @@
      Paolo Adrian Quezon - N01424883
      Nicholas Dibiase - N01367109           -->
 
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/SmartAquaHomeBtn"
@@ -19,17 +19,17 @@
         android:id="@+id/SmartAquaSetM"
         android:icon="@drawable/settings"
         android:title="@string/settings"
-        app:showAsAction="withText|ifRoom"/>
+        app:showAsAction="withText|ifRoom" />
     <item
         android:id="@+id/SmartAquaFeedbackM"
         android:title="@string/feedback"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/SmartAquaAboutUsM"
         android:title="@string/about_us_t"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/SmartAquaContactUsM"
         android:title="@string/contactUs"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 </menu>
