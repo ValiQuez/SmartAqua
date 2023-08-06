@@ -19,6 +19,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+
 import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
@@ -34,6 +35,8 @@ public class SmartAquaTemperatureTest {
         activity = Robolectric.buildActivity(FragmentActivity.class).create().start().resume().get();
     }
 
+    private static final String INVALID_TEMP_TEXT = "18°C";
+
     // Invalid Test Case 1
     @Test
     public void testSeekBarProgressAndTemperatureRange_invalid_negativeProgress() {
@@ -48,7 +51,7 @@ public class SmartAquaTemperatureTest {
 
         // Negative progress should not update the temperature text
         TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
-        assertEquals("18°C", textView.getText().toString());
+        assertEquals(INVALID_TEMP_TEXT, textView.getText().toString());
     }
 
     // Invalid Test Case 2
@@ -90,7 +93,7 @@ public class SmartAquaTemperatureTest {
 
         // The expected temperature text is "Invalid", but we expect it not to match
         TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
-        assertNotEquals("Invalid", textView.getText().toString());
+        assertNotEquals(INVALID_TEMP_TEXT, textView.getText().toString());
     }
 
     // Valid Test Case 1
@@ -100,6 +103,4 @@ public class SmartAquaTemperatureTest {
         assertNotNull("Fragment should not be null", fragment);
     }
 
-    }
-
-
+}
