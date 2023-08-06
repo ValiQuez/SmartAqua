@@ -20,11 +20,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 public class SmartAquaSwitchTest {
+
+    private final static String OFF = "OFF";
+    private final static String ON = "ON";
+
     @Rule
     public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void testSwitchFragment(){
+    public void testSwitchFragment() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -34,7 +38,7 @@ public class SmartAquaSwitchTest {
     }
 
     @Test
-    public void clickAirSwitchPress(){
+    public void clickAirSwitchPress() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -43,11 +47,11 @@ public class SmartAquaSwitchTest {
                 .commit());
 
         Espresso.onView(withId(R.id.SmartAquaSwitchAir)).perform(click());
-        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("ON")));
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText(ON)));
     }
 
     @Test
-    public void clickBubbleSwitchPress(){
+    public void clickBubbleSwitchPress() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -56,11 +60,11 @@ public class SmartAquaSwitchTest {
                 .commit());
 
         Espresso.onView(withId(R.id.SmartAquaSwitchBubble)).perform(click());
-        Espresso.onView(withId(R.id.SmartAquaSwitchStatusBubble)).check(matches(withText("ON")));
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusBubble)).check(matches(withText(ON)));
     }
 
     @Test
-    public void clickSwitchInvalid(){
+    public void clickSwitchInvalid() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -69,11 +73,11 @@ public class SmartAquaSwitchTest {
                 .commit());
 
         Espresso.onView(withId(R.id.SmartAquaSwitchAir)).perform(click());
-        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("OFF")));
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText(OFF)));
     }
 
     @Test
-    public void checkSwitchAirTextView(){
+    public void checkSwitchAirTextView() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -81,11 +85,11 @@ public class SmartAquaSwitchTest {
                 .replace(R.id.SmartAquaDrawerLayout, switchFragment)
                 .commit());
 
-        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("OFF")));
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText(OFF)));
     }
 
     @Test
-    public void checkSwitchBubbleTextView(){
+    public void checkSwitchBubbleTextView() {
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -93,6 +97,6 @@ public class SmartAquaSwitchTest {
                 .replace(R.id.SmartAquaDrawerLayout, switchFragment)
                 .commit());
 
-        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("ON")));
+        Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText(ON)));
     }
 }

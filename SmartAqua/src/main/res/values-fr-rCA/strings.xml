@@ -5,37 +5,50 @@
      Nicholas Dibiase - N01367109           -->
 
 <resources>
+
     <string name="water_monitor">Moniteur d\'eau</string>
     <string name="light_monitor">Moniteur de lumière</string>
     <string name="temperature_monitor">Moniteur de température</string>
     <string name="switch_control">Commutateur de contrôle</string>
+
     <string name="open">Ouvrir</string>
-    <string name="splashDesc">Autonomiser les utilisateurs avec une automatisation intelligente et une surveillance en temps réel pour une santé optimale de l\'aquarium et du système d\'eau.</string>
-    <string name="yes">Oui</string>
-    <string name="alertDialogMesg">Voulez-vous quitter l\'application?</string>
-    <string name="no">Non</string>
     <string name="close">Fermer</string>
+
+    <string name="splashDesc">Autonomiser les utilisateurs avec une automatisation intelligente et une surveillance en temps réel pour une santé optimale de l\'aquarium et du système d\'eau.</string>
+
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+    <string name="alertDialogMesg">Voulez-vous quitter l\'application?</string>
     <string name="homeFragmentGreeting">Bienvenue sur l\'application Smart Aqua</string>
+
     <string name="app_description">Notre objectif est de suivre et de contrôler efficacement les systèmes d\'eau pour assurer la qualité de l\'eau et minimiser les dommages et les coûts.</string>
     <string name="feature_description">Notre application dispose de 4 fonctionnalités différentes pour maintenir un système d\'eau sain</string>
+
     <string name="members">Membres de l\équipe Smart Aqua</string>
     <string name="home">Accueil</string>
     <string name="settings">Paramètres</string>
     <string name="help">Aider</string>
-    <string name="switchName">Pompe à air</string>
+
     <string name="on">Allumé</string>
     <string name="off">Éteindre</string>
+
+    <string name="switchName">Pompe à air</string>
     <string name="switchName2">Bain moussant</string>
-    <string name="lightbutton1">LUMIÈRE MARCHE/ARRÊT</string>
-    <string name="feedback">Retour d\'information</string>
     <string name="switchWelcome">Commandes de commutation</string>
+
+    <string name="feedback">Retour d\'information</string>
+
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
+
     <string name="poplighton">lumière allumée</string>
     <string name="poplightoff">lumière éteinte</string>
+
     <string name="lightnotification">Notification lumineuse</string>
     <string name="lightstatus">État de la lumière</string>
     <string name="notificationlightoff">La lumière est éteinte</string>
     <string name="notificationlighton">La lumière est allumée</string>
+    <string name="lightbutton1">LUMIÈRE MARCHE/ARRÊT</string>
 
     <!-- ALL SCREEN DISC STRINGS -->
     <string name="water_monitor_desc">Mesurez le niveau PPM de votre système d\'eau</string>
@@ -46,57 +59,72 @@
     <!-- TEMPERATURE SCREEN STRINGS -->
     <string name="tempToggleON">Sur</string>
     <string name="tempToggleOFF">Désactivé</string>
+
     <string name="tempReadings">Relevés de température</string>
-    <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
     <string name="tempReadings2">Température:</string>
+
+    <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
+    <string name="tempDescription">Canal pour les notifications de température</string>
+
     <string name="tempContentTitle">État de la température</string>
     <string name="tempCharSequence">Canal de température</string>
-    <string name="tempDescription">Canal pour les notifications de température</string>
+
     <string name="tempNoti_ON">Température activée </string>
     <string name="tempNoti_OFF">Température désactivée</string>
+
     <string name="tempCelcius">°C </string>
     <string name="tempChannelID">Canal de notification de température </string>
 
     <!-- WATER QUALITY SCREEN STRINGS -->
     <string name="readings">Texte temporaire pour les lectures</string>
     <string name="measure">PPM -> Parties par Millon</string>
+
     <string name="explanation">Les PPM sont utilisés pour mesurer la propreté du réseau d\'eau</string>
-    <string name="record_button">Record</string>
+    <string name="record_button">Enregistrer</string>
+
     <string name="settingsLockPortrait">Verrouiller l\'application en mode portrait</string>
     <string name="switchBubblesImgDesc">Image de bulles d\'air qui coule</string>
     <string name="switchTitleImgDesc">Image de titre pour l\'écran de contrôle du commutateur</string>
     <string name="settingsResetValues">Réinitialiser TOUTES les valeurs et tous les paramètres dans l\'application</string>
     <string name="settingsResetBtn">RÉINITIALISER</string>
     <string name="settingsTitleImgDesc">Image du titre de l\'écran des paramètres de l\'application</string>
+
     <string name="info_ppm">Les niveaux idéaux pour le système d\'eau se situent entre 400 PPM et 450 PPM. Une approximation des niveaux de gamme PPM est également bonne.</string>
     <string name="stat_title">Statut:</string>
+
     <string name="s_good">Bien!</string>
     <string name="s_bad">Mauvais!</string>
-    <string name="save_data">Reading saved in database!</string>
-    <string name="darkModeON">Dark Mode ON</string>
-    <string name="failedDB">Failed to read TDS Data</string>
-    <string name="reset_snackbar">Settings were reset to default</string>
-    <string name="wq_download_message">Quality Reading Saved!</string>
-    <string name="wq_txt_error">Error downloading text data to file</string>
-    <string name="wq_json_error">Error downloading JSON data to file</string>
+
+    <string name="save_data">Lecture sauvegardée dans la base de données !</string>
+    <string name="darkModeON">Mode sombre ON</string>
+    <string name="failedDB">Échec de la lecture des données TDS</string>
+    <string name="reset_snackbar">Les paramètres ont été rétablis par défaut</string>
+
+    <string name="wq_download_message">Une lecture de qualité sauvée !</string>
+    <string name="wq_txt_error">Erreur de téléchargement de données textuelles dans un fichier</string>
+    <string name="wq_json_error">Erreur lors du téléchargement de données JSON dans un fichier</string>
 
     <string name="feedback_text">Dites-nous ce que vous en pensez ! :)</string>
     <string name="feedback_hint">Tapez ici…</string>
-    <string name="insert_name">Name:</string>
-    <string name="insert_email">Email:</string>
-    <string name="insert_phone">Phone:</string>
-    <string name="insert_comments">Comments:</string>
-    <string name="hint_name">Type name…</string>
-    <string name="hint_email">Type email…</string>
-    <string name="hint_phone">Type phone…</string>
-    <string name="hint_comment">Type comment…</string>
-    <string name="hint_rate">Rate our app!</string>
-    <string name="submit">Soumettre</string>
-    <string name="reviewSent">The review has been sent to the team. Thank you!</string>
-    <string name="reviewEmpty">Please fill all the fields</string>
 
+    <string name="insert_name">Nom:</string>
+    <string name="insert_email">Courriel:</string>
+    <string name="insert_phone">Téléphone:</string>
+    <string name="insert_comments">Commentaires:</string>
+
+    <string name="hint_name">Nom du type…</string>
+    <string name="hint_email">Type d\'email…</string>
+    <string name="hint_phone">Type de téléphone…</string>
+    <string name="hint_comment">Tapez le commentaire…</string>
+    <string name="hint_rate">Notez notre application !</string>
+
+    <string name="submit">Soumettre</string>
+
+    <string name="reviewSent">L\'avis a été envoyé à l\'équipe. Nous vous remercions de votre attention.</string>
+    <string name="reviewEmpty">Veuillez remplir tous les champs</string>
 
     <string name="contactUs">Contactez-nous</string>
+
     <string name="settingsDarkMode">Mode sombre</string>
     <string name="settingsMute">Application muette</string>
     <string name="settingsAccessDenied">Accès refusé</string>
@@ -107,23 +135,28 @@
     <string name="settingsPermissionGrant">Donner accès</string>
     <string name="settingsUsrPermBtnTxt">Emplacement</string>
     <string name="settingscurrentLocation">Latitude: %1$.2f\nLongitude: %2$.2f</string>
+
     <string name="snackbarAirOff">La pompe à air est éteinte</string>
     <string name="snackbarBubbleOn">Le bain moussant est activé</string>
     <string name="snackbarBubbleOff">Le bain moussant est éteint</string>
     <string name="snackbarAirOn">La pompe à air est allumée</string>
+
     <string name="reviewSendAlertBody">Vous êtes sur le point d\'envoyer l\'avis à notre équipe de développement. Vous confirmez ?</string>
     <string name="reviewSendDenied">L\'avis n\'a pas été envoyé</string>
     <string name="reviewSendAlert">Envoyer</string>
     <string name="reviewSendAlertTitle">Confirmez l\'envoi de votre avis</string>
-    <string name="ON">ALLUMÉ</string>
-    <string name="OFF">ÉTEINDRE</string>
     <string name="reviewSendingReview">Envoi de votre avis…</string>
 
+    <string name="ON">ALLUMÉ</string>
+    <string name="OFF">ÉTEINDRE</string>
+
     <!-- ABOUT US STRINGS -->
-    <string name="about_us_t">About Us</string>
-    <string name="about_us_descp">The Smart Aqua is a Capstone Project from the Computer Engineering Tech
-        Program at Humber College.\nDeveloped in the Software Project Class (CENG 322). Soon to be implemented with the
-        Hardware device which is under production.</string>
+    <string name="about_us_t">À propos de nous</string>
+
+    <string name="about_us_descp">Le Smart Aqua est un projet de base du programme d\'ingénierie informatique du Humber College.
+        \nDéveloppé dans le cadre du cours sur les projets logiciels (CENG 322). Bientôt mis en œuvre avec le dispositif matériel qui est en cours de production.
+        matériel qui est en cours de production.</string>
+
     <string name="reviewTitleImgDesc">Image de titre pour la page de commentaires. Il est écrit sur l\'image \"Feedback\" en grosses lettres.</string>
     <string name="reviewFeedbackImgDesc">Image en bas de la page de commentaires. L\'image contient des représentations de deux mains montrant les pouces vers le haut et vers le bas au-dessus d\'une bulle de dialogue.</string>
 

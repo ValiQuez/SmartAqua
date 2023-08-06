@@ -11,21 +11,24 @@ import android.os.Handler;
 import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class SmartAquaSplash extends AppCompatActivity {
     private static final int SPLASH_DELAY = 3000; // Splash screen delay in milliseconds
+    private static final String USER_PREF_SETTINGS = "UserPrefSettings";
+    private static final String DARK_MODE_TOGGLE_STATE = "DarkModeToggleState";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splash);
 
-        SharedPreferences sharedPref = getSharedPreferences("UserPrefSettings", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(USER_PREF_SETTINGS, Context.MODE_PRIVATE);
 
-        boolean darkModeEnabled = sharedPref.getBoolean("DarkModeToggleState", false);
+        boolean darkModeEnabled = sharedPref.getBoolean(DARK_MODE_TOGGLE_STATE, false);
         if (darkModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {

@@ -13,6 +13,10 @@ import android.widget.ProgressBar;
 public class SmartAquaFeedbackProgressbar {
 
     private final ProgressBar progressBar;
+    private final static int totalIterations = 4;
+    private final static int progressDelayMillis = 1000;
+    private final static int twentyFivePercent = 25;
+    private final static int oneHundredPercent = 100;
 
     public SmartAquaFeedbackProgressbar(View rootView) {
         progressBar = rootView.findViewById(R.id.SmartAquaFeedbackProgressBar);
@@ -23,21 +27,18 @@ public class SmartAquaFeedbackProgressbar {
         simulateTaskCompletion();
     }
 
-    public void setProgressbarInvisible(){
+    public void setProgressbarInvisible() {
         progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void simulateTaskCompletion() {
-        final int totalIterations = 4;
-        final int progressDelayMillis = 1000;
-
         Handler handler = new Handler();
         for (int i = 1; i <= totalIterations; i++) {
-            final int progress = i * 25;
+            final int progress = i * twentyFivePercent;
 
             handler.postDelayed(() -> {
                 progressBar.setProgress(progress);
-                if (progress == 100) {
+                if (progress == oneHundredPercent) {
                     setProgressbarInvisible();
                 }
             }, i * progressDelayMillis);
