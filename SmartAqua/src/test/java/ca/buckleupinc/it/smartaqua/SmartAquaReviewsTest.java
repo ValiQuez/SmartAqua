@@ -1,3 +1,9 @@
+/*  CENG-322-0NA: Group 6
+    Denis Shwaloff - N01422583
+    Alvaro Rodrigo Chavez Moya - N01455107
+    Paolo Adrian Quezon - N01424883
+    Nicholas Dibiase - N01367109            */
+
 package ca.buckleupinc.it.smartaqua;
 
 import static org.junit.Assert.*;
@@ -14,36 +20,36 @@ public class SmartAquaReviewsTest {
     private final float rating = 4;
 
     @Test
-    public void identifyWrongField(){
+    public void identifyWrongField() {
         SmartAquaReviews commentTest = new SmartAquaReviews(name, email, comment, model, number, rating);
-        assertEquals("Sebastian",commentTest.getComment());
+        assertEquals("Sebastian", commentTest.getComment());
     }
 
-     @Test
+    @Test
     public void overwriteName() {
         SmartAquaReviews nameTest = new SmartAquaReviews(name, email, comment, model, number, rating);
         nameTest.setName("Alvaro");
-        assertEquals("Alvaro",nameTest.getName());
+        assertEquals("Alvaro", nameTest.getName());
     }
 
     @Test
     public void setOverRatingBar() {
         SmartAquaReviews rateBar = new SmartAquaReviews(name, email, comment, model, number, rating);
         rateBar.setRating(9);
-        assertNotEquals(5,rateBar.getRating());
+        assertNotEquals(5, rateBar.getRating());
     }
 
     @Test
     public void identifyRating() {
         SmartAquaReviews rateBar = new SmartAquaReviews(name, email, comment, model, number, rating);
         rateBar.setRating(4);
-        assertEquals(4,rateBar.getRating(),0.0);
+        assertEquals(4, rateBar.getRating(), 0.0);
     }
 
     @Test
-    public void identifyPhoneModel(){
+    public void identifyPhoneModel() {
         SmartAquaReviews modelPhone = new SmartAquaReviews(name, email, comment, model, number, rating);
-        assertEquals("LG Nexus 5",modelPhone.getModel());
+        assertEquals("LG Nexus 5", modelPhone.getModel());
     }
 
 }

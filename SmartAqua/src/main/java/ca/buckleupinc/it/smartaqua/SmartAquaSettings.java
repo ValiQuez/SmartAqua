@@ -27,7 +27,8 @@ public class SmartAquaSettings extends Fragment {
     private final static String DarkModeToggleStateKey = "DarkModeToggleState";
     private final static String MuteToggleStateKey = "MuteToggleState";
 
-    public SmartAquaSettings() {}
+    public SmartAquaSettings() {
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

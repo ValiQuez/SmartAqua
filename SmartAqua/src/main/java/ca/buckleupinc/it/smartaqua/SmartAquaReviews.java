@@ -11,7 +11,8 @@ public class SmartAquaReviews {
     String name, email, comment, model, number;
     float rating;
 
-    public SmartAquaReviews() {}
+    public SmartAquaReviews() {
+    }
 
     public SmartAquaReviews(String name, String email, String comment, String model, String number, float rating) {
         this.name = name;
