@@ -35,9 +35,6 @@ public class SmartAquaSwitchTest {
 
     @Test
     public void clickAirSwitchPress(){
-        //SmartAquaSwitch test = new SmartAquaSwitch();
-        //View view = test.getView();
-
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -51,9 +48,6 @@ public class SmartAquaSwitchTest {
 
     @Test
     public void clickBubbleSwitchPress(){
-        //SmartAquaSwitch test = new SmartAquaSwitch();
-        //View view = test.getView();
-
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -67,9 +61,6 @@ public class SmartAquaSwitchTest {
 
     @Test
     public void clickSwitchInvalid(){
-        //SmartAquaSwitch test = new SmartAquaSwitch();
-        //View view = test.getView();
-
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -83,9 +74,6 @@ public class SmartAquaSwitchTest {
 
     @Test
     public void checkSwitchAirTextView(){
-        //SmartAquaSwitch test = new SmartAquaSwitch();
-        //View view = test.getView();
-
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -98,9 +86,6 @@ public class SmartAquaSwitchTest {
 
     @Test
     public void checkSwitchBubbleTextView(){
-        //SmartAquaSwitch test = new SmartAquaSwitch();
-        //View view = test.getView();
-
         SmartAquaSwitch switchFragment = new SmartAquaSwitch();
 
         activityRule.getScenario().onActivity(activity -> activity.getSupportFragmentManager()
@@ -110,6 +95,4 @@ public class SmartAquaSwitchTest {
 
         Espresso.onView(withId(R.id.SmartAquaSwitchStatusAir)).check(matches(withText("ON")));
     }
-
-
 }

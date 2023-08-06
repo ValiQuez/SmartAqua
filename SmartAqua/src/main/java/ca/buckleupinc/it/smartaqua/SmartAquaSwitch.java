@@ -28,16 +28,13 @@ public class SmartAquaSwitch extends Fragment {
     private TextView statusBubble;
     private SharedPreferences switchPref;
 
-    public SmartAquaSwitch(){
-
-    }
+    public SmartAquaSwitch(){}
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view;
-
         view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
 
         Switch switchAir = view.findViewById(R.id.SmartAquaSwitchAir);
