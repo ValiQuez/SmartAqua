@@ -85,7 +85,6 @@ public class SmartAquaSwitch extends Fragment {
             }
             switchPref.edit().putBoolean(SwitchBubbleStateKey, isChecked).apply();
         });
-
         return view;
     }
 
