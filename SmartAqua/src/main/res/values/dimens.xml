@@ -7,6 +7,7 @@
      Nicholas Dibiase - N01367109           -->
 
 <resources>
+
     <dimen name="button_width_home">190dp</dimen>
     <dimen name="title_pic_width">260dp</dimen>
     <dimen name="title_pic_height">134dp</dimen>
@@ -15,4 +16,5 @@
     <dimen name="quality_pic">200dp</dimen>
     <dimen name="home_w">78dp</dimen>
     <dimen name="home_h">68dp</dimen>
+
 </resources>

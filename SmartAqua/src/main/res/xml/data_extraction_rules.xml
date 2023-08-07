@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-   Sample data extraction rules file; uncomment and customize as necessary.
-   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
-   for details.
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+CENG-322-0NA: Group 6
+Denis Shwaloff - N01424883
+Alvaro Rodrigo Chavez Moya - N01455107
+Paolo Adrian Quezon - N01424883
+Nicholas Dibiase - N01367109
 -->
+
 <data-extraction-rules>
     <cloud-backup>
         <!-- TODO: Use <include> and <exclude> to control what is backed up.
