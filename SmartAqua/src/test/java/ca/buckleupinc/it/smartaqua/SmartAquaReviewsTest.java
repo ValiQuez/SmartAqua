@@ -22,7 +22,7 @@ public class SmartAquaReviewsTest {
     @Test
     public void identifyWrongField() {
         SmartAquaReviews commentTest = new SmartAquaReviews(name, email, comment, model, number, rating);
-        assertEquals("Sebastian", commentTest.getComment());
+        assertNotEquals("Sebastian", commentTest.getComment());
     }
 
     @Test

@@ -33,7 +33,7 @@ public class SmartAquaQualityDataTest {
         String reading = "234";
         String status = "Danger!";
         SmartAquaQualityData test3 = new SmartAquaQualityData(reading, status);
-        assertEquals("450", test3.getReading_TDS());
+        assertNotEquals("450", test3.getReading_TDS());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class SmartAquaQualityDataTest {
         String reading = "407";
         String status = "Good!";
         SmartAquaQualityData test4 = new SmartAquaQualityData(reading, status);
-        assertEquals("Danger!", test4.getReading_TDS());
+        assertNotEquals("Danger!", test4.getReading_TDS());
     }
 
     @Test
