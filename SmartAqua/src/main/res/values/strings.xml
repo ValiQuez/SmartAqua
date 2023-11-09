@@ -116,7 +116,7 @@
     <string name="tempReadings">Temperature readings </string>
     <string name="tempReadings2">Temp: </string>
 
-    <string name="tempControlDescription">Accurate temperature control for water, with on/off capability</string>
+    <string name="tempControlDescription">Temperature readings are currently being updated</string>
     <string name="tempContentTitle">Temperature Status </string>
 
     <string name="tempCharSequence">Temperature Channel </string>

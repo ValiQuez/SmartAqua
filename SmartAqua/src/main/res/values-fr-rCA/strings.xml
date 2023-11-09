@@ -63,7 +63,7 @@
     <string name="tempReadings">Relevés de température</string>
     <string name="tempReadings2">Température:</string>
 
-    <string name="tempControlDescription">Contrôle précis de la température de l\'eau avec fonction marche arrêt</string>
+    <string name="tempControlDescription">Les relevés de température sont en cours de mise à jour</string>
     <string name="tempDescription">Canal pour les notifications de température</string>
 
     <string name="tempContentTitle">État de la température</string>

@@ -1,9 +1,3 @@
-/*  CENG-322-0NA: Group 6
-    Denis Shwaloff - N01422583
-    Alvaro Rodrigo Chavez Moya - N01455107
-    Paolo Adrian Quezon - N01424883
-    Nicholas Dibiase - N01367109            */
-
 package ca.buckleupinc.it.smartaqua;
 
 import android.annotation.SuppressLint;
@@ -14,13 +8,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.SeekBar;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -29,15 +22,20 @@ import androidx.fragment.app.Fragment;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import java.util.Random;
+
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
     private static final String TEMPERATURE_PROGRESS_KEY = "TemperatureProgress";
-    private static final String TEMPERATURE_RANGE_KEY = "TemperatureRange";
     private static final String TEMP_PREF_KEY = "TempPref";
 
-    private SeekBar seekBar;
+    private ProgressBar progressBar;
     private TextView textView;
+    private TextView percentTextView; // TextView to display the percentage
     private SharedPreferences tempPref;
+    private Handler handler = new Handler();
+    private static final int MAX_PROGRESS = 9; // Maximum progress value (corresponds to 27°C)
+    private int currentProgress = 0; // Current progress value
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -47,64 +45,50 @@ public class SmartAquaTemperature extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
-        seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
+        progressBar = view.findViewById(R.id.SmartAquaTempProgressBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
+        percentTextView = view.findViewById(R.id.SmartAquaTempPercent); // Initialize the percentage TextView
 
         tempPref = PreferenceManager.getDefaultSharedPreferences(getContext()); // Changed variable assignment
-        int savedProgress = tempPref.getInt(TEMPERATURE_PROGRESS_KEY, 0);
-        int savedTemperatureRange = tempPref.getInt(TEMPERATURE_RANGE_KEY, 18); // Default value is 18
-        boolean toggleState = tempPref.getBoolean(TEMP_PREF_KEY, false);
 
-        seekBar.setProgress(savedProgress); // Set the saved progress
-        setTemperatureText(savedTemperatureRange); // Set the saved temperature range
+        progressBar.setMax(MAX_PROGRESS); // Set the maximum value of the ProgressBar
 
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        // Start a handler to update the temperature reading, ProgressBar, and percentage display
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
-                setTemperatureText(temperatureRange); // Update temperature text
+            public void run() {
+                if (currentProgress < MAX_PROGRESS) {
+                    currentProgress++; // Increment the progress value
+                    progressBar.setProgress(currentProgress);
+                    updateTemperatureText(currentProgress);
+                } else {
+                    currentProgress = 0; // Reset progress when it reaches the maximum
+                    progressBar.setProgress(currentProgress);
+                    updateTemperatureText(currentProgress);
+                }
 
-                // Save the progress and temperature range in shared preferences
-                SharedPreferences.Editor editor = tempPref.edit();
-                editor.putInt(TEMPERATURE_PROGRESS_KEY, progress);
-                editor.putInt(TEMPERATURE_RANGE_KEY, temperatureRange);
-                editor.apply();
+                // Calculate the percentage and update the TextView
+                int percentage = (currentProgress * 100) / MAX_PROGRESS;
+                percentTextView.setText(percentage + "%");
+
+                handler.postDelayed(this, 5000); // Schedule the next update after 5 seconds
             }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
-        toggleButton.setChecked(toggleState);
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
-                displayNotification(message);
-
-                // Save the toggle state in shared preferences
-                SharedPreferences.Editor editor = tempPref.edit();
-                editor.putBoolean(TEMP_PREF_KEY, isChecked);
-                editor.apply();
-            }
-        });
+        }, 0);
 
         return view;
     }
 
-    private void setTemperatureText(int temperatureRange) {
-        String temperatureText = temperatureRange + getString(R.string.tempCelcius);
-        if (temperatureRange > 20) {
+    private void updateTemperatureText(int temperatureRange) {
+        // Generate a random temperature within the range (18-27)
+        int randomTemperature = new Random().nextInt(10) + 18;
+        String temperatureText = randomTemperature + getString(R.string.tempCelcius);
+
+        if (randomTemperature > 20) {
             textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
         } else {
             textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
         }
+
         textView.setText(temperatureText);
     }
 

@@ -40,28 +40,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempToggleButton"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempProgressBar"
             app:layout_constraintVertical_bias="0.0" />
-
-        <ToggleButton
-            android:id="@+id/SmartAquaTempToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="162dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="162dp"
-            android:checked="false"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textOff="@string/tempToggleON"
-            android:textOn="@string/tempToggleOFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempSeekBar"
-            app:showText="true" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -116,20 +96,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading" />
 
-        <SeekBar
-            android:id="@+id/SmartAquaTempSeekBar"
+        <ProgressBar
+            android:id="@+id/SmartAquaTempProgressBar"
             android:layout_width="375dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            android:max="100"
-            android:progress="50"
+            android:max="9"
+            android:progress="0"
             android:progressTint="@color/russian_violet"
             android:thumbTint="@color/russian_violet"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading2" />
+        app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading2" />
+
+        <TextView
+            android:id="@+id/SmartAquaTempPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0%"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempProgressBar" />
+
 
         <TextView
             android:id="@+id/SmartAquaTempReading2"
