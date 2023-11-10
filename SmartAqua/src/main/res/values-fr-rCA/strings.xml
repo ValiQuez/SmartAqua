@@ -39,7 +39,7 @@
 
     <string name="feedback">Retour d\'information</string>
 
-    <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
+    <string name="lightcontroldescription">Lectures de Lux en temps réel</string>
 
 
     <string name="poplighton">lumière allumée</string>

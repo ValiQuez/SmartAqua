@@ -139,7 +139,7 @@
     <string name="snackbarBubbleOff">Bubble Bath is OFF</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
-    <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
+    <string name="lightcontroldescription">Real Time Lux Readings in Real Time</string>
 
     <string name="lux_level_normal">Lux Level: %1$.2f</string>
     <string name="lightstatus">Light Status</string>

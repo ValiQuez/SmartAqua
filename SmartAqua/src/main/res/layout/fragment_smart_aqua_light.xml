@@ -16,29 +16,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".SmartAquaLight">
-
+        <View
+            android:id="@+id/view3"
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="440dp"
+            android:layout_marginEnd="30dp"
+            android:alpha="0.8"
+            android:background="@color/lapis_lazuli"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
         <TextView
             android:id="@+id/notificationTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="100dp"
             android:gravity="center"
-            android:textColor="@color/reseda_green"
-            android:textSize="80dp"
+            android:textColor="@color/turquoise"
+            android:textSize="50dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAqualightbulb" />
 
+        <TextView
+            android:id="@+id/Lightcontroldec"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:text="@string/lightcontroldescription"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/notificationTextView"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/SmartAqualightbulb"
             android:layout_width="251dp"
             android:layout_height="270dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/aqua_smart_light_bulb_off"
+            android:src="@drawable/aqua_smart_light_bulb_on"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaLightTitle" />
