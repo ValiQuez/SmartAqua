@@ -141,14 +141,17 @@
     <!-- LIGHT SCREEN STRINGS  -->
     <string name="lightcontroldescription">Control your water light all with the touch of a button</string>
 
+    <string name="lux_level_normal">Lux Level: %1$.2f</string>
+    <string name="lightstatus">Light Status</string>
+    <string name="lightnotification">Light Notification</string>
+
     <string name="lightbutton1">LIGHT ON/OFF</string>
     <string name="poplighton">Light ON</string>
     <string name="poplightoff">Light OFF</string>
     <string name="notificationlightoff">Light is OFF</string>
     <string name="notificationlighton">Light is ON</string>
 
-    <string name="lightnotification">Light Notification</string>
-    <string name="lightstatus">Light Status</string>
+
 
     <!-- FEEDBACK STRINGS -->
     <string name="feedback_text">Tell us what you think!</string>

@@ -6,87 +6,74 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.annotation.SuppressLint;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import java.util.Random;
 
 public class SmartAquaLight extends Fragment {
 
     private static final String CHANNEL_ID = "LightNotificationChannel";
     private static final int NOTIFICATION_ID = 1;
+    private static final int SENSOR_DELAY = 2000; // 2 seconds
 
-    private static final String LIGHT_PREF_KEY = "LightPref";
-    private static final int LIGHT_BULB_ON = R.drawable.aqua_smart_light_bulb_on;
-    private static final int LIGHT_BULB_OFF = R.drawable.aqua_smart_light_bulb_off;
-
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private Switch switchlightButton;
-    private TextView notificationTextView;
+    private TextView luxLevelTextView;
     private NotificationManager notificationManager;
     private ImageView lightBulbImage;
+    private Random random;
 
     public SmartAquaLight() {
-
+        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_smart_aqua_light, container, false);
 
-        switchlightButton = view.findViewById(R.id.switchlightButton);
-        notificationTextView = view.findViewById(R.id.notificationTextView);
-        notificationTextView.setText(R.string.poplightoff);
+        luxLevelTextView = view.findViewById(R.id.notificationTextView);
         lightBulbImage = view.findViewById(R.id.SmartAqualightbulb);
-
-        SharedPreferences lightPref = getActivity().getSharedPreferences(LIGHT_PREF_KEY, Context.MODE_PRIVATE);
-        switchlightButton.setOnCheckedChangeListener(null);
-        boolean previousState = lightPref.getBoolean(LIGHT_PREF_KEY, false);
-        switchlightButton.setChecked(previousState);
-        updateUI(previousState);
-
-        switchlightButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            notificationTextView.setText(isChecked ? R.string.poplighton : R.string.poplightoff);
-            updateUI(isChecked); // Update UI based on the new state
-            sendNotification(isChecked ? getString(R.string.notificationlighton) : getString(R.string.notificationlightoff));
-            lightPref.edit().putBoolean(LIGHT_PREF_KEY, isChecked).apply();
-        });
-
         notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        random = new Random();
+
+        // Simulate sensor reading after view is created
+        simulateSensorReading();
 
         return view;
     }
 
-    private void updateUI(boolean isChecked) {
-        lightBulbImage.setImageResource(isChecked ? LIGHT_BULB_ON : LIGHT_BULB_OFF);
+    private void simulateSensorReading() {
+        // Handler to simulate sensor data reading with a delay
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Generate a random lux value between 0 and 1000 for simulation
+                float simulatedLuxValue = random.nextFloat() * 1000;
+                onSensorChanged(simulatedLuxValue);
+
+                // Schedule the next sensor reading
+                handler.postDelayed(this, SENSOR_DELAY);
+            }
+        }, SENSOR_DELAY); // Simulate after the initial delay
     }
 
-    private void sendNotification(String message) {
-        // Create a notification channel
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, getString(R.string.lightnotification), NotificationManager.IMPORTANCE_DEFAULT);
-        notificationManager.createNotificationChannel(channel);
-
-        // Creates a notification
-        Notification.Builder builder = new Notification.Builder(requireActivity(), CHANNEL_ID)
-                .setSmallIcon(R.drawable.notification)
-                .setContentTitle(getString(R.string.lightstatus))
-                .setContentText(message)
-                .setAutoCancel(true);
-
-        // Shows the notification
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
+    public void onSensorChanged(float lux) {
+        // Update the UI with the simulated lux value
+        luxLevelTextView.setText(getString(R.string.lux_level_normal, lux)); // Use string resource for normal lux level
     }
 }

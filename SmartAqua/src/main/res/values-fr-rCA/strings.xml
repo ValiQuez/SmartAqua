@@ -41,6 +41,7 @@
 
     <string name="lightcontroldescription">Contrôlez votre lumière d\'eau d\'une simple pression sur un bouton</string>
 
+
     <string name="poplighton">lumière allumée</string>
     <string name="poplightoff">lumière éteinte</string>
 
@@ -49,6 +50,7 @@
     <string name="notificationlightoff">La lumière est éteinte</string>
     <string name="notificationlighton">La lumière est allumée</string>
     <string name="lightbutton1">LUMIÈRE MARCHE/ARRÊT</string>
+    <string name="lux_level_normal">Niveau de lux: %1$.2f </string>
 
     <!-- ALL SCREEN DISC STRINGS -->
     <string name="water_monitor_desc">Mesurez le niveau PPM de votre système d\'eau</string>
