@@ -1,11 +1,4 @@
-/*  CENG-322-0NA: Group 6
-    Denis Shwaloff - N01422583
-    Alvaro Rodrigo Chavez Moya - N01455107
-    Paolo Adrian Quezon - N01424883
-    Nicholas Dibiase - N01367109            */
-
 package ca.buckleupinc.it.smartaqua;
-
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -73,7 +66,9 @@ public class SmartAquaLight extends Fragment {
     }
 
     public void onSensorChanged(float lux) {
-        // Update the UI with the simulated lux value
-        luxLevelTextView.setText(getString(R.string.lux_level_normal, lux)); // Use string resource for normal lux level
+        if (isAdded()) { // Check if the fragment is attached to a context
+            // Update the UI with the simulated lux value
+            luxLevelTextView.setText(getString(R.string.lux_level_normal, lux)); // Use string resource for normal lux level
+        }
     }
 }
