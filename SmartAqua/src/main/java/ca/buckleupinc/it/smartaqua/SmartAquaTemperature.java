@@ -1,9 +1,3 @@
-/*  CENG-322-0NA: Group 6
-    Denis Shwaloff - N01422583
-    Alvaro Rodrigo Chavez Moya - N01455107
-    Paolo Adrian Quezon - N01424883
-    Nicholas Dibiase - N01367109            */
-
 package ca.buckleupinc.it.smartaqua;
 
 import android.annotation.SuppressLint;
@@ -11,33 +5,35 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.SeekBar;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import java.util.Random;
 
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
-    private static final String TEMPERATURE_PROGRESS_KEY = "TemperatureProgress";
-    private static final String TEMPERATURE_RANGE_KEY = "TemperatureRange";
-    private static final String TEMP_PREF_KEY = "TempPref";
+    private static final int UPDATE_INTERVAL = 5000; // Update every 5 seconds
 
-    private SeekBar seekBar;
     private TextView textView;
+    private ProgressBar temperatureProgressBar; // Updated ProgressBar
     private SharedPreferences tempPref;
+    private Random random;
+    private Handler handler;
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -47,65 +43,83 @@ public class SmartAquaTemperature extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
-        seekBar = view.findViewById(R.id.SmartAquaTempSeekBar);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
+        temperatureProgressBar = view.findViewById(R.id.temperatureProgressBar); // Initialize ProgressBar
 
-        tempPref = PreferenceManager.getDefaultSharedPreferences(getContext()); // Changed variable assignment
-        int savedProgress = tempPref.getInt(TEMPERATURE_PROGRESS_KEY, 0);
-        int savedTemperatureRange = tempPref.getInt(TEMPERATURE_RANGE_KEY, 18); // Default value is 18
-        boolean toggleState = tempPref.getBoolean(TEMP_PREF_KEY, false);
+        tempPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        random = new Random();
+        handler = new Handler(Looper.getMainLooper());
 
-        seekBar.setProgress(savedProgress); // Set the saved progress
-        setTemperatureText(savedTemperatureRange); // Set the saved temperature range
-
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                int temperatureRange = (int) (progress * 0.09) + 18; // Map progress from 18-27
-                setTemperatureText(temperatureRange); // Update temperature text
-
-                // Save the progress and temperature range in shared preferences
-                SharedPreferences.Editor editor = tempPref.edit();
-                editor.putInt(TEMPERATURE_PROGRESS_KEY, progress);
-                editor.putInt(TEMPERATURE_RANGE_KEY, temperatureRange);
-                editor.apply();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        ToggleButton toggleButton = view.findViewById(R.id.SmartAquaTempToggleButton);
-        toggleButton.setChecked(toggleState);
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String message = isChecked ? getString(R.string.tempNoti_ON) : getString(R.string.tempNoti_OFF);
-                displayNotification(message);
-
-                // Save the toggle state in shared preferences
-                SharedPreferences.Editor editor = tempPref.edit();
-                editor.putBoolean(TEMP_PREF_KEY, isChecked);
-                editor.apply();
-            }
-        });
+        // Start periodic temperature updates
+        startPeriodicTemperatureUpdate();
 
         return view;
     }
 
-    private void setTemperatureText(int temperatureRange) {
-        String temperatureText = temperatureRange + getString(R.string.tempCelcius);
-        if (temperatureRange > 20) {
-            textView.setTextColor(Color.RED); // Set text color to red for temperatures above 20 degrees Celsius
-        } else {
-            textView.setTextColor(Color.BLUE); // Set text color to blue for temperatures below or equal to 20 degrees Celsius
+    private void startPeriodicTemperatureUpdate() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                updateRandomTemperature();
+                handler.postDelayed(this, UPDATE_INTERVAL); // Schedule the next update
+            }
+        }, UPDATE_INTERVAL);
+    }
+
+    private void updateRandomTemperature() {
+        // Check if the fragment is attached to a context
+        if (!isAdded()) {
+            return;
         }
+
+        Context context = requireContext();
+
+        int randomTemperature = random.nextInt(14) + 18;
+        String temperatureText = randomTemperature + context.getString(R.string.tempCelcius);
+
+        // Update TextView
         textView.setText(temperatureText);
+
+        // Update ProgressBar and its color based on temperature range
+        updateProgressBar(randomTemperature);
+
+        // Display a toast message indicating the temperature status
+        displayTemperatureStatus(randomTemperature);
+
+        displayNotification(temperatureText);
+    }
+
+    private void updateProgressBar(int temperature) {
+        int progress = temperature - 18; // Calculate progress relative to the range
+        temperatureProgressBar.setProgress(progress);
+
+        // Set color based on the temperature range
+        int color;
+        if (temperature >= 28) {
+            color = Color.RED;
+        } else if (temperature >= 21) {
+            color = Color.GREEN;
+        } else {
+            color = Color.BLUE;
+        }
+
+        // Set the progress color
+        temperatureProgressBar.setProgressTintList(android.content.res.ColorStateList.valueOf(color));
+    }
+
+    private void displayTemperatureStatus(int temperature) {
+        String statusMessage;
+
+        if (temperature >= 28) {
+            statusMessage = "Hot";
+        } else if (temperature >= 21) {
+            statusMessage = "Ideal";
+        } else {
+            statusMessage = "Cold";
+        }
+
+        // Display a toast message with the temperature status
+        Toast.makeText(requireContext(), "Temperature Status: " + statusMessage, Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("MissingPermission")
