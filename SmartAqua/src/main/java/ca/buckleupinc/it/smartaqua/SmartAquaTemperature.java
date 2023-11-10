@@ -44,7 +44,8 @@ public class SmartAquaTemperature extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
-        temperatureProgressBar = view.findViewById(R.id.temperatureProgressBar); // Initialize ProgressBar
+        temperatureProgressBar = view.findViewById(R.id.temperatureProgressBar);
+        temperatureProgressBar.setMax(31 - 18); // Set the maximum value to the entire range
 
         tempPref = PreferenceManager.getDefaultSharedPreferences(getContext());
         random = new Random();
@@ -82,6 +83,19 @@ public class SmartAquaTemperature extends Fragment {
 
         // Update ProgressBar and its color based on temperature range
         updateProgressBar(randomTemperature);
+
+        // Update the text color based on temperature range
+        int textColor;
+        if (randomTemperature >= 28) {
+            textColor = Color.RED;
+        } else if (randomTemperature >= 21) {
+            textColor = Color.GREEN;
+        } else {
+            textColor = Color.BLUE;
+        }
+
+        // Set the text color
+        textView.setTextColor(textColor);
 
         // Display a toast message indicating the temperature status
         displayTemperatureStatus(randomTemperature);
