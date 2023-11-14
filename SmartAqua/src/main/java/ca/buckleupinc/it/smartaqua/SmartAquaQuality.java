@@ -6,8 +6,6 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,17 +37,13 @@ public class SmartAquaQuality extends Fragment {
     private Handler handler;
     private Runnable runnable;
     private DatabaseReference dbRef;
-    private List<Integer> tdsDataList;
+    private List<Double> tdsDataList;
     private boolean isOnline;
     private int lastDisplayedIndex = -1;
-    private SharedPreferences sharedPreferences;
-    private static final String SHARED_PREF_KEY = "SmartAquaQualityData";
     private static final String SHARED_PREF_READINGS = "QualityDataReadings";
-    private static final String TDS_DATA_REF = "TDS_DATA";
+    private static final String TDS_DATA_REF = "ReadingsRPi/SmartAqua_Readings/tds";
     private static final String OFFLINE_REF = ".info/connected";
-    private static final String COMMA = ",";
-    private static final String EMPTY = "";
-    private static final String TDS_LIST = "tdsDataList";
+    private static final String OFFLINE = "Connect to Wi-Fi...";
 
     public SmartAquaQuality() {
 
@@ -61,8 +55,6 @@ public class SmartAquaQuality extends Fragment {
 
         handler = new Handler();
         tdsDataList = new ArrayList<>();
-        sharedPreferences = requireContext().getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE);
-        loadDataFromSharedPreferences();
 
         runnable = new Runnable() {
             @Override
@@ -70,13 +62,13 @@ public class SmartAquaQuality extends Fragment {
                 if (isOnline && !tdsDataList.isEmpty()) {
                     // Data is available from Firebase and online, show random readings
                     int randomIndex = new Random().nextInt(tdsDataList.size());
-                    int reading_ran = tdsDataList.get(randomIndex);
+                    Double reading_ran = tdsDataList.get(randomIndex);
                     displayReading(reading_ran);
                 } else {
                     // No data available from Firebase or offline, display the last cached readings in a loop
                     if (!tdsDataList.isEmpty()) {
                         lastDisplayedIndex = (lastDisplayedIndex + 1) % tdsDataList.size();
-                        int reading_ran = tdsDataList.get(lastDisplayedIndex);
+                        Double reading_ran = tdsDataList.get(lastDisplayedIndex);
                         displayReading(reading_ran);
                     }
                 }
@@ -107,7 +99,6 @@ public class SmartAquaQuality extends Fragment {
         });
 
         setupNetworkConnectivityListener();
-        loadDataFromSharedPreferences();
         readDataFromDatabase();
 
         FloatingActionButton quality_fab = view.findViewById(R.id.SmartAquaFAB);
@@ -127,12 +118,10 @@ public class SmartAquaQuality extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tdsDataList.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    int tdsData = snapshot.getValue(Integer.class);
-                    tdsDataList.add(tdsData);
-                }
-                // Save data to SharedPreferences for offline caching
-                saveDataToSharedPreferences();
+                double tdsData = dataSnapshot.getValue(Double.class);
+                tdsDataList.add(tdsData);
+                displayReading(tdsData);
+
                 // Start displaying random TDS data
                 handler.post(runnable);
             }
@@ -145,30 +134,6 @@ public class SmartAquaQuality extends Fragment {
         });
     }
 
-    private void saveDataToSharedPreferences() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        StringBuilder dataStringBuilder = new StringBuilder();
-
-        for (int tdsData : tdsDataList) {
-            dataStringBuilder.append(tdsData).append(COMMA);
-        }
-
-        editor.putString(TDS_LIST, dataStringBuilder.toString());
-        editor.apply();
-    }
-
-    private void loadDataFromSharedPreferences() {
-        String dataString = sharedPreferences.getString(TDS_LIST, EMPTY);
-        String[] dataValues = dataString.split(COMMA);
-
-        tdsDataList.clear();
-        for (String value : dataValues) {
-            if (!value.isEmpty()) {
-                tdsDataList.add(Integer.parseInt(value));
-            }
-        }
-    }
-
     private void setupNetworkConnectivityListener() {
         DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(OFFLINE_REF);
         connectedRef.addValueEventListener(new ValueEventListener() {
@@ -177,18 +142,19 @@ public class SmartAquaQuality extends Fragment {
                 isOnline = snapshot.getValue(Boolean.class);
                 if (!isOnline) {
                     // If offline, load cached data from SharedPreferences
-                    loadDataFromSharedPreferences();
+                    readings_TDS.setText(OFFLINE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 // Handle network connectivity error
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void displayReading(int reading_ran) {
+    private void displayReading(Double reading_ran) {
         readings_TDS.setText(String.valueOf(reading_ran));
         if (reading_ran >= 390 && reading_ran <= 460) {
             status_TDS.setText(R.string.s_good);
@@ -203,15 +169,11 @@ public class SmartAquaQuality extends Fragment {
     public void onPause() {
         super.onPause();
         handler.removeCallbacks(runnable);
-        saveDataToSharedPreferences();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-        // Load cached data from SharedPreferences when the app resumes
-        loadDataFromSharedPreferences();
 
         // Fetch data from the Firebase Realtime Database
         readDataFromDatabase();
