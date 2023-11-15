@@ -21,17 +21,24 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SmartAquaSwitch extends Fragment {
 
     private TextView statusAir;
     private TextView statusBubble;
     private SharedPreferences switchPref;
+    private DatabaseReference relay1StateRef;
+    private DatabaseReference relay2StateRef;
 
     private static final String SwitchPref = "SwitchPref";
     private static final String SwitchAirStateKey = "SwitchAirState";
     private static final String SwitchBubbleStateKey = "SwitchBubbleState";
     private static final String EmptyString = "";
+    private static final String RELAY_1_STATE_REF = "ReadingsRPi/SmartAqua_Relay/relay_1_state";
+    private static final String RELAY_2_STATE_REF = "ReadingsRPi/SmartAqua_Relay/relay_2_state";
+
 
     public SmartAquaSwitch() {
     }
@@ -41,6 +48,8 @@ public class SmartAquaSwitch extends Fragment {
         // Inflate the layout for this fragment
         View view;
         view = inflater.inflate(R.layout.fragment_smart_aqua_switch, container, false);
+        relay1StateRef = FirebaseDatabase.getInstance().getReference(RELAY_1_STATE_REF);
+        relay2StateRef = FirebaseDatabase.getInstance().getReference(RELAY_2_STATE_REF);
 
         Switch switchAir = view.findViewById(R.id.SmartAquaSwitchAir);
         Switch switchBubble = view.findViewById(R.id.SmartAquaSwitchBubble);
@@ -63,10 +72,12 @@ public class SmartAquaSwitch extends Fragment {
         switchAir.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 setStatusText(statusAir, true);
+                updateRelayState(relay1StateRef, "ON"); // Update Relay_1_state
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
                 setStatusText(statusAir, false);
+                updateRelayState(relay1StateRef, "OFF"); // Update Relay_1_state
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarAirOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
@@ -76,16 +87,22 @@ public class SmartAquaSwitch extends Fragment {
         switchBubble.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 setStatusText(statusBubble, true);
+                updateRelayState(relay2StateRef, "ON"); // Update Relay_1_state
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOn, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             } else {
                 setStatusText(statusBubble, false);
+                updateRelayState(relay2StateRef, "OFF"); // Update Relay_1_state
                 Snackbar snackbar = Snackbar.make(view, R.string.snackbarBubbleOff, Snackbar.LENGTH_SHORT);
                 snackbar.show();
             }
             switchPref.edit().putBoolean(SwitchBubbleStateKey, isChecked).apply();
         });
         return view;
+    }
+
+    private void updateRelayState(DatabaseReference relayStateRef, String state) {
+        relayStateRef.setValue(state);
     }
 
     private void setStatusText(TextView textView, boolean isOn) {
