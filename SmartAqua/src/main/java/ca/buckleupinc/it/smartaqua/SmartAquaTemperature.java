@@ -18,22 +18,34 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class SmartAquaTemperature extends Fragment {
     private static final String CHANNEL_ID = "TemperatureNotificationChannel";
-    private static final int UPDATE_INTERVAL = 5000; // Update every 5 seconds
-
     private TextView textView;
     private ProgressBar temperatureProgressBar; // Updated ProgressBar
-    private SharedPreferences tempPref;
+    private DatabaseReference tempDataPref;
+    private List<Double> tempDataList;
+    private boolean isOnline;
     private Random random;
     private Handler handler;
+    private ValueEventListener tempValueEventListener;
+    private static final String OFFLINE = "Connect to Wi-Fi...";
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -47,27 +59,76 @@ public class SmartAquaTemperature extends Fragment {
         temperatureProgressBar = view.findViewById(R.id.temperatureProgressBar);
         temperatureProgressBar.setMax(31 - 18); // Set the maximum value to the entire range
 
-        tempPref = PreferenceManager.getDefaultSharedPreferences(getContext());
-        random = new Random();
+        //tempPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        //random = new Random();
+        tempDataList = new ArrayList<>();
         handler = new Handler(Looper.getMainLooper());
 
+        // Reference to the "temperature" node in the database
+        tempDataPref = FirebaseDatabase.getInstance().getReference("ReadingsRPi/SmartAqua_Readings/temperature");
+
+        // Setup network connectivity listener
+        setupNetworkConnectivityListener();
         // Start periodic temperature updates
-        startPeriodicTemperatureUpdate();
+        readTemperatureData();
 
         return view;
     }
 
-    private void startPeriodicTemperatureUpdate() {
-        handler.postDelayed(new Runnable() {
+    private void readTemperatureData() {
+        tempValueEventListener = new ValueEventListener() {
             @Override
-            public void run() {
-                updateRandomTemperature();
-                handler.postDelayed(this, UPDATE_INTERVAL); // Schedule the next update
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tempDataList.clear();
+
+                Double temperatureData = snapshot.getValue(Double.class);
+
+                if (temperatureData != null) {
+                    tempDataList.add(temperatureData);
+                    displayTemperature(temperatureData);
+                }
             }
-        }, UPDATE_INTERVAL);
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle any errors that occur during data reading
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        tempDataPref.addValueEventListener(tempValueEventListener);
     }
 
-    private void updateRandomTemperature() {
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Remove the ValueEventListener when the fragment is destroyed
+        if (tempDataPref != null && tempValueEventListener != null) {
+            tempDataPref.removeEventListener(tempValueEventListener);
+        }
+    }
+        /*tempDataPref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tempDataList.clear();
+
+                Double temperatureData = dataSnapshot.getValue(Double.class);
+
+                if (temperatureData != null) {
+                    tempDataList.add(temperatureData);
+                    displayTemperature(temperatureData);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle any errors that occur during data reading
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
+
+    /*private void updateRandomTemperature() {
         // Check if the fragment is attached to a context
         if (!isAdded()) {
             return;
@@ -101,6 +162,36 @@ public class SmartAquaTemperature extends Fragment {
         displayTemperatureStatus(randomTemperature);
 
         displayNotification(temperatureText);
+    }*/
+
+    private void displayTemperature(double temperature) {
+
+        if(!isAdded()){
+            return;
+        }
+
+        Context context = requireContext();
+
+        String temperatureText = String.format(Locale.getDefault(), "%.2f%s", temperature, context.getString(R.string.tempCelcius));
+        textView.setText(temperatureText);
+
+        updateProgressBar((int) temperature);
+        //updateTextColor((int) temperature);
+        int textColor;
+        if (temperature >= 28) {
+            textColor = Color.RED;
+        } else if (temperature >= 21) {
+            textColor = Color.GREEN;
+        } else {
+            textColor = Color.BLUE;
+        }
+
+        textView.setTextColor(textColor);
+
+        // Display a toast message indicating the temperature status
+        //displayTemperatureStatus((int) temperature);
+
+        //displayNotification(temperatureText);
     }
 
     private void updateProgressBar(int temperature) {
@@ -120,8 +211,31 @@ public class SmartAquaTemperature extends Fragment {
         // Set the progress color
         temperatureProgressBar.setProgressTintList(android.content.res.ColorStateList.valueOf(color));
     }
+    private void setupNetworkConnectivityListener() {
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
+        connectedRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                isOnline = snapshot.getValue(Boolean.class);
+                if (!isOnline) {
+                    // If offline, display a placeholder text
+                    textView.setText(OFFLINE);
+                }
+            }
 
-    private void displayTemperatureStatus(int temperature) {
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Handle network connectivity error
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    /*private void updateTextColor(int temperature) {
+
+    }*/
+
+    /*private void displayTemperatureStatus(int temperature) {
         String statusMessage;
 
         if (temperature >= 28) {
@@ -167,5 +281,5 @@ public class SmartAquaTemperature extends Fragment {
             NotificationManager notificationManager = requireContext().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
-    }
+    }*/
 }

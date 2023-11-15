@@ -94,14 +94,14 @@
 
     <string name="explanation">PPM is used to measure the cleanliness of the water system</string>
     <string name="record_button">Record</string>
-    <string name="info_ppm">Ideal PPM Levels: 400 PPM - 450 PPM. Approximate level to the PPM range levels is good as well.</string>
+    <string name="info_ppm">Ideal PPM Levels: 100 PPM - 450 PPM. Approximate level to the PPM range levels is good as well.</string>
 
     <string name="stat_title">Status:</string>
     <string name="s_good">Good!</string>
     <string name="s_bad">Danger!</string>
 
     <string name="save_data">Reading saved in database!</string>
-    <string name="failedDB">Failed to read TDS Data</string>
+    <string name="failedDB">Failed to read data from Firebase</string>
 
     <string name="wq_download_message">Quality Reading Saved!</string>
     <string name="wq_txt_error">Error downloading text data to file</string>
@@ -139,9 +139,10 @@
     <string name="snackbarBubbleOff">Bubble Bath is OFF</string>
 
     <!-- LIGHT SCREEN STRINGS  -->
-    <string name="lightcontroldescription">Real Time Lux Readings in Real Time</string>
+    <string name="lightcontroldescription">Illuminance Readings</string>
+    <string name="light_lux_value" translatable="false">lux</string>
 
-    <string name="lux_level_normal">Lux Level: %1$.2f</string>
+    <string name="lux_level_normal">%1$.2f</string>
     <string name="lightstatus">Light Status</string>
     <string name="lightnotification">Light Notification</string>
 

@@ -44,6 +44,8 @@ public class SmartAquaQuality extends Fragment {
     private static final String TDS_DATA_REF = "ReadingsRPi/SmartAqua_Readings/tds";
     private static final String OFFLINE_REF = ".info/connected";
     private static final String OFFLINE = "Connect to Wi-Fi...";
+    private ValueEventListener tdsValueEventListener;
+    private DatabaseReference tdsDataRef;
 
     public SmartAquaQuality() {
 
@@ -55,6 +57,7 @@ public class SmartAquaQuality extends Fragment {
 
         handler = new Handler();
         tdsDataList = new ArrayList<>();
+        tdsDataRef = FirebaseDatabase.getInstance().getReference(TDS_DATA_REF);
 
         runnable = new Runnable() {
             @Override
@@ -91,10 +94,11 @@ public class SmartAquaQuality extends Fragment {
         dbButton.setOnClickListener(view1 -> {
             String reading_TDS_str = readings_TDS.getText().toString();
             String status_TDS_str = status_TDS.getText().toString();
+            String changedTDS_str = reading_TDS_str.replaceAll("[.#$\\[\\]]", ",");
 
             SmartAquaQualityData qualityData = new SmartAquaQualityData(reading_TDS_str, status_TDS_str);
-            dbRef = FirebaseDatabase.getInstance().getReference(SHARED_PREF_READINGS);
-            dbRef.child(reading_TDS_str).setValue(qualityData);
+            DatabaseReference tdsDbRef = FirebaseDatabase.getInstance().getReference(SHARED_PREF_READINGS);
+            tdsDbRef.child(changedTDS_str).setValue(qualityData);
             Toast.makeText(getActivity(), R.string.save_data, Toast.LENGTH_SHORT).show();
         });
 
@@ -112,9 +116,37 @@ public class SmartAquaQuality extends Fragment {
     }
 
     private void readDataFromDatabase() {
-        DatabaseReference tdsDataRef = FirebaseDatabase.getInstance().getReference(TDS_DATA_REF);
+        tdsValueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tdsDataList.clear();
+                double tdsData = dataSnapshot.getValue(Double.class);
+                tdsDataList.add(tdsData);
+                displayReading(tdsData);
 
-        tdsDataRef.addValueEventListener(new ValueEventListener() {
+                // Start displaying random TDS data
+                handler.post(runnable);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle any errors that occur during data reading
+                Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
+            }
+        };
+        tdsDataRef.addValueEventListener(tdsValueEventListener);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Remove the ValueEventListener when the fragment is destroyed
+        if (tdsDataRef != null && tdsValueEventListener != null) {
+            tdsDataRef.removeEventListener(tdsValueEventListener);
+        }
+    }
+
+        /*tdsDataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tdsDataList.clear();
@@ -132,7 +164,7 @@ public class SmartAquaQuality extends Fragment {
                 Toast.makeText(getActivity(), R.string.failedDB, Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
     private void setupNetworkConnectivityListener() {
         DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(OFFLINE_REF);
@@ -156,7 +188,7 @@ public class SmartAquaQuality extends Fragment {
 
     private void displayReading(Double reading_ran) {
         readings_TDS.setText(String.valueOf(reading_ran));
-        if (reading_ran >= 390 && reading_ran <= 460) {
+        if (reading_ran >= 90 && reading_ran <= 460) {
             status_TDS.setText(R.string.s_good);
             status_TDS.setTextColor(Color.GREEN);
         } else {
