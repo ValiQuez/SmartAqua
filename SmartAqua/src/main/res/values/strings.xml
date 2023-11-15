@@ -142,7 +142,7 @@
     <string name="lightcontroldescription">Illuminance Readings</string>
     <string name="light_lux_value" translatable="false">lux</string>
 
-    <string name="lux_level_normal">%1$.2f</string>
+    <!--string name="lux_level_normal">%1$.2f</-string>-->
     <string name="lightstatus">Light Status</string>
     <string name="lightnotification">Light Notification</string>
 
