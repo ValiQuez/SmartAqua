@@ -103,18 +103,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempTitle" />
 
-            <View
-                android:id="@+id/view3"
-                android:layout_width="350dp"
-                android:layout_height="2dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
-                android:alpha="0.8"
-                android:background="@color/lapis_lazuli"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:alpha="0.8"
+            android:background="@color/lapis_lazuli"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading" />
 
         <!-- <SeekBar
             android:id="@+id/SmartAquaTempSeekBar"
@@ -160,7 +160,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <ProgressBar
-            android:id="@+id/temperatureProgressBar"
+            android:id="@+id/SmartAquaTemperatureProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -169,10 +169,97 @@
             android:max="13"
             android:progress="0"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/SmartAqualegendLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaTempReading3" />
+
+        <LinearLayout
+            android:id="@+id/SmartAqualegendLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaTemperatureProgressBar">
+
+            <!-- Cold Label -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/SmartAquaColdLegend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_label_cold"
+                    android:textColor="#0000FF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/SmartAquaColdTempRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_range_cold"
+                    android:textColor="#0000FF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Ideal Label -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/SmartAquaIdealLegend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_label_ideal"
+                    android:textColor="#008000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/SmartAquaIdealTempRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_range_ideal"
+                    android:textColor="#008000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Hot Label -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/SmartAquaHotLegend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_label_hot"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/SmartAquaHotTempRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_range_hot"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

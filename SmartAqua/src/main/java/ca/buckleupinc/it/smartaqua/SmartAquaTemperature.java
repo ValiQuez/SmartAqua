@@ -1,13 +1,7 @@
 package ca.buckleupinc.it.smartaqua;
 
-import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,11 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
-import androidx.preference.PreferenceManager;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -56,7 +46,7 @@ public class SmartAquaTemperature extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_smart_aqua_temperature, container, false);
         textView = view.findViewById(R.id.SmartAquaTempReading3);
-        temperatureProgressBar = view.findViewById(R.id.temperatureProgressBar);
+        temperatureProgressBar = view.findViewById(R.id.SmartAquaTemperatureProgressBar);
         temperatureProgressBar.setMax(31 - 18); // Set the maximum value to the entire range
 
         //tempPref = PreferenceManager.getDefaultSharedPreferences(getContext());
