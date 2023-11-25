@@ -164,18 +164,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SmartAquaRatingBar" />
 
+        <ProgressBar
+            android:id="@+id/SmartAquaFeedbackProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeedbackBtn" />
+
         <ImageView
             android:id="@+id/SmartAquaFeedbackPic"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
             android:contentDescription="@string/reviewFeedbackImgDesc"
             android:src="@drawable/feedback_pic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeedbackBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/SmartAquaFeedbackProgressBar"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
