@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +37,9 @@ public class SmartAquaTemperature extends Fragment {
     private Handler handler;
     private ValueEventListener tempValueEventListener;
     private static final String OFFLINE = "Connect to Wi-Fi...";
+
+    private int temperature = 0; // Initialize temperature to 0
+    private int waterLevel = 0; // Initialize water level to 0
 
     public SmartAquaTemperature() {
         // Required empty public constructor
@@ -63,6 +67,34 @@ public class SmartAquaTemperature extends Fragment {
         readTemperatureData();
 
         return view;
+    }
+
+    // Getter for temperature
+    public int getTemperature() {
+        return temperature;
+    }
+
+    // Setter for temperature
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    // Getter for water level
+    public int getWaterLevel() {
+        return waterLevel;
+    }
+
+    // Setter for water level
+    public void setWaterLevel(int waterLevel) {
+        this.waterLevel = waterLevel;
+    }
+
+    public boolean isTemperatureTooHigh() {
+        // Define your temperature threshold here
+        int temperatureThreshold = 31; // Change this to your desired threshold
+
+        // Check if the current temperature is above the threshold
+        return getTemperature() > temperatureThreshold;
     }
 
     private void readTemperatureData() {
@@ -156,7 +188,7 @@ public class SmartAquaTemperature extends Fragment {
 
     private void displayTemperature(double temperature) {
 
-        if(!isAdded()){
+        if (!isAdded()) {
             return;
         }
 
@@ -201,6 +233,7 @@ public class SmartAquaTemperature extends Fragment {
         // Set the progress color
         temperatureProgressBar.setProgressTintList(android.content.res.ColorStateList.valueOf(color));
     }
+
     private void setupNetworkConnectivityListener() {
         DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
         connectedRef.addValueEventListener(new ValueEventListener() {
@@ -220,6 +253,8 @@ public class SmartAquaTemperature extends Fragment {
             }
         });
     }
+
+
 
     /*private void updateTextColor(int temperature) {
 

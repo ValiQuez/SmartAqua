@@ -77,9 +77,9 @@
     <string name="tempCelcius">°C </string>
     <string name="tempChannelID">Canal de notification de température </string>
 
-    <string name="temp_label_cold">Cold</string>
-    <string name="temp_label_ideal">Ideal</string>
-    <string name="temp_label_hot">Hot</string>
+    <string name="temp_label_cold">Froid</string>
+    <string name="temp_label_ideal">Idéal</string>
+    <string name="temp_label_hot">Chaud</string>
 
     <string name="temp_range_cold">&lt; 21°C</string>
     <string name="temp_range_ideal">21 - 27°C</string>

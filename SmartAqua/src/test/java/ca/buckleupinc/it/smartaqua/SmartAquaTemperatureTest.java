@@ -6,91 +6,57 @@
 
 package ca.buckleupinc.it.smartaqua;
 
-import android.os.Build;
-import android.widget.SeekBar;
-import android.widget.TextView;
-
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import android.os.Build;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.O_MR1)
-
 public class SmartAquaTemperatureTest {
 
-    private FragmentActivity activity;
+    private SmartAquaTemperature smartAquaTemperature;
 
     @Before
     public void setUp() {
-        activity = Robolectric.buildActivity(FragmentActivity.class).create().get();
+        smartAquaTemperature = new SmartAquaTemperature();
     }
 
-    // Invalid Test Case 1
-    //@Test
-    //public void testSeekBarProgressAndTemperatureRange_invalid_negativeProgress() {
-        //SmartAquaTemperature fragment = new SmartAquaTemperature();
-        //FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-        //transaction.add(fragment, null).commit();
-
-        //SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
-
-        //seekBar.setProgress(-10);
-
-        //TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
-        //assertEquals("18°C", textView.getText().toString());
-        //}
-
-    // Invalid Test Case 2
-    //@Test(expected = IllegalArgumentException.class)
-    //public void testInvalidSeekBarProgress() {
-    //SmartAquaTemperature fragment = new SmartAquaTemperature();
-    //FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-    //transaction.add(fragment, null).commit();
-
-        //SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
-
-        //seekBar.setProgress(30);
-    //}
-
-    // Invalid Test Case 3
     @Test
-    public void testTextViewInitialization_invalid() {
-        SmartAquaTemperature fragment = new SmartAquaTemperature();
-        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-        transaction.add(fragment, null).commit();
-
-        TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
-        assertNotNull(textView);
+    public void testSmartAquaTemperatureNotNull() {
+        assertNotNull("SmartAquaTemperature instance should not be null", smartAquaTemperature);
     }
 
-    // Invalid Test Case 4
-    // @Test
-    //public void testInvalidTemperatureDisplay() {
-    //SmartAquaTemperature fragment = new SmartAquaTemperature();
-    //FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-    //transaction.add(fragment, null).commit();
-
-        //SeekBar seekBar = fragment.getView().findViewById(R.id.SmartAquaTempSeekBar);
-
-        //seekBar.setProgress(9);
-
-    //TextView textView = fragment.getView().findViewById(R.id.SmartAquaTempReading3);
-    // assertNotEquals("18°C", textView.getText().toString());
-    // }
-
-    // Valid Test Case 1
     @Test
-    public void testFragmentNotNull() {
-        SmartAquaTemperature fragment = new SmartAquaTemperature();
-        assertNotNull("Fragment should not be null", fragment);
+    public void testInitialization() {
+        assertEquals(0, smartAquaTemperature.getTemperature());
     }
+
+    @Test
+    public void testTemperatureSetting() {
+
+        smartAquaTemperature.setTemperature(25);
+        assertEquals(25, smartAquaTemperature.getTemperature());
+    }
+
+    @Test
+    public void testWaterLevel() {
+        smartAquaTemperature.setWaterLevel(50);
+        assertEquals(50, smartAquaTemperature.getWaterLevel());
+    }
+
+    @Test
+    public void testTemperatureAboveThreshold() {
+
+        smartAquaTemperature.setTemperature(105);
+        assertTrue(smartAquaTemperature.isTemperatureTooHigh());
+    }
+
 }
